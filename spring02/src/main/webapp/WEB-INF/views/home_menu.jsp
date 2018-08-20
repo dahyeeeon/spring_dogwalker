@@ -16,10 +16,10 @@
            <a class="nav-link js-scroll-trigger" href="#bestreview">review</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link js-scroll-trigger" href="#projects">login</a>
+           <a class="nav-link js-scroll-trigger" href="petwalker/loginform.do">login</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link js-scroll-trigger" href="#signup">join us</a>
+           <a class="nav-link js-scroll-trigger" href="petwalker/signup_form.do">join us</a>
          </li>
        </ul>
      </div>

@@ -15,9 +15,79 @@ a#MOVE_TOP_BTN {
     right: 2%;
     bottom: 50px;
     display: none;
-    z-index: 999;
+    z-index: 998;
 }
-
+body {
+    margin:0;
+    padding:0;
+    background:#262626;;
+    font-family:verdana;
+}
+.box {
+	z-index:999;
+    position:absolute;
+    top:70%;
+    left:92%;
+    transform:translate(-50%,-50%);
+    width:150px;
+    height:320px;
+    background:#64a19d;
+    box-sizing:border-box;
+    padding:5px;
+    transition:.5s;
+    overflow:hidden;
+}
+.box P {
+    margin:0;
+    padding:0;
+    color:#fff;
+    font-size:14px;
+    transition:.5s;
+    transition-delay:.2s;
+    transform:scale(.8);
+}
+.box:before {
+    content:'';
+    position:absolute;
+    width:0%;
+    height:0%;
+    top:0;
+    left:0;
+    border-top:2px solid #fff;
+    border-left:2px solid #fff;
+    opacity:0;
+    transform:.5s;
+    box-sizing:border-box;
+}
+.box:after {
+    content:'';
+    position:absolute;
+    width:0%;
+    height:0%;
+    bottom:0;
+    right:0;
+    border-bottom:2px solid #fff;
+    border-right:2px solid #fff;
+    opacity:0;
+    transform:.5s;
+    box-sizing:border-box;
+}
+.box:hover:before {
+    width:100%;
+    height:100%;
+    opacity:1;
+}
+.box:hover:after {
+    width:100%;
+    height:100%;
+    opacity:1;
+}
+.box:hover p {
+    transform:scale(1);
+}
+.box:hover {
+    box-shadow:0 25px 30px rgba(0,0,0,.5);
+}
 </style>
   <!-- Bootstrap core CSS -->
  <link href="resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -34,24 +104,26 @@ a#MOVE_TOP_BTN {
  <!-- Header -->
 <header class="masthead">
 <div class="container d-flex h-100 align-items-center">
-    <div class="header-img">
-    	<img src="resources/img/background.jpg" style="width:675px">
-   	</div>
-    <div class="header-content">
-        <h3>안내</h3>
-	   <p>02-1234-1234</p>
-	   <p>전화가능 시간 10:00~18:00</p>
-		 <p>카카오톡:렛츠런</p>
-		 <p><b>보험내용안내</b></p>
-		 <p>산책 중 다른개와 싸움이 발생해 상해를 입혔을때</p>
-		 <p>산책 중 강아지가 타인을 공격했을때</p>
+  <section class="jumbotron text-center">
+    <div class="container">
+        <p class="lead text-muted mb-0">
+        <img src="resources/img/background.jpg"/>
+       반려견 사랑의 첫걸음, 산책
     </div>
+</section>
   </div> 
 </header>
-    
+
+    <div class="box">
+    <p>서비스 안내</p>
+    <p>문의:02-1234-1234
+  <br> 도그워킹 서비스는 이동시간 포함 1시간~1시간 30분정도 진행됩니다.
+    예약은 원하는 서비스/상담일 1주일전에 하셔야하며 3일이내 취소가 가능합니다.</p>
+    </div>
 <div class="container">
 	<div class="row">
         <div class="col-xs-12">
+        <h4>이용방법</h4>
             <ul class="nav nav-pills nav-justified thumbnail">
                 <li>
                     <h4 class="list-group-item-heading">Step 1</h4>
@@ -489,6 +561,10 @@ a#MOVE_TOP_BTN {
         });
     });
     
+    var currentPosition = parseInt($(".box").css("top"));
+    $(window).scroll(function() {
+    	var position = $(window).scrollTop(); $(".box")
+    	.stop().animate({"top":position+currentPosition+"px"},100); });
 
 </script>
 

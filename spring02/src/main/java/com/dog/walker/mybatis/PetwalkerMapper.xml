@@ -13,11 +13,12 @@
 		WHERE id=#{id}
 	</select>
 
-	<insert id="insert" parameterType="petwalkerDto">
-		INSERT INTO pet_walker
-		VALUES(#{id}, #{nickname}, #{pwd}, #{kakao}, #{phone}, #{addr}, #{sex}, #{hasPet},
-		#{imagePath}, #{evaluation},#{orgFileName}, #{saveFileName}, #{fileSize}, SYSDATE)
-	</insert>
+<insert id="insert" parameterType="petwalkerDto">
+      INSERT INTO pet_walker (id,nickname,pwd,kakao,phone,addr,sex,imagePath,hasPet,evaluation,
+      regdate,orgFileName,saveFileName,fileSize) VALUES(#{id}, 
+      #{nickname}, #{pwd}, #{kakao}, #{phone}, #{addr}, #{sex},#{imagePath} ,#{hasPet},
+       #{evaluation}, SYSDATE,#{orgFileName}, #{saveFileName}, #{fileSize})
+   </insert>
 
 	<update id="update" parameterType="petwalkerDto">
 		UPDATE pet_walker SET kakao = #{kakao}, phone = #{phone}, addr = #{addr},

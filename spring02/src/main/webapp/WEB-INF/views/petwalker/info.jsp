@@ -15,9 +15,8 @@
 	<tr>
 		<th>프사</th>
 		<th> 
-		 <c:forEach var="tmp" items="${list }">
-		<img src="${cPath}${tmp.imagePath}"  class="img-responsive img-thumbnail"/>
-		</c:forEach>
+		<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
+		style="width:100px; height:100px"/>
 		</th>
 	</tr>
 		<tr>

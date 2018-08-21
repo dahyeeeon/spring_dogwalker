@@ -532,7 +532,7 @@ body {
  </div>
  </div>
 </section>
-<a id="MOVE_TOP_BTN" href="#">TOP></a>
+<a id="MOVE_TOP_BTN" href="#">TOP</a>
 
 
 <%@include file="home_footer.jsp" %>

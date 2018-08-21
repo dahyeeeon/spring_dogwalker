@@ -45,7 +45,7 @@ text-align: center;
 		</div>
 		<div class="col-sm-5">
 			<h3>walker 이름</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt neque hic amet ipsa porro velit nam numquam aspernatur enim blanditiis molestiae dolore iusto possimus consequatur dicta doloribus tempora corporis alias.</p>
+			<p>Lorem ipsum dolor amet, consectetur adipisicing elit. Incidunt neque hic amet ipsa porro velit nam numquam aspernatur enim blanditiis molestiae dolore iusto possimus consequatur dicta doloribus tempora corporis alias.</p>
 			<div class="row">
 				<div class="col-xs-2 icons">
         		<div class="round round-lg hollow orange">

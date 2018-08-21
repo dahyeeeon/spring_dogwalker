@@ -1,6 +1,7 @@
 package com.dog.walker.petwalker.service;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petwalker.dao.PetwalkerDao;
@@ -29,7 +31,6 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 
 	@Override
 	   public void signup(HttpServletRequest request ,ModelAndView mView, PetwalkerDto dto) {
-	      
 	      //파일을 저장할 폴더의 절대 경로를 얻어온다.
 	      String realPath=request.getSession()
 	            .getServletContext().getRealPath("/upload");
@@ -57,7 +58,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 	      }catch(Exception e){
 	         e.printStackTrace();
 	      }
-	      
+	     
 	      //FileDto 객체에 추가 정보를 담는다.
 	      dto.setOrgFileName(orgFileName);
 	      dto.setSaveFileName(saveFileName);
@@ -81,7 +82,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 	      dao.insert(dto);
 	      //request 에 담을 내용을 ModelAndView 객체에 담는다.
 	      mView.addObject("msg", dto.getId()+" 회원님 가입되었습니다.");
-	   }
+}
 	@Override
 	public void login(ModelAndView mView, PetwalkerDto dto, HttpSession session) {
 		//로그인 성공여부를 담을 지역 변수 
@@ -171,5 +172,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 		//ModelAndView 객체에 메세지를 담는다.
 		mView.addObject("msg",id+" 님 회원 탈퇴 되었습니다.");
 	}
+
+
 
 }

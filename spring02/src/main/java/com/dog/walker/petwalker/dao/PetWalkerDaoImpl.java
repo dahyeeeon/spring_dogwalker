@@ -1,5 +1,7 @@
 package com.dog.walker.petwalker.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -63,6 +65,11 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 	public void updateImg(PetwalkerDto dto) {
 		session.update("petwalker.updateImg", dto);
 
+	}
+	@Override
+	public List<PetwalkerDto> getList(String id) {
+		List<PetwalkerDto> list = session.selectList("petwalker.getList",id);
+		return list;
 	}
 
 }

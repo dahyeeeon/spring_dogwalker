@@ -225,8 +225,8 @@ body {
       <div class="col-md-10 col-lg-8 mx-auto text-center">
         <h2 class="text-white mb-5">우리 동네 도그워커 검색하기</h2>
 
-        <form class="form-inline d-flex">
-          <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail">
+        <form class="form-inline d-flex" action="AddressSearchResult.do" method = "post" >
+          <input type="text" class="form-control" name="input_address" id="input_address">
           <button type="submit" class="btn btn-primary mx-auto"><i class="fa fa-paw fa-2x"></i></button>
         </form>
 
@@ -234,7 +234,6 @@ body {
     </div>
   </div>
 </section>
-
  <!-- Contact Section -->
 
 <section id="bestreview" class="pb-5">
@@ -574,3 +573,10 @@ body {
 </body>
 
 </html>
+<script>
+   $(function() {
+        var placesAutocomplete = places({
+          container: document.querySelector('#input_address')
+        });
+   });
+</script>

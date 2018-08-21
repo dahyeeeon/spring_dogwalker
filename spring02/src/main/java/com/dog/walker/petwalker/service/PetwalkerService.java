@@ -3,6 +3,7 @@ package com.dog.walker.petwalker.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petwalker.dto.PetwalkerDto;
@@ -18,4 +19,6 @@ public interface PetwalkerService {
 	public void updatePwd(String pwd, HttpSession session);
 	public void updateImg(String pwd, HttpSession session);
 	public void delete(ModelAndView mView, HttpSession session);
+
+	
 }

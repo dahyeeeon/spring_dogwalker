@@ -18,6 +18,8 @@
 		<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
 		style="width:100px; height:100px"/>
 		</th>
+		<th><a href="profileform.do">도그워커프로필 입력</a>
+		<p>도그워커 디테일에 들어갈 소개 입력 및 수정</p></th>
 	</tr>
 		<tr>
 			<th>항목</th>
@@ -34,17 +36,25 @@
 			<td>${dto.kakao }</td>
 		</tr>
 		<tr>
-			<th>휴대폰번호</th>
-			<td>${dto.phone }</td>
+			<th>닉네임</th>
+			<td>${dto.nickname }</td>
 		</tr>
 		<tr>
 			<th>휴대폰번호</th>
 			<td>${dto.phone }</td>
 		</tr>
 		<tr>
-			<th>휴대폰번호</th>
-			<td>${dto.phone }</td>
-		</tr>		
+			<th>주소</th>
+			<td>${dto.addr }</td>
+		</tr>	
+		<tr>
+			<th>성별</th>
+			<td>${dto.sex }</td>
+		</tr>
+		<tr>
+			<th>펫소유</th>
+			<td>${dto.hasPet }</td>
+		</tr>	
 		<tr>
 			<th>가입일</th>
 			<td>${dto.regdate }</td>

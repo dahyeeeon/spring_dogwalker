@@ -1,5 +1,7 @@
 package com.dog.walker.petwalker.dao;
 
+import java.util.List;
+
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 public interface PetwalkerDao {
@@ -10,4 +12,5 @@ public interface PetwalkerDao {
 	public boolean canUseId(String id);
 	public void updatePwd(PetwalkerDto dto);
 	public void updateImg(PetwalkerDto dto);
+	public List<PetwalkerDto> getList(String id);
 }

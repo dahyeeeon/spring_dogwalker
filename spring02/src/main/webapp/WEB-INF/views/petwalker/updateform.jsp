@@ -17,13 +17,19 @@
 	<label for="kakao">카카오 아이디</label>
 	<input type="text" name="kakao" id="kakao" 
 		value="${dto.kakao }"/><br/>
+	<label for="nickname">닉네임 </label>
+	<input type="text" name="nickname" id="nickname" 
+		value="${dto.nickname }" disabled="disabled"/><br/>
 	<label for="phone">휴대폰 번호</label>
 	<input type="text" name="phone" id="phone" 
 		value="${dto.phone }"/><br/>
 	<label for="addr">주소</label>
 	<input type="text" name="addr" id="addr" 
 		value="${dto.addr }"/><br/>
-	
+	<label for="sex">성별 </label>
+	<input type="text" name="sex" id="sex" 
+		value="${dto.sex }" disabled="disabled"/><br/>
+
 	<button type="submit">수정 확인</button>
 </form>
 <a href="pw_changeform.do">비밀번호 변경</a>

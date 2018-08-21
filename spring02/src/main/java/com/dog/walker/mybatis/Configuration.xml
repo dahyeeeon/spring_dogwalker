@@ -5,8 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.dog.walker.petwalker.dto.PetwalkerDto" alias="petwalkerDto" />
+		<typeAlias type="com.dog.walker.detail.dto.ReserveDto" alias="rsvDto"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/dog/walker/mybatis/PetwalkerMapper.xml" />
+		<mapper resource="com/dog/walker/mybatis/DetailReserveMapper.xml" />
 	</mappers>
 </configuration>

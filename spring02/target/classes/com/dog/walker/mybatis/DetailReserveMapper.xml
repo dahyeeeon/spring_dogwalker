@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rsv">
+	<select id="getList" resultType="rsvDto" parameterType="rsvDto">
+		SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv
+		FROM reservation
+		ORDER BY num ASC
+	</select>
+	<insert id="insert" parameterType="rsvDto">
+		INSERT INTO reservation
+		(num, id, kakao, nickname,dogSize,selectDate,timeSlot,cctv)
+		VALUES(reservation_seq.NEXTVAL, #{id}, #{kakao}, #{nickname},
+		#{dogSize},#{selectDate},#{timeSlot},#{cctv})
+	</insert>
+	<update id="update" parameterType="rsvDto">
+		UPDATE reservation
+		SET id=#{id}, kakao=#{kakao}, nickname=#{nickname},
+		dogSize=#{dogSize},selectDate=#{selectDate},
+		timeSlot=#{timeSlot},cctv=#{cctv}
+		WHERE num=#{num}
+	</update>
+	<delete id="delete" parameterType="int">
+		DELETE FROM reservation
+		WHERE num=#{num}
+	</delete>
+	<select id="getData" parameterType="int" 
+		resultType="rsvDto">
+		SELECT num, id, kakao, nickname,dogSize,selectDate,timeSlot,cctv
+		FROM reservation
+		WHERE num=#{num}
+	</select>
+</mapper>

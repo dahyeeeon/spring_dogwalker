@@ -262,7 +262,7 @@ body {
                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                  <ul class="list-inline">
                                      <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
+                                         <a class="social-icon text-xs-center" target="_blank" href="walkerPrf/detail_main.do">
                                              <i class="fa fa-facebook"></i>
                                          </a>
                                      </li>

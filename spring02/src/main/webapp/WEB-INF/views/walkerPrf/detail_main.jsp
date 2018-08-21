@@ -8,8 +8,12 @@
 <title>Grayscale - Start Bootstrap Theme</title>
 <style>
 .icons{
-margin-left:60px;
+
 text-align: center;
+margin: auto;
+
+
+
 }
 .bottomCol{
 	border-top: 3px solid lightblue;
@@ -17,6 +21,15 @@ text-align: center;
 	 margin: 0 auto;
 	
 }
+.round > p{
+	font-size:12px;
+	color:black;
+	width:100px;
+	 margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -30px;
+}
+
 </style>
 <link
 	href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css"
@@ -47,30 +60,33 @@ text-align: center;
 			<h3>walker 이름</h3>
 			<p>Lorem ipsum dolor amet, consectetur adipisicing elit. Incidunt neque hic amet ipsa porro velit nam numquam aspernatur enim blanditiis molestiae dolore iusto possimus consequatur dicta doloribus tempora corporis alias.</p>
 			<div class="row">
-				<div class="col-xs-2 icons">
+				<div class="col-xs-4 icons">
         		<div class="round round-lg hollow orange">
                 <span class="fa fa-tags"></span><br />
-                <p>소형: 5kg 미만</p><br />
+                <p>소형:</p> 
+                <p>5kg 미만</p>
                 <p>15000원</p>
             	</div></div>
-            	
-            	<div class="col-xs-2 icons">
+            	<div class="col-xs-4 icons">
         		<div class="round round-lg hollow orange">
                 <span class="fa fa-tags"></span><br />
-                <p>중형: 5-15kg</p><br />
-                <p>17500원</p>
-            	</div></div>
-            	
-            	<div class="col-xs-2 icons">
-        		<div class="round round-lg hollow orange">
-                <span class="fa fa-tags"></span><br />
-                <p>대형: 15kg 이상</p><br />
+                <p>중형:</p>
+                <p>10~15kg</p>
                 <p>20000원</p>
             	</div></div>
+            	<div class="col-xs-4 icons">
+        		<div class="round round-lg hollow orange">
+                <span class="fa fa-tags"></span><br />
+                <p>대형:</p>
+                <p>15kg 이상</p>
+                <p>20000원</p>
+            	</div></div>
+            	
+            	
             </div>
            
             
-			<div class="action center-block">
+			<div class="action" style="text-align:center; margin-top:50px;">
 				<button class="btn btn-default" type="submit">
 				<a href="insertform.do"> reservation </a></button>
 				

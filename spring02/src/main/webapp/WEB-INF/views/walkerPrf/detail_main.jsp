@@ -16,7 +16,7 @@ margin: auto;
 
 }
 .bottomCol{
-	border-top: 3px solid lightblue;
+	border-top: 3px solid #64a19d;
 	
 	 margin: 0 auto;
 	

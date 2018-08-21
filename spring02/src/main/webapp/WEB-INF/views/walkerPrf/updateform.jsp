@@ -14,7 +14,7 @@
 	
 <style>
 .row {
-	border: 3px solid lightblue;
+	border: 3px solid #64a19d;
 	 margin: 0 auto;
 	
 }

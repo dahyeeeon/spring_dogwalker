@@ -100,7 +100,7 @@ margin: auto;
 	</div>
 	<div class="row bottomCol">
 	<h3>펫 워커 경험</h3>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque officia maxime minima incidunt dolor facere iusto vitae veritatis facilis sapiente expedita esse obcaecati architecto maiores nisi ratione iste veniam eveniet!
+	Lorem ipsum dlor sit amet, consectetur adipisicing elit. Eaque officia maxime minima incidunt dolor facere iusto vitae veritatis facilis sapiente expedita esse obcaecati architecto maiores nisi ratione iste veniam eveniet!
 	</div>
 	<div class="row bottomCol">
 	<h3>펫 워커 경험</h3>

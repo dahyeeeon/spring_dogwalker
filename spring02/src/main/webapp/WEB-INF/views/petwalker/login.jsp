@@ -18,6 +18,7 @@
 		<a href="loginform.do?url=${url }">확인</a>
 	</c:otherwise>
 </c:choose>
+
 </body>
 </html>
 

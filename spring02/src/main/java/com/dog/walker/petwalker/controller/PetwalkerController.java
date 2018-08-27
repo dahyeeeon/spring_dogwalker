@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.petwalker.service.PetwalkerService;
+import com.dog.walker.profile.service.WalkerProfileService;
 
 @Controller
 public class PetwalkerController {

@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.profile.dao.WalkerProfileDao;
 import com.dog.walker.profile.dto.WalkerProfileDto;
 
@@ -21,11 +23,10 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
 	@Autowired
 	private WalkerProfileDao dao;
 
-
 	@Override
 	public void insert(MultipartHttpServletRequest request, ModelAndView mView, WalkerProfileDto dto) {
 		List<MultipartFile> fileList = request.getFiles("file");
-
+		
 		//파일을 저장할 폴더의 절대 경로를 얻어온다.
 	      String realPath=request.getSession()
 	            .getServletContext().getRealPath("/upload");
@@ -54,7 +55,9 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
 	         e.printStackTrace();
 	      }
 	     
+	
 	      //FileDto 객체에 추가 정보를 담는다.
+	      dto.setId(dto.getId());
 	      dto.setOrgFileName(orgFileName);
 	      dto.setSaveFileName(saveFileName);
 	      dto.setFileSize(fileSize);
@@ -62,13 +65,14 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
 	      dto.setExperience(dto.getExperience());
 	      dto.setFreeservice(dto.getFreeservice());
 	      dto.setImagePath("/upload/"+saveFileName);
-	      
 
 	      dao.insert(dto);
 
-		
+
+	      }
 	}
 
 
-}
+
+
 }

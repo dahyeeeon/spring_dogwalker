@@ -9,10 +9,7 @@
 <body>
 <form action="profile.do" method="post" 
 id="profileform" enctype="multipart/form-data">
-	<input type="hidden" name="id" value="${id }"/>
-	<label for="id">아이디</label>
-	<input type="text" id="id" value="${id }" 
-		disabled="disabled"/><br/>
+	<input type="hidden" name="id" id="id" value="${id }"/>
 	<label for="myFile">이미지</label>
 	<input type="file" name="file" id="file" multiple="multiple"/><br/>
 	<label for="career">도그워커 경력</label><br />

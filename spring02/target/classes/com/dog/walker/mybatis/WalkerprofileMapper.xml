@@ -3,8 +3,10 @@
 <mapper namespace="walkerprofile">	
 
 <insert id="insert" parameterType="walkerprofileDto">
-      INSERT INTO walker_profile (career,experience,freeservice,imagePath,orgFileName,saveFileName,fileSize )
-       VALUES(#{career}, #{experience}, #{freeservice},#{imagePath}, #{orgFileName}, #{saveFileName}, #{fileSize})
+      INSERT INTO walker_profile (id,career,experience,freeservice,
+      imagePath,orgFileName,saveFileName,fileSize )
+       VALUES(#{id},#{career}, #{experience}, #{freeservice},#{imagePath},
+        #{orgFileName}, #{saveFileName}, #{fileSize})
 </insert>
 
 

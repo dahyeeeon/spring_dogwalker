@@ -1,5 +1,8 @@
 package com.dog.walker.profile.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,7 +25,8 @@ public class ProfileController {
 	private WalkerProfileService wpService;
 	
 	   @RequestMapping("/petwalker/profile")
-	   public ModelAndView insert(MultipartHttpServletRequest request,@ModelAttribute WalkerProfileDto dto) {
+	   public ModelAndView insert(MultipartHttpServletRequest request,
+			   @ModelAttribute WalkerProfileDto dto) {
 	      // 서비스에 전달할 ModelAndView 객체 생성
 	      ModelAndView mView = new ModelAndView();
 	      // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
@@ -36,5 +42,5 @@ public class ProfileController {
 	      return "petwalker/profileform";
 	   }
 	   
-
+	  
 }

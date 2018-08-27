@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 public class WalkerProfileDto {
+	private String id;
 	private	String career;
 	private String experience;
 	private String freeservice;
@@ -13,12 +14,14 @@ public class WalkerProfileDto {
 	private String saveFileName;
 	private long fileSize;
 	private List<MultipartFile> file;
+	private String isprofile;
 	
 	public WalkerProfileDto() {}
 
-	public WalkerProfileDto(String career, String experience, String freeservice, String imagePath, String orgFileName,
-			String saveFileName, long fileSize, List<MultipartFile> file) {
+	public WalkerProfileDto(String id, String career, String experience, String freeservice, String imagePath,
+			String orgFileName, String saveFileName, long fileSize, List<MultipartFile> file, String isprofile) {
 		super();
+		this.id = id;
 		this.career = career;
 		this.experience = experience;
 		this.freeservice = freeservice;
@@ -27,6 +30,15 @@ public class WalkerProfileDto {
 		this.saveFileName = saveFileName;
 		this.fileSize = fileSize;
 		this.file = file;
+		this.isprofile = isprofile;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getCareer() {
@@ -93,4 +105,13 @@ public class WalkerProfileDto {
 		this.file = file;
 	}
 
+	public String getIsprofile() {
+		return isprofile;
+	}
+
+	public void setIsprofile(String isprofile) {
+		this.isprofile = isprofile;
+	}
+
+	
 }

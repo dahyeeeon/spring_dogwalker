@@ -13,7 +13,8 @@ public class WalkerProfileDaoImpl implements WalkerProfileDao {
 
 	@Override
 	public void insert(WalkerProfileDto dto) {
-		session.update("walkerprofile.insert", dto);
+		session.insert("walkerprofile.insert", dto);
 	}
+
 
 }

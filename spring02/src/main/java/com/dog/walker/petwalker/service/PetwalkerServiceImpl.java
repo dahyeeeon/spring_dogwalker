@@ -82,7 +82,10 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 	      dao.insert(dto);
 	      //request 에 담을 내용을 ModelAndView 객체에 담는다.
 	      mView.addObject("msg", dto.getId()+" 회원님 가입되었습니다.");
-}
+	      
+	
+	}
+
 	@Override
 	public void login(ModelAndView mView, PetwalkerDto dto, HttpSession session) {
 		//로그인 성공여부를 담을 지역 변수 

@@ -10,5 +10,5 @@ import com.dog.walker.profile.dto.WalkerProfileDto;
 
 public interface WalkerProfileService {
 	public void insert(MultipartHttpServletRequest request,ModelAndView mView, WalkerProfileDto dto);
-	
+
 }

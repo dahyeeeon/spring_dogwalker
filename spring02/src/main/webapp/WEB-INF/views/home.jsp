@@ -24,74 +24,77 @@ body {
     background:#262626;;
     font-family:verdana;
 }
+.expand{
+position:fixed;
+right:20px;
+bottom:100px;
+width:40px;
+height:40px;
+border:1px solid #64a19d;
+border-radius:50%;
+z-index:999;
+text-align:center;
+
+}
+.expand i{margin-top:12px;color:#64a19d}
+.expand .box{display:none}
+.expand.active .box{display:block}
 .box {
+text-align:left;
 	z-index:999;
     position:absolute;
-    top:70%;
-    left:92%;
-    transform:translate(-50%,-50%);
+    bottom:50px;
+    right:0;
     width:150px;
-    height:320px;
+    height:auto;
     background:#64a19d;
     box-sizing:border-box;
     padding:5px;
     transition:.5s;
     overflow:hidden;
+    border-radius:20px;
 }
 .box P {
     margin:0;
-    padding:0;
+    padding:0 10px 10px;
     color:#fff;
-    font-size:14px;
-    transition:.5s;
-    transition-delay:.2s;
-    transform:scale(.8);
+    font-size:10px;
 }
-.box:before {
-    content:'';
-    position:absolute;
-    width:0%;
-    height:0%;
-    top:0;
-    left:0;
-    border-top:2px solid #fff;
-    border-left:2px solid #fff;
-    opacity:0;
-    transform:.5s;
-    box-sizing:border-box;
+.box p:first-child{
+font-weight:bold;
+font-size:12px;
 }
-.box:after {
-    content:'';
-    position:absolute;
-    width:0%;
-    height:0%;
-    bottom:0;
-    right:0;
-    border-bottom:2px solid #fff;
-    border-right:2px solid #fff;
-    opacity:0;
-    transform:.5s;
-    box-sizing:border-box;
+
+
+html,
+body {
+    height: 100%;
 }
-.box:hover:before {
-    width:100%;
-    height:100%;
-    opacity:1;
+
+
+.carousel-inner {
+    height: 100%;
 }
-.box:hover:after {
-    width:100%;
-    height:100%;
-    opacity:1;
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
-.box:hover p {
-    transform:scale(1);
-}
-.box:hover {
-    box-shadow:0 25px 30px rgba(0,0,0,.5);
+
+footer {
+    margin: 50px 0;
 }
 </style>
   <!-- Bootstrap core CSS -->
  <link href="resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+ <link href="resources/css/bootstrap.css" rel="stylesheet">
  <!-- Custom styles for this template -->
   <link href="resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -101,26 +104,23 @@ body {
 <body id="page-top">
 
 <%@include file="home_menu.jsp" %>
+<!-- Wrapper for slides -->
+<div class="item active">
+   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
+ </div>
 
- <!-- Header -->
-<header class="masthead">
-<div class="container d-flex h-100 align-items-center">
-  <section class="jumbotron text-center">
-    <div class="container">
-        <p class="lead text-muted mb-0">
-        <img src="resources/img/background.jpg"/>
-       반려견 사랑의 첫걸음, 산책
-    </div>
-</section>
-  </div> 
-</header>
-
-    <div class="box">
-    <p>서비스 안내</p>
-    <p>문의:02-1234-1234
-  <br> 도그워킹 서비스는 이동시간 포함 1시간~1시간 30분정도 진행됩니다.
-    예약은 원하는 서비스/상담일 1주일전에 하셔야하며 3일이내 취소가 가능합니다.</p>
-    </div>
+<div class="expand">
+	<i class="fa fa-plus"></i>
+	<div class="box">
+		<p>서비스 안내</p>
+		<p>
+			<strong>문의:02-1234-1234</strong><br/><br/>
+			이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
+	  		예약 관련 : <br/>최소  1주 전<br/><br/>
+	  		취소 관련 : <br/>3일 이내 취소 가능
+	  	</p>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
         <div class="col-xs-12">
@@ -130,21 +130,36 @@ body {
                     <h4 class="list-group-item-heading">Step 1</h4>
                     <p class="list-group-item-text">가입</p>
                 </li>
+                <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
+                </li>
                 <li class="active">
                     <h4 class="list-group-item-heading">Step 2</h4>
                     <p class="list-group-item-text">내 지역 검색</p>
                </li>
                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
+                </li>
+                <li>
                     <h4 class="list-group-item-heading">Step 3</h4>
                     <p class="list-group-item-text">도그워커 선택</p>
+                </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
                 </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 4</h4>
                     <p class="list-group-item-text">예약 및 문의</p>
                 </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
+                </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 5</h4>
                     <p class="list-group-item-text">도그워커 방문</p>
+                </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
                 </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 6</h4>
@@ -532,6 +547,7 @@ body {
  </div>
  </div>
 </section>
+
 <a id="MOVE_TOP_BTN" href="#">TOP-</a>
 
 
@@ -539,10 +555,7 @@ body {
 
 
  <!-- Bootstrap core JavaScript -->
-<script src="resources/vendor/jquery/jquery.js"></script>
-<script src="resources/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-<script src="resources/vendor/jquery-easing/jquery.easing.js"></script>
-<script src="resources/vendor/bootstrap/js/grayscale.js"></script>
+<script src="resources/js/jquery-3.3.1.js"></script>
 <script>
     $(function() {
         $(window).scroll(function() {
@@ -561,22 +574,26 @@ body {
         });
     });
     
+    $('.expand').on('click', function(){
+    	
+    	$(this).toggleClass('active');
+    });
+    
+    
     var currentPosition = parseInt($(".box").css("top"));
     $(window).scroll(function() {
     	var position = $(window).scrollTop(); $(".box")
     	.stop().animate({"top":position+currentPosition+"px"},100); });
 
-</script>
-
-
-
-</body>
-
-</html>
-<script>
-   $(function() {
+    $(function() {
         var placesAutocomplete = places({
           container: document.querySelector('#input_address')
         });
    });
+   
+
 </script>
+
+</body>
+
+</html>

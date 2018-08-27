@@ -50,10 +50,12 @@ margin: auto;
 	<div class="row">
 		<div class="col-sm-7">
 			<div class="fotorama" data-autoplay="true" data-nav="thumbs" data-allowfullscreen="true">
-  				<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
-		style="width:410px; height:240px"/>
-  				<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
-		style="width:410px; height:240px"/>
+  				<img src="${pageContext.request.contextPath }/resources/img/dog1.jpg"  class="img-responsive img-thumbnail"
+		/>
+  				<img src="${pageContext.request.contextPath }/resources/img/dog2.jpg"  class="img-responsive img-thumbnail"
+		/>
+				<img src="${pageContext.request.contextPath }/resources/img/dog4.jpg"  class="img-responsive img-thumbnail"
+		/>
 			</div>
 		</div>
 		<div class="col-sm-5">

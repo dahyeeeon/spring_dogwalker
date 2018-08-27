@@ -1,6 +1,5 @@
 package com.dog.walker.petwalker.service;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -9,7 +8,7 @@ import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 public interface PetwalkerService {
 	public boolean canUseId(String id);
-	public void signup(HttpServletRequest request,ModelAndView mView, PetwalkerDto dto);
+	public void signup(ModelAndView mView, PetwalkerDto dto);
 	public void login(ModelAndView mView, PetwalkerDto dto, HttpSession session);
 	public void info(ModelAndView mView, HttpSession session);
 	public void updateForm(ModelAndView mView, HttpSession session);

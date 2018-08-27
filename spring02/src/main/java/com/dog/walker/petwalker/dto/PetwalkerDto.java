@@ -1,7 +1,5 @@
 package com.dog.walker.petwalker.dto;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class PetwalkerDto {
 	private String id;
 	private String nickname;
@@ -14,17 +12,11 @@ public class PetwalkerDto {
 	private String imagePath;
 	private int evaluation;
 	private String regdate;
-	private String orgFileName; //원본 파일명
-	private String saveFileName; //저장된 파일명
-	private long fileSize; //파일의 크기 
 	
-	private MultipartFile file;
-
 	public PetwalkerDto() {}
-	
+
 	public PetwalkerDto(String id, String nickname, String pwd, String kakao, String phone, String addr, String sex,
-			String hasPet, String imagePath, int evaluation, String regdate, String orgFileName, String saveFileName,
-			long fileSize, MultipartFile file) {
+			String hasPet, String imagePath, int evaluation, String regdate) {
 		super();
 		this.id = id;
 		this.nickname = nickname;
@@ -37,10 +29,6 @@ public class PetwalkerDto {
 		this.imagePath = imagePath;
 		this.evaluation = evaluation;
 		this.regdate = regdate;
-		this.orgFileName = orgFileName;
-		this.saveFileName = saveFileName;
-		this.fileSize = fileSize;
-		this.file = file;
 	}
 
 	public String getId() {
@@ -130,38 +118,5 @@ public class PetwalkerDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-
-	public String getOrgFileName() {
-		return orgFileName;
-	}
-
-	public void setOrgFileName(String orgFileName) {
-		this.orgFileName = orgFileName;
-	}
-
-	public String getSaveFileName() {
-		return saveFileName;
-	}
-
-	public void setSaveFileName(String saveFileName) {
-		this.saveFileName = saveFileName;
-	}
-
-	public long getFileSize() {
-		return fileSize;
-	}
-
-	public void setFileSize(long fileSize) {
-		this.fileSize = fileSize;
-	}
-
-	public MultipartFile getFile() {
-		return file;
-	}
-
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
-	
 	
 }

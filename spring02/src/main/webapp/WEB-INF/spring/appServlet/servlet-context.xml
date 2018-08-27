@@ -70,10 +70,13 @@
       <beans:property name="order" value="0"/>
    </beans:bean>
    
-   
-   <context:component-scan base-package="com.dog.walker" />
-   <context:component-scan base-package="com.dog.walker.petwalker.*" />
-   <context:component-scan base-package="com.dog.walker.detail.*" />
-   
+   	
+	<context:component-scan base-package="com.dog.walker" />
+	<context:component-scan base-package="com.dog.walker.petwalker.*" />
+	<context:component-scan base-package="com.dog.walker.review.*" />
+	<context:component-scan base-package="com.dog.walker.detail.*" />
+	<context:component-scan base-package="com.dog.walker.profile.*" />
+	<context:component-scan base-package="com.dog.walker.search.*" />
+	<context:component-scan base-package="com.dog.walker.aspect" />
    
 </beans:beans>

@@ -10,17 +10,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dog.walker.review.dao.ReviewDao;
-import com.dog.walker.review.dto.ReviewDto;
+import com.dog.walker.manage.dao.ManageDao;
+import com.dog.walker.manage.dto.ManageDto;
+
 
 @Service
 public class ReviewServiceImpl implements ReviewService{
 	
 	@Autowired
-	private ReviewDao dao;
+	private ManageDao dao;
 
 	@Override
-	public void upload(HttpServletRequest request, ModelAndView mView, ReviewDto dto) {
+	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto) {
 		  
 		 
 		
@@ -54,7 +55,8 @@ public class ReviewServiceImpl implements ReviewService{
 	      
 	      //FileDto 객체에 추가 정보를 담는다.
 
-	      
+	      int stars = Integer.parseInt(request.getParameter("stars"));
+	      dto.setStars(stars);
 	      dto.setOrgImageName(orgFileName);
 	      dto.setSaveImageName(saveFileName);
 	      dto.setImageSize(imageSize);
@@ -80,9 +82,9 @@ public class ReviewServiceImpl implements ReviewService{
 	private static final int PAGE_DISPLAY_COUNT=3;	
 
 	@Override
-	public void getList(HttpServletRequest request) {
+	public void reviewgetList(HttpServletRequest request) {
 		
-		ReviewDto dto=new ReviewDto();
+		ManageDto dto=new ManageDto();
 		//보여줄 페이지의 번호
 		int pageNum=1;
 		//보여줄 페이지의 번호가 파라미터로 전달되는지 읽어온다.
@@ -116,7 +118,7 @@ public class ReviewServiceImpl implements ReviewService{
 		dto.setEndRowNum(endRowNum);
 		
 		//1. FileDto 객체를 전달해서 파일 목록을 불러온다 
-		List<ReviewDto> list=dao.getList(dto);
+		List<ManageDto> list=dao.reviewgetList(dto);
 		
 		//2. request 에 담고
 		request.setAttribute("list", list);

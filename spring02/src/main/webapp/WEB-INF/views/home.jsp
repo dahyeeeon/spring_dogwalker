@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,12 +16,85 @@ a#MOVE_TOP_BTN {
     right: 2%;
     bottom: 50px;
     display: none;
-    z-index: 999;
+    z-index: 998;
+}
+body {
+    margin:0;
+    padding:0;
+    background:#262626;;
+    font-family:verdana;
+}
+.expand{
+position:fixed;
+right:20px;
+bottom:100px;
+width:40px;
+height:40px;
+border:1px solid #64a19d;
+border-radius:50%;
+z-index:999;
+text-align:center;
+
+}
+.expand i{margin-top:12px;color:#64a19d}
+.expand .box{display:none}
+.expand.active .box{display:block}
+.box {
+text-align:left;
+	z-index:999;
+    position:absolute;
+    bottom:50px;
+    right:0;
+    width:150px;
+    height:auto;
+    background:#64a19d;
+    box-sizing:border-box;
+    padding:5px;
+    transition:.5s;
+    overflow:hidden;
+    border-radius:20px;
+}
+.box P {
+    margin:0;
+    padding:0 10px 10px;
+    color:#fff;
+    font-size:10px;
+}
+.box p:first-child{
+font-weight:bold;
+font-size:12px;
 }
 
+
+html,
+body {
+    height: 100%;
+}
+
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+footer {
+    margin: 50px 0;
+}
 </style>
   <!-- Bootstrap core CSS -->
  <link href="resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+ <link href="resources/css/bootstrap.css" rel="stylesheet">
  <!-- Custom styles for this template -->
   <link href="resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -30,48 +104,62 @@ a#MOVE_TOP_BTN {
 <body id="page-top">
 
 <%@include file="home_menu.jsp" %>
+<!-- Wrapper for slides -->
+<div class="item active">
+   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
+ </div>
 
- <!-- Header -->
-<header class="masthead">
-<div class="container d-flex h-100 align-items-center">
-    <div class="header-img">
-    	<img src="resources/img/background.jpg" style="width:675px">
-   	</div>
-    <div class="header-content">
-        <h3>안내</h3>
-	   <p>02-1234-1234</p>
-	   <p>전화가능 시간 10:00~18:00</p>
-		 <p>카카오톡:렛츠런</p>
-		 <p><b>보험내용안내</b></p>
-		 <p>산책 중 다른개와 싸움이 발생해 상해를 입혔을때</p>
-		 <p>산책 중 강아지가 타인을 공격했을때</p>
-    </div>
-  </div> 
-</header>
-    
+<div class="expand">
+	<i class="fa fa-plus"></i>
+	<div class="box">
+		<p>서비스 안내</p>
+		<p>
+			<strong>문의:02-1234-1234</strong><br/><br/>
+			이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
+	  		예약 관련 : <br/>최소  1주 전<br/><br/>
+	  		취소 관련 : <br/>3일 이내 취소 가능
+	  	</p>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
         <div class="col-xs-12">
+        <h4>이용방법</h4>
             <ul class="nav nav-pills nav-justified thumbnail">
                 <li>
                     <h4 class="list-group-item-heading">Step 1</h4>
                     <p class="list-group-item-text">가입</p>
+                </li>
+                <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
                 </li>
                 <li class="active">
                     <h4 class="list-group-item-heading">Step 2</h4>
                     <p class="list-group-item-text">내 지역 검색</p>
                </li>
                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
+                </li>
+                <li>
                     <h4 class="list-group-item-heading">Step 3</h4>
                     <p class="list-group-item-text">도그워커 선택</p>
+                </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
                 </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 4</h4>
                     <p class="list-group-item-text">예약 및 문의</p>
                 </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
+                </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 5</h4>
                     <p class="list-group-item-text">도그워커 방문</p>
+                </li>
+                 <li>
+                <span class="fa fa-lg fa-angle-double-right"></span>
                 </li>
                 <li>
                     <h4 class="list-group-item-heading">Step 6</h4>
@@ -145,7 +233,7 @@ a#MOVE_TOP_BTN {
   </div>
 </section>
  
- <!-- Signup Section -->
+<!-- Signup Section -->
 <section id="search" class="signup-section">
   <div class="container">
     <div class="row">
@@ -162,21 +250,23 @@ a#MOVE_TOP_BTN {
   </div>
 </section>
 
- 
 <section id="bestreview" class="pb-5">
  <div class="container">
+ 	
      <h5 class="section-title h1">BEST REVIEW</h5>
+     
      <div class="row">
          <!-- Team member -->
-         <div class="col-xs-12 col-sm-6 col-md-4">
+         <c:forEach var="tmp" items="${list }">
+                <div class="col-xs-12 col-sm-6 col-md-4">
              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                  <div class="mainflip">
                      <div class="frontside">
                          <div class="card">
                              <div class="card-body text-center">
-                                 <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                 <h4 class="card-title">Walker1</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                 <p><img class=" img-fluid" src="${pageContext.request.contextPath }/${tmp.imagePath }" alt="card image"></p>
+                                 <h4 class="card-title">${tmp.title }</h4>
+                                 <p class="card-text">강아지도 유저도 좋아하는 최고의 펫워커!</p>
                                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                              </div>
                          </div>
@@ -184,8 +274,8 @@ a#MOVE_TOP_BTN {
                      <div class="backside">
                          <div class="card">
                              <div class="card-body text-center mt-4">
-                                 <h4 class="card-title">Sunlimetech</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                 <h4 class="card-title"><a href="#">${tmp.walker}</a></h4>
+                                 <p class="card-text">${tmp.content }</p>
                                  <ul class="list-inline">
                                      <li class="list-inline-item">
                                          <a class="social-icon text-xs-center" target="_blank" href="walkerPrf/detail_main.do">
@@ -214,262 +304,21 @@ a#MOVE_TOP_BTN {
                  </div>
              </div>
          </div>
-         <!-- ./Team member -->
-         <!-- Team member -->
-         <div class="col-xs-12 col-sm-6 col-md-4">
-             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                 <div class="mainflip">
-                     <div class="frontside">
-                         <div class="card">
-                             <div class="card-body text-center">
-                                 <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="card image"></p>
-                                 <h4 class="card-title">Walker2</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="backside">
-                         <div class="card">
-                             <div class="card-body text-center mt-4">
-                                 <h4 class="card-title">Sunlimetech</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                 <ul class="list-inline">
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-facebook"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-twitter"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-skype"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-google"></i>
-                                         </a>
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- ./Team member -->
-         <!-- Team member -->
-         <div class="col-xs-12 col-sm-6 col-md-4">
-             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                 <div class="mainflip">
-                     <div class="frontside">
-                         <div class="card">
-                             <div class="card-body text-center">
-                                 <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
-                                 <h4 class="card-title">Walker3</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="backside">
-                         <div class="card">
-                             <div class="card-body text-center mt-4">
-                                 <h4 class="card-title">Sunlimetech</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                 <ul class="list-inline">
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-facebook"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-twitter"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-skype"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-google"></i>
-                                         </a>
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- ./Team member -->
-         <!-- Team member -->
-         <div class="col-xs-12 col-sm-6 col-md-4">
-             <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                 <div class="mainflip">
-                     <div class="frontside">
-                         <div class="card">
-                             <div class="card-body text-center">
-                                 <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_04.jpg" alt="card image"></p>
-                                 <h4 class="card-title">Walker4</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="backside">
-                         <div class="card">
-                             <div class="card-body text-center mt-4">
-                                 <h4 class="card-title">Sunlimetech</h4>
-                                 <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                 <ul class="list-inline">
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-facebook"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-twitter"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-skype"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-google"></i>
-                                         </a>
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- ./Team member -->
-         <!-- Team member -->
-     <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-             <div class="mainflip">
-                 <div class="frontside">
-                     <div class="card">
-                         <div class="card-body text-center">
-                             <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_05.png" alt="card image"></p>
-                             <h4 class="card-title">Walker5</h4>
-                             <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                             <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="backside">
-                     <div class="card">
-                         <div class="card-body text-center mt-4">
-                             <h4 class="card-title">Sunlimetech</h4>
-                             <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                             <ul class="list-inline">
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-facebook"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-twitter"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-skype"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-google"></i>
-                                     </a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- ./Team member -->
-     <!-- Team member -->
-     <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-             <div class="mainflip">
-                 <div class="frontside">
-                     <div class="card">
-                         <div class="card-body text-center">
-                             <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_06.jpg" alt="card image"></p>
-                             <h4 class="card-title">Walker6</h4>
-                             <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                             <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="backside">
-                     <div class="card">
-                         <div class="card-body text-center mt-4">
-                             <h4 class="card-title">Sunlimetech</h4>
-                             <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                             <ul class="list-inline">
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-facebook"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-twitter"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-skype"></i>
-                                     </a>
-                                 </li>
-                                 <li class="list-inline-item">
-                                     <a class="social-icon text-xs-center" target="_blank" href="#">
-                                         <i class="fa fa-google"></i>
-                                     </a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- ./Team member -->
+      
+ </c:forEach>
+ </div>
 
  </div>
- </div>
 </section>
-<a id="MOVE_TOP_BTN" href="#">TOP</a>
+
+<a id="MOVE_TOP_BTN" href="#">TOP-</a>
 
 
 <%@include file="home_footer.jsp" %>
 
 
  <!-- Bootstrap core JavaScript -->
-<script src="resources/vendor/jquery/jquery.js"></script>
-<script src="resources/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-<script src="resources/vendor/jquery-easing/jquery.easing.js"></script>
-<script src="resources/vendor/bootstrap/js/grayscale.js"></script>
+<script src="resources/js/jquery-3.3.1.js"></script>
 <script>
     $(function() {
         $(window).scroll(function() {
@@ -488,10 +337,25 @@ a#MOVE_TOP_BTN {
         });
     });
     
+    $('.expand').on('click', function(){
+    	
+    	$(this).toggleClass('active');
+    });
+    
+    
+    var currentPosition = parseInt($(".box").css("top"));
+    $(window).scroll(function() {
+    	var position = $(window).scrollTop(); $(".box")
+    	.stop().animate({"top":position+currentPosition+"px"},100); });
+
+    $(function() {
+        var placesAutocomplete = places({
+          container: document.querySelector('#input_address')
+        });
+   });
+   
 
 </script>
-
-
 
 </body>
 

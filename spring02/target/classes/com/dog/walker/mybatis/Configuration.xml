@@ -9,8 +9,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="com.dog.walker.petwalker.dto.PetwalkerDto" alias="petwalkerDto" />
 		<typeAlias type="com.dog.walker.review.dto.ReviewDto" alias="reviewDto" />
-		<typeAlias type="com.dog.walker.detail.dto.ReserveDto" alias="rsvDto"/>
+		<typeAlias type="com.dog.walker.manage.dto.ManageDto" alias="manageDto" />
 		<typeAlias type="com.dog.walker.profile.dto.WalkerProfileDto" alias="walkerprofileDto" />
+		<typeAlias type="com.gura.spring03.cafe.dto.CafeDto" alias="cafeDto"/>
+		<typeAlias type="com.gura.spring03.cafe.dto.CafeCommentDto" alias="commentDto"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/dog/walker/mybatis/PetwalkerMapper.xml" />
@@ -18,5 +20,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/dog/walker/mybatis/SearchMapper.xml" />
 		<mapper resource="com/dog/walker/mybatis/WalkerprofileMapper.xml" />
 		<mapper resource="com/dog/walker/mybatis/DetailReserveMapper.xml" />
+		<mapper resource="com/dog/walker/mybatis/CafeMapper.xml"/>
+		<mapper resource="com/dog/walker/mybatis/CafeCommentMapper.xml"/>
 	</mappers>
 </configuration>

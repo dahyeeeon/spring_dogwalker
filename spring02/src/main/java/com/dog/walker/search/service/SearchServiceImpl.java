@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dog.walker.manage.dao.ManageDao;
+import com.dog.walker.manage.dto.ManageDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
-import com.dog.walker.profile.dao.WalkerProfileDao;
-import com.dog.walker.profile.dto.WalkerProfileDto;
+
 
 
 @Service
@@ -21,7 +22,7 @@ public class SearchServiceImpl implements SearchService{
 	private PetwalkerDao petwalkerdao;
 	
 	@Autowired
-	private WalkerProfileDao walkerprofiledao;
+	private ManageDao walkerprofiledao;
 
 	
 	@Override
@@ -39,7 +40,7 @@ public class SearchServiceImpl implements SearchService{
 
 	@Override
 	public void getProfile(String input_address, ModelAndView mView) {
-		List<WalkerProfileDto> profileWalker = walkerprofiledao.getList(input_address);
+		List<ManageDto> profileWalker = walkerprofiledao.getList(input_address);
 		
 		mView.addObject("profileWalker",profileWalker);
 	}

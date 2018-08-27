@@ -4,12 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dog.walker.review.dto.ReviewDto;
+import com.dog.walker.manage.dto.ManageDto;
+
 
 
 
 public interface ReviewService {
-	public void upload(HttpServletRequest request, ModelAndView mView, ReviewDto dto);
+	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto);
 	
-	public void getList(HttpServletRequest request);
+	public void reviewgetList(HttpServletRequest request);
 }

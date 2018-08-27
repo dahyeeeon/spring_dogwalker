@@ -11,17 +11,17 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dog.walker.profile.dao.WalkerProfileDao;
-import com.dog.walker.profile.dto.WalkerProfileDto;
+import com.dog.walker.manage.dao.ManageDao;
+import com.dog.walker.manage.dto.ManageDto;
 
 @Service
 public class WalkerProfileServiceImpl implements WalkerProfileService{
 	@Autowired
-	private WalkerProfileDao dao;
+	private ManageDao dao;
 
 
 	@Override
-	public void insert(MultipartHttpServletRequest request,HttpSession session, ModelAndView mView, WalkerProfileDto dto) {
+	public void profileinsert(MultipartHttpServletRequest request,HttpSession session, ModelAndView mView, ManageDto dto) {
 		List<MultipartFile> fileList = request.getFiles("file");
 
 		//파일을 저장할 폴더의 절대 경로를 얻어온다.

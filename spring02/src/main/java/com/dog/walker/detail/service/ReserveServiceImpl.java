@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dog.walker.detail.dao.ReserveDao;
-import com.dog.walker.detail.dto.ReserveDto;
+import com.dog.walker.manage.dao.ManageDao;
+import com.dog.walker.manage.dto.ManageDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
 
 @Service
 public class ReserveServiceImpl implements ReserveService{
 	@Autowired
-	private ReserveDao dao;
+	private ManageDao dao;
 	
 	@Autowired
 	private PetwalkerDao petdao;
@@ -24,18 +24,18 @@ public class ReserveServiceImpl implements ReserveService{
 		String selectDate=request.getParameter("selectDate");
 		String timeSlot=request.getParameter("timeSlot");
 		
-		ReserveDto dto= new ReserveDto();
+		ManageDto dto= new ManageDto();
 		dto.setSelectDate(selectDate);
 		dto.setTimeSlot(timeSlot);
 		
-		List<ReserveDto> list= dao.getList(dto);
+		List<ManageDto> list= dao.reservegetList(dto);
 		
 		request.setAttribute("list", list);
 		
 	}
 
 	@Override
-	public void insert(HttpServletRequest request, ReserveDto dto) {
+	public void reservationinsert(HttpServletRequest request, ManageDto dto) {
 		//String id=(String)request.getSession().getAttribute("id");
 		//String kakao=(String)request.getSession().getAttribute("kakao");
 		String id=request.getParameter("id");
@@ -66,7 +66,7 @@ public class ReserveServiceImpl implements ReserveService{
 		String timeSlot=request.getParameter("timeSlot");
 		String cctv=request.getParameter("cctv");
 		//담기
-		ReserveDto dto=new ReserveDto();
+		ManageDto dto=new ManageDto();
 		dto.setDogSize(dogSize);
 		dto.setSelectDate(selectDate);
 		dto.setTimeSlot(timeSlot);
@@ -80,9 +80,9 @@ public class ReserveServiceImpl implements ReserveService{
 	@Override
 	public void updateform(HttpServletRequest request) {
 		int num=Integer.parseInt(request.getParameter("num"));
-		ReserveDto dto=new ReserveDto();
+		ManageDto dto=new ManageDto();
 		dto.setNum(num);;
-		ReserveDto updateDto=dao.getData(num);
+		ManageDto updateDto=dao.getData(num);
 		request.setAttribute("dto", updateDto);
 		
 	}

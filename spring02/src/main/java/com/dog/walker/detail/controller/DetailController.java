@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dog.walker.detail.dto.ReserveDto;
 import com.dog.walker.detail.service.ReserveService;
+import com.dog.walker.manage.dto.ManageDto;
 
 @Controller
 public class DetailController {
@@ -22,8 +22,8 @@ public class DetailController {
 	} 
 	
 	@RequestMapping("/walkerPrf/insert")
-	public ModelAndView insert(HttpServletRequest request, ReserveDto dto) {
-		rsvService.insert(request, dto);
+	public ModelAndView insert(HttpServletRequest request, ManageDto dto) {
+		rsvService.reservationinsert(request, dto);
 		return new ModelAndView("walkerPrf/insert");
 	}
 	

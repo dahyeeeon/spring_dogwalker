@@ -266,7 +266,7 @@ footer {
                              <div class="card-body text-center">
                                  <p><img class=" img-fluid" src="${pageContext.request.contextPath }/${tmp.imagePath }" alt="card image"></p>
                                  <h4 class="card-title">${tmp.title }</h4>
-                                 <p class="card-text">강아지도 유저도 좋아하는 최고의 펫워커!</p>
+                                 <p class="card-text">강아지도 유저도 좋아하는 최고의 펫워커</p>
                                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                              </div>
                          </div>

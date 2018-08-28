@@ -15,6 +15,6 @@ public interface ManageDao {
    public void update(ManageDto dto);
    public void delete(int num);
    public ManageDto getData(int num);
-   public ManageDto rsvgetData(String id);
+   public List<ManageDto> rgetList(ManageDto dto);
    public List<ManageDto> getList(String input_address);
 }

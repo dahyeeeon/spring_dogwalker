@@ -10,7 +10,6 @@ public class ManageDto {
    private String title;
    private String content; 
    private int stars;
-   private String walker;
    private String regdate;
    private String imagePath;
    private String orgImageName;
@@ -47,7 +46,7 @@ public class ManageDto {
    public ManageDto() {}
    
    
-public ManageDto(int num, String writer, String title, String content, int stars, String walker, String regdate,
+public ManageDto(int num, String writer, String title, String content, int stars, String regdate,
       String imagePath, String orgImageName, String saveImageName, long imageSize, int startRowNum, int endRowNum,
       int prevNum, int nextNum, MultipartFile file, String id, String kakao, String nickname, String dogSize,
       String selectDate, String timeSlot, String cctv, String career, String experience, String freeservice,
@@ -58,7 +57,6 @@ public ManageDto(int num, String writer, String title, String content, int stars
    this.title = title;
    this.content = content;
    this.stars = stars;
-   this.walker = walker;
    this.regdate = regdate;
    this.imagePath = imagePath;
    this.orgImageName = orgImageName;
@@ -114,12 +112,6 @@ public int getStars() {
 }
 public void setStars(int stars) {
    this.stars = stars;
-}
-public String getWalker() {
-   return walker;
-}
-public void setWalker(String walker) {
-   this.walker = walker;
 }
 public String getRegdate() {
    return regdate;

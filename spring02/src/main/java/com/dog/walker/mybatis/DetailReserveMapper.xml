@@ -29,9 +29,11 @@
       FROM reservation
       WHERE num=#{num}
    </select>
-   <select id="rsvgetData" parameterType="String" resultType="manageDto">
-   		SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv
-   		FROM reservation
-   		WHERE id=#{id}		
+   <select id="rgetList" parameterType="manageDto" resultType="manageDto">
+   		SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.orgImageName,e.saveImageName,
+      e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=p.nickname
+   </select>
+   <select id="prfList">
+   		SELECT id, imagePath
    </select>
 </mapper>

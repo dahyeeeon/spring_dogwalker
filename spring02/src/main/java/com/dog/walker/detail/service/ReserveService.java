@@ -11,7 +11,8 @@ public interface ReserveService {
 	public void update(HttpServletRequest request);
 	public void updateform(HttpServletRequest request);
 	public void delete(HttpServletRequest request, int num);
-	public void getData(HttpServletRequest request);
+	
+	public void reviewgetList(HttpServletRequest request);
 	
 	
 }

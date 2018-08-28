@@ -68,17 +68,18 @@ public class ManageDaoImpl implements ManageDao{
          return session.selectOne("rsv.getData",num);
       }
 
-      @Override
-      public ManageDto rsvgetData(String id) {
-    	  
-    	  return session.selectOne("rsv.rsvgetData",id);
-      }
-   
+    
       
       @Override
       public List<ManageDto> getList(String input_address) {
          List<ManageDto> list = session.selectList("walkerprofile.getList",input_address);
          return list;
       }
+
+	@Override
+	public List<ManageDto> rgetList(ManageDto dto) {
+		List<ManageDto> list= session.selectList("rsv.rgetList", dto);
+		return list;
+	}
       
 }

@@ -53,21 +53,27 @@
 
 	<%@include file="../home_menu.jsp"%>
 	<div class="container">
+
 		<div class="row">
 			<div class="col-sm-7">
+
 				<div class="fotorama" data-autoplay="true" data-nav="thumbs"
 					data-allowfullscreen="true">
-					<img
-						src="${pageContext.request.contextPath }/resources/img/dog1.jpg"
+					<c:forEach var="tmp" items="${list }">
+					<img src="${pageContext.request.contextPath }/${tmp.imagePath }"
 						class="img-responsive img-thumbnail" /> <img
-						src="${pageContext.request.contextPath }/resources/img/dog2.jpg"
+						src="${pageContext.request.contextPath }/${tmp.imagePath }"
 						class="img-responsive img-thumbnail" /> <img
 						src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
 						class="img-responsive img-thumbnail" />
+					</c:forEach>
 				</div>
+
 			</div>
 			<div class="col-sm-5">
-				<h3>walker 이름</h3>
+				<c:forEach var="tmp" items="${list }">
+				<h3>${tmp.nickname }</h3>
+				</c:forEach>
 				<p>Lorem ipsum dolor amet, consectetur adipisicing elit.
 					Incidunt neque hic amet ipsa porro velit nam numquam aspernatur
 					enim blanditiis molestiae dolore iusto possimus consequatur dicta
@@ -111,7 +117,7 @@
 			</div>
 		</div>
 
-		<div class="row bottomCol" style="margin-top: 100px">
+		<div class="row bottomCol">
 			<h3>펫 워커 경험</h3>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
 			officia maxime minima incidunt dolor facere iusto vitae veritatis
@@ -132,6 +138,37 @@
 			facilis sapiente expedita esse obcaecati architecto maiores nisi
 			ratione iste veniam eveniet!
 		</div>
+		<div class="row bottomCol">
+			<h3>받은 리뷰들</h3>
+			<c:forEach var="tmp" items="${list }">
+				<div class="well row right-block">
+					<div class="media">
+						<a class="pull-left" href="#"> <img
+							class="media-object img-responsive img-thumbnail"
+							style="width: 100px; height: 100px"
+							src="${pageContext.request.contextPath }/${tmp.imagePath }">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">${tmp.title }</h4>
+							<p>워커 이름 : ${tmp.nickname }</p>
+							<p>${tmp.content }</p>
+							<ul class="list-inline list-unstyled">
+								<li><span><i class="glyphicon glyphicon-calendar"></i>${tmp.regdate }</span></li>
+								<li>|</li>
+								<li class="print-star" data-stars="${tmp.stars }"></li>
+								<li>|</li>
+								<li>
+									<!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+									<span><i class="fa fa-facebook-square"></i></span> <span><i
+										class="fa fa-twitter-square"></i></span> <span><i
+										class="fa fa-google-plus-square"></i></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
 		<div class="row bottomCol" style="margin-bottom: 130px">
 			<h3>예약 목록</h3>
 			<table class="table table-border">
@@ -142,7 +179,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="tmp" items="${list }">
+					<c:forEach var="tmp" items="${rsvlist }">
 						<tr>
 							<td>${tmp.selectDate }</td>
 							<td>${tmp.timeSlot }</td>

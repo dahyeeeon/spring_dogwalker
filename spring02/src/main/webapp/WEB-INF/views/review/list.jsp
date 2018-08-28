@@ -41,7 +41,7 @@
               </a>
               <div class="media-body">
                 <h4 class="media-heading">${tmp.title }</h4>
-                  <p>워커 이름 : ${tmp.walker }</p>
+                  <p>워커 이름 : ${tmp.nickname }</p>
                    <p>${tmp.content }</p>
                    <ul class="list-inline list-unstyled">
                        <li><span><i class="glyphicon glyphicon-calendar"></i>${tmp.regdate }</span></li>

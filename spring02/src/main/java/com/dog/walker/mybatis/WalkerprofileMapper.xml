@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="walkerprofile">	
 
-<insert id="insert" parameterType="walkerprofileDto">
-      INSERT INTO walker_profile (id,career,experience,freeservice,
-      imagePath,orgFileName,saveFileName,fileSize )
-       VALUES(#{id},#{career}, #{experience}, #{freeservice},#{imagePath},
+<insert id="insert" parameterType="manageDto">
+      INSERT INTO manage(num, id,career,experience,freeservice,
+      filePath,orgFileName,saveFileName,fileSize )
+       VALUES(manage_seq.NEXTVAL, #{id},#{career}, #{experience}, #{freeservice},#{filePath},
         #{orgFileName}, #{saveFileName}, #{fileSize})
 </insert>
 

@@ -5,13 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
 </head>
 <body>
 <form action="profile.do" method="post" 
 id="profileform" enctype="multipart/form-data">
 	<input type="hidden" name="id" id="id" value="${id }"/>
 	<label for="myFile">이미지</label>
-	<input type="file" name="file" id="file" multiple="multiple"/><br/>
+	<input type="file" name="file1" id="file" multiple="multiple"/><br/>
 	<label for="career">도그워커 경력</label><br />
 	<textarea name="career" id="career" cols="30" rows="10"></textarea><br />
 	<label for="experience">경험</label><br />

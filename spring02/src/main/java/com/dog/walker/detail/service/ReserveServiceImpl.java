@@ -96,7 +96,8 @@ public class ReserveServiceImpl implements ReserveService{
 
 	@Override
 	public void getData(HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		String walker=request.getParameter("walker");
+		dao.rsvgetData(walker);
 		
 	}
 	

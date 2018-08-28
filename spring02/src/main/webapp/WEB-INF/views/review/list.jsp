@@ -11,12 +11,25 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+<style>
+    #insertbutton{
+       
+       float:right;
+       margin-top:20px;
+       
+    }
+    
+    #insertanchor{
+       text-decoration:none;
+        color:white;
+    }
+
+</style>
 </head>
 <body>
-<a href="uploadform.do">업로드하기</a>
+
 <div class="container">
    <c:forEach var="tmp" items="${list }">
         <div class="well">
@@ -49,6 +62,7 @@
         </div>
    </c:forEach>
    <!-- 페이징 처리 -->
+   <div>
    <ul class="pagination">
       <c:choose>
          <c:when test="${startPageNum ne 1 }">
@@ -90,6 +104,9 @@
          </c:otherwise>
       </c:choose>      
    </ul>
+   
+   <button class="btn btn-primary" id="insertbutton"><a id="insertanchor" href="uploadform.do">업로드하기</a></button>
+   </div>
 </div>
 <script>   
 

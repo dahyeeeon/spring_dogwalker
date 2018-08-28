@@ -82,6 +82,10 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 		return num;
 	}
 	
-	
+	@Override
+	public List<String> getnicknameList() {
+	      List<String> list = session.selectList("petwalker.getnicknameList");
+	      return list;
+	}
 	
 }

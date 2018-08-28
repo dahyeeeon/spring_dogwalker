@@ -15,42 +15,42 @@
 .header_gnb .list_gnb li a:after{position:absolute;bottom:0;left:0;width:0;height:2px;background:rgba(0,0,0,0.4);content:'';}
 .header_gnb .list_gnb li:hover a:after{width:100%;-webkit-transition:width .4s;transition:width .4s;}
 @media (max-width: 720px) {
-	.header_gnb .gnb_area h1{margin-top:10px}
-	.header_gnb .gnb_area nav button{display:block;margin-top:10px;width:60px;height:40px;line-height:40px;border:1px solid #333;border-radius:4px;background:none}
-	.header_gnb .gnb_area nav button:hover + .list_gnb{display:block;position:absolute;top:90px;right:0}
-	.header_gnb .list_gnb.active{display:block;position:absolute;top:90px;right:0}
-	.header_gnb .list_gnb li{float:none}
-	.header_gnb .list_gnb{display:none}
+   .header_gnb .gnb_area h1{margin-top:10px}
+   .header_gnb .gnb_area nav button{display:block;margin-top:10px;width:60px;height:40px;line-height:40px;border:1px solid #333;border-radius:4px;background:none}
+   .header_gnb .gnb_area nav button:hover + .list_gnb{display:block;position:absolute;top:90px;right:0}
+   .header_gnb .list_gnb.active{display:block;position:absolute;top:90px;right:0}
+   .header_gnb .list_gnb li{float:none}
+   .header_gnb .list_gnb{display:none}
 }
 </style>
 <header class="header_gnb">
-	<div class="login_area">
-		<c:choose>
-			<c:when test="${not empty id }">
-		 		<a class="nav-link js-scroll-trigger" href="petwalker/logout.do">logout</a>
-			</c:when>
-			<c:otherwise>
-		    	<a class="nav-link js-scroll-trigger" href="petwalker/loginform.do">login</a>
-		    </c:otherwise>
-		</c:choose>
-		<c:choose>
-			<c:when test="${not empty id }">
-				<a href="petwalker/info.do" >${id } 님 마이페이지</a>
-			</c:when>
-			<c:otherwise>
-				<a href="petwalker/signup_form.do">join us</a>
-			</c:otherwise>
-		</c:choose>
-	</div>
-	<div class="gnb_area">
-		<h1><a href="home.do"><img src="resources/img/logo (2).png" alt="logo"/></a></h1>
-		<nav>
-			<button type="button">Menu</button>
-			<ul class="list_gnb">
-				<li><a href="#search">All walker</a></li>
-				<li><a href="review/list.do">Review</a></li>
-				<li><a href="community/list.do">Community</a></li>
-			</ul>
-		</nav>
-	</div>
+   <div class="login_area">
+      <c:choose>
+         <c:when test="${not empty id }">
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
+         </c:when>
+         <c:otherwise>
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/loginform.do">login</a>
+          </c:otherwise>
+      </c:choose>
+      <c:choose>
+         <c:when test="${not empty id }">
+            <a href="${pageContext.request.contextPath }/petwalker/info.do" >${id } 님 마이페이지</a>
+         </c:when>
+         <c:otherwise>
+            <a href="${pageContext.request.contextPath }/home_signup.do">join us</a>
+         </c:otherwise>
+      </c:choose>
+   </div>
+   <div class="gnb_area">
+      <h1><a href="${pageContext.request.contextPath }/home.do"><img src="${pageContext.request.contextPath }/resources/img/logo (2).png" alt="logo"/></a></h1>
+      <nav>
+         <button type="button">Menu</button>
+         <ul class="list_gnb">
+            <li><a href="#search">All walker</a></li>
+            <li><a href="${pageContext.request.contextPath }/review/list.do">Review</a></li>
+            <li><a href="${pageContext.request.contextPath }/community/list.do">Community</a></li>
+         </ul>
+      </nav>
+   </div>
 </header>

@@ -33,9 +33,11 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/review/uploadform")
-	public ModelAndView authReviewUploadform(HttpServletRequest request) {
-		
-		return new ModelAndView("review/uploadform");
+	public ModelAndView ReviewUploadform(HttpServletRequest request) {
+	      
+	      rService.reviewpetwalkergetList(request);
+	      
+	      return new ModelAndView("review/uploadform");
 	}
 	
 	@RequestMapping("/review/upload")

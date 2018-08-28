@@ -8,7 +8,7 @@
 <title>Grayscale - Start Bootstrap Theme</title>
 <style>
 .nav>li{
-	margin-right:80px;
+   margin-right:80px;
 }
 
 a#MOVE_TOP_BTN {
@@ -41,7 +41,7 @@ text-align:center;
 .expand.active .box{display:block}
 .box {
 text-align:left;
-	z-index:999;
+   z-index:999;
     position:absolute;
     bottom:50px;
     right:0;
@@ -348,14 +348,22 @@ footer {
     	var position = $(window).scrollTop(); $(".box")
     	.stop().animate({"top":position+currentPosition+"px"},100); });
 
-    $(function() {
+   
+   
+
+</script>
+
+<script>
+
+   $(function() {
         var placesAutocomplete = places({
           container: document.querySelector('#input_address')
         });
    });
    
-
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 
 </body>
 

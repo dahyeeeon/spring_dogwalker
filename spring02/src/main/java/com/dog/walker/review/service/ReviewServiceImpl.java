@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petwalker.dao.PetwalkerDao;
 
 
 @Service
@@ -19,6 +20,9 @@ public class ReviewServiceImpl implements ReviewService{
 	
 	@Autowired
 	private ManageDao dao;
+	
+	@Autowired
+	private PetwalkerDao pdao;
 
 	@Override
 	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto) {
@@ -131,6 +135,18 @@ public class ReviewServiceImpl implements ReviewService{
 		request.setAttribute("totalRow", totalRow);	
 		
 	}
+
+	@Override
+	   public void reviewpetwalkergetList(HttpServletRequest request) {
+	      // TODO Auto-generated method stub
+	      
+	      
+	      
+	      List<String> list = pdao.getnicknameList();
+	      
+	      request.setAttribute("list", list);
+
+	   }
 
 	
 

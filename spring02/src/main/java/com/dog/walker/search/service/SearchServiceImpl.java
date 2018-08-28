@@ -22,7 +22,7 @@ public class SearchServiceImpl implements SearchService{
 	private PetwalkerDao petwalkerdao;
 	
 	@Autowired
-	private ManageDao walkerprofiledao;
+	private ManageDao managedao;
 
 	
 	@Override
@@ -40,7 +40,7 @@ public class SearchServiceImpl implements SearchService{
 
 	@Override
 	public void getProfile(String input_address, ModelAndView mView) {
-		List<ManageDto> profileWalker = walkerprofiledao.getList(input_address);
+		List<ManageDto> profileWalker = managedao.getList(input_address);
 		
 		mView.addObject("profileWalker",profileWalker);
 	}

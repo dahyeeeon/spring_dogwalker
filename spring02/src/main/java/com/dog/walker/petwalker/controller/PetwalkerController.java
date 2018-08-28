@@ -25,12 +25,12 @@ public class PetwalkerController {
 
 	// 회원가입 요청 처리
 	@RequestMapping("/petwalker/signup")
-	public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetwalkerDto dto) {
+	public ModelAndView signup(HttpServletRequest request,@ModelAttribute PetwalkerDto dto) {
 		// 서비스에 전달할 ModelAndView 객체 생성
 		ModelAndView mView = new ModelAndView();
 		// 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
 		// 담겨있는 UsersDto 객체를 전달한다.
-		pService.signup(request,mView, dto);
+		pService.signup(request, mView, dto);
 		// ModelAndView 객체에 view 페이지 정보를 담고
 		mView.setViewName("petwalker/signup");
 		// 리턴해준다.
@@ -156,7 +156,7 @@ public class PetwalkerController {
 			return map;
 		}
 		//비밀번호 수정 반영하는 요청 처리
-		@RequestMapping("/users/pw_update")
+		@RequestMapping("/petwalker/pw_update")
 		public ModelAndView authPwUpdate(HttpServletRequest request,
 				@RequestParam String pwd, HttpSession session) {
 			//서비스를 이용해서 비밀번호 수정 

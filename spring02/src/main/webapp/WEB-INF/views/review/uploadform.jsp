@@ -49,11 +49,11 @@
    <form name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
         <label for="walker">워커</label>
         <select name="walker" id="walker">
-        <<option>워커 선택</option>
+        <option>워커 선택</option>
         <c:forEach var="tmp" items="${list }">
-           <option>${tmp.walker }</option>
+           <option>${tmp }</option>
         </c:forEach>
-        </select></br>
+        </select>
         <label for="stars">별점</label>
         <select id="example-square" name="stars" id="stars">
                   <option value=""></option>

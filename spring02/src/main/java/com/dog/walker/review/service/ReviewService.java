@@ -13,4 +13,5 @@ public interface ReviewService {
 	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto);
 	
 	public void reviewgetList(HttpServletRequest request);
+	public void reviewpetwalkergetList(HttpServletRequest request);
 }

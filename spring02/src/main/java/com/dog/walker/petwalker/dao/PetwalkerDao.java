@@ -14,4 +14,5 @@ public interface PetwalkerDao {
 	public void updatePwd(PetwalkerDto dto);
 	public void updateImg(PetwalkerDto dto);
 	public int getCount(String id);
+	public List<String> getnicknameList(); 
 }

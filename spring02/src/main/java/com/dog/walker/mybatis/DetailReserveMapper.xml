@@ -29,4 +29,9 @@
       FROM reservation
       WHERE num=#{num}
    </select>
+   <select id="rsvgetData" parameterType="String" resultType="manageDto">
+   		SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv
+   		FROM reservation
+   		WHERE id=#{id}		
+   </select>
 </mapper>

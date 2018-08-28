@@ -18,6 +18,24 @@ CREATE TABLE pet_walker(
 
 select * from pet_walker;
 
+
+
+CREATE TABLE pet_users(
+   id VARCHAR2(30) PRIMARY KEY,
+   nickname VARCHAR2(100),
+   pwd VARCHAR2(100),
+   kakao VARCHAR2(100),
+   phone VARCHAR2(100),
+   addr VARCHAR2(100),
+   sex VARCHAR2(10),
+   hasPet VARCHAR2(10),
+   imagePath VARCHAR2(100),
+   regdate DATE,
+   orgFileName varchar2(300),
+   saveFileName varchar2(300),
+   fileSize   long
+);
+
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,
    writer VARCHAR2(100),
@@ -52,3 +70,7 @@ CREATE TABLE manage(
 );
 
 CREATE SEQUENCE manage_seq;
+
+select * from manage;
+
+

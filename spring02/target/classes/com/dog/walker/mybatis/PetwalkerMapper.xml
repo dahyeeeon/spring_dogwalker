@@ -52,5 +52,7 @@
 		set imagePath=#{imagePath}
 		where id=#{id}
 	</update>
-
+	<select id="getnicknameList" resultType="String">
+      SELECT nickname FROM pet_walker ORDER BY id DESC
+   </select>
 </mapper>

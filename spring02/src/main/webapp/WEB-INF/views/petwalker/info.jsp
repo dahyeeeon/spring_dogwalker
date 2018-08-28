@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>petwalker/info.jsp</title>
+<style>
+
+</style>
 </head>
 <body>
 <a href="${pageContext.request.contextPath }/">인덱스로 가기</a>
@@ -15,10 +18,8 @@
       <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-   
-   
           <div class="panel panel-info">
-            <div class="panel-heading">
+            <div class="panel-heading panel_update">
               <h3 class="panel-title">개인정보</h3>
             </div>
             <div class="panel-body">
@@ -84,9 +85,9 @@
                     </tbody>
                   </table>
                   
-                  <a href="updateform.do" class="btn btn-primary">회원정보 수정</a>
-                  <a href="javascript:deleteConfirm()" class="btn btn-primary">회원탈퇴</a>
-                  <a href="profileform.do" class="btn btn-primary">프로필 수정</a>
+                  <a href="updateform.do" class="btn_update">회원정보 수정</a>
+                  <a href="javascript:deleteConfirm()" class="btn_update">회원탈퇴</a>
+                  <a href="profileform.do" class="btn_update">프로필 수정</a>
                 </div>
               </div>
             </div>

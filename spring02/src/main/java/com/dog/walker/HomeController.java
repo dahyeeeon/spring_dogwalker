@@ -12,14 +12,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.dog.walker.detail.service.ReserveService;
 import com.dog.walker.review.service.ReviewService;
 
 @Controller
 public class HomeController {
 	@Autowired
 	private ReviewService rService;
-	   
+	@Autowired
+	private ReserveService rsvService;
+	@Autowired
+	private ReviewService rvService;
+	
+	
    //로그를 찍기 위한 도구
    private static final Logger logger =
          LoggerFactory.getLogger(HomeController.class);
@@ -31,7 +38,7 @@ public class HomeController {
       return "home";
    }
 
-	
+  
    
 
 

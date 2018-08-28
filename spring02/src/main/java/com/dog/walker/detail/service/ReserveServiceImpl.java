@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
@@ -111,7 +112,24 @@ public class ReserveServiceImpl implements ReserveService {
 		request.setAttribute("list", list);
 	}
 
+	@Override
+	public void pwkList(HttpServletRequest request) {
+		ManageDto dto=new ManageDto();
+		
+		List<ManageDto> pwklist=dao.pwkList(dto);
+		
+		request.setAttribute("pwklist", pwklist);
+		
+	}
 
+	@Override
+	public void detail(HttpServletRequest request, ModelAndView mView, String nickname) {
+		List<ManageDto> detail = dao.DtgetList(nickname);
+		mView.addObject("detail",detail);
+		
+	}
+
+	
 	
 
 }

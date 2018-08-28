@@ -59,10 +59,10 @@
 
 				<div class="fotorama" data-autoplay="true" data-nav="thumbs"
 					data-allowfullscreen="true">
-					<c:forEach var="tmp" items="${list }">
-					<img src="${pageContext.request.contextPath }/${tmp.imagePath }"
+					<c:forEach var="tmp" items="${pwklist }">
+					<img src="${pageContext.request.contextPath }/${tmp.filePath }"
 						class="img-responsive img-thumbnail" /> <img
-						src="${pageContext.request.contextPath }/${tmp.imagePath }"
+						src="${pageContext.request.contextPath }/${tmp.filePath }"
 						class="img-responsive img-thumbnail" /> <img
 						src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
 						class="img-responsive img-thumbnail" />
@@ -71,10 +71,9 @@
 
 			</div>
 			<div class="col-sm-5">
-				<c:forEach var="tmp" items="${list }">
-				<h3>${tmp.nickname }</h3>
-				</c:forEach>
-				<p>Lorem ipsum dolor amet, consectetur adipisicing elit.
+				
+				<h3>${nickname }</h3>
+					<p>Lorem ipsum dolor amet, consectetur adipisicing elit.
 					Incidunt neque hic amet ipsa porro velit nam numquam aspernatur
 					enim blanditiis molestiae dolore iusto possimus consequatur dicta
 					doloribus tempora corporis alias.</p>
@@ -116,31 +115,27 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="row bottomCol">
 			<h3>펫 워커 경험</h3>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-			officia maxime minima incidunt dolor facere iusto vitae veritatis
-			facilis sapiente expedita esse obcaecati architecto maiores nisi
-			ratione iste veniam eveniet!
+			<p>${detail }</p>
+			<p>${detail.career }</p>
+			
+		</div>
+		
+		<div class="row bottomCol">
+			<h3>워커 경력</h3>
+			<p>${dto.experience } Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quam voluptates pariatur praesentium eligendi nulla ratione eum neque rerum dignissimos atque laudantium optio. Ipsum eos magni voluptates omnis cum eum.</p>
 		</div>
 		<div class="row bottomCol">
-			<h3>펫 워커 경험</h3>
-			Lorem ipsum dlor sit amet, consectetur adipisicing elit. Eaque
-			officia maxime minima incidunt dolor facere iusto vitae veritatis
-			facilis sapiente expedita esse obcaecati architecto maiores nisi
-			ratione iste veniam eveniet!
-		</div>
-		<div class="row bottomCol">
-			<h3>펫 워커 경험</h3>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-			officia maxime minima incidunt dolor facere iusto vitae veritatis
-			facilis sapiente expedita esse obcaecati architecto maiores nisi
-			ratione iste veniam eveniet!
+			<h3>워커로서 제공 가능한 무료 서비스</h3>
+			<p>${dto.freeservice } Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab in nam eveniet quis doloremque distinctio unde tenetur iusto placeat doloribus fugit error molestias eum dicta et. Aliquam aliquid similique nobis!</p>
 		</div>
 		<div class="row bottomCol">
 			<h3>받은 리뷰들</h3>
+			
 			<c:forEach var="tmp" items="${list }">
+			
 				<div class="well row right-block">
 					<div class="media">
 						<a class="pull-left" href="#"> <img
@@ -167,6 +162,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</c:forEach>
 		</div>
 		<div class="row bottomCol" style="margin-bottom: 130px">

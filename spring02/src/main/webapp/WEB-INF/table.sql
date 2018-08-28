@@ -74,6 +74,8 @@ CREATE SEQUENCE manage_seq;
 select * from manage;
 
 SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.orgImageName,e.saveImageName,
-      e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=p.nickname;
+      e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=#{tmp.nickname};
 
+select career from manage;
 
+SELECT career, experience, freeservice from manage WHERE nickname = '11';

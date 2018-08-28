@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 @Repository
 public class ManageDaoImpl implements ManageDao{
@@ -80,6 +81,24 @@ public class ManageDaoImpl implements ManageDao{
 	public List<ManageDto> rgetList(ManageDto dto) {
 		List<ManageDto> list= session.selectList("rsv.rgetList", dto);
 		return list;
+	}
+
+	@Override
+	public List<ManageDto> pwkList(ManageDto dto) {
+		List<ManageDto> list=session.selectList("rsv.pwkList", dto);
+		return list;
+	}
+
+	@Override
+	public ManageDto DgetData(ManageDto dto) {
+		
+		return session.selectOne("rsv.DgetData", dto);
+	}
+
+	@Override
+	public List<ManageDto> DtgetList(String nickname) {
+		
+		return session.selectList("rsv.DtgetList", nickname);
 	}
       
 }

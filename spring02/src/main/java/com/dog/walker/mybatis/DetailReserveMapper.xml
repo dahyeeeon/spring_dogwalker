@@ -33,7 +33,16 @@
    		SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.orgImageName,e.saveImageName,
       e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=p.nickname
    </select>
-   <select id="prfList">
-   		SELECT id, imagePath
+   <select id="pwkList" parameterType="manageDto" resultType="manageDto">
+   		SELECT e.nickname, e.career, e.experience, e.freeservice, e.filePath, e.orgFileName, e.saveFileName, 
+   		e.filesize FROM manage e, pet_walker p WHERE e.nickname=p.nickname
    </select>
+   <select id="DgetData" parameterType="manageDto" resultType="manageDto">
+   		SELECT num, id, kakao, nickname, career, experience, freeservice FROM manage WHERE nickname=#{nickname}
+   </select>
+   
+   <select id="DtgetList" parameterType="String" resultType="manageDto">
+   SELECT career, experience, freeservice from manage WHERE nickname=#{nickname}
+</select>
+   
 </mapper>

@@ -253,7 +253,7 @@ footer {
 <section id="bestreview" class="pb-5">
  <div class="container">
  	
-     <h5 class="section-title h1">BEST REVIEW</h5>
+     <h5 class="section-title h1">RECENT REVIEW</h5>
      
      <div class="row">
          <!-- Team member -->

@@ -319,9 +319,6 @@ footer {
 <a id="MOVE_TOP_BTN" href="#">TOP-</a>
 
 
-<%@include file="home_footer.jsp" %>
-
-
  <!-- Bootstrap core JavaScript -->
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 

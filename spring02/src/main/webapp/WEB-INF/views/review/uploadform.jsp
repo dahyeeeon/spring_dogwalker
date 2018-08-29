@@ -41,7 +41,7 @@
 }
 
 html{
-	font-size:15px;
+   font-size:15px;
 }
 
 .stars
@@ -52,11 +52,11 @@ html{
 }
 
 .form{
-	width:100%;
+   width:100%;
 }
 
 input{
-	margin-bottom:10px;
+   margin-bottom:10px;
 }
 
 
@@ -71,7 +71,11 @@ input{
 
 
 .container{
-	margin-top:140px;
+   margin-top:140px;
+}
+
+#walker{
+   height: 50px;
 }
 
 
@@ -80,16 +84,21 @@ input{
 </head>
 <body>
 <div class="container">
+   <div style="text-align:center;">
+      <h2>도그 워커 후기 게시판</h2>
+      <p>회원님들의 도그 워커 후기를 써주세요</p>
+   </div>
+   <br /><br />
 
    <form id="reviewform" name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
         <div class="form">
         <label for="walker">워커</label>
         <br />
-        <select name="nickname" id="nickname" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
-        	<c:forEach var="tmp" items="${list }">
-        	    <option>${tmp.nickname } </option>
-        	</c:forEach>
-        	</select>
+        <select name="walker" id="walker" data-height="50px" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
+           <c:forEach var="tmp" items="${list }">
+               <option>${tmp.nickname } </option>
+           </c:forEach>
+           </select>
         </div>
         <br />
         
@@ -105,10 +114,10 @@ input{
         <label for="title">제목</label>
         <input type="text" name="title" id="title" style="width:100%"/>
         <div class="wrap">
-       	 	<textarea class="form-control animated"  minlength="60" cols="50" id="content" name="content" placehlder="Enter your review here..." rows="5"></textarea>
-     		<span id="counter">###</span>
-     		<br />
-     	</div>
+              <textarea class="form-control animated"  minlength="60" cols="50" id="content" name="content" placehlder="Enter your review here..." rows="5"></textarea>
+           <span id="counter">###</span>
+           <br />
+        </div>
       <label for="myFile">이미지</label>
       <input type="file" name="file" id="file"/><br/>
         <div class="text-right">

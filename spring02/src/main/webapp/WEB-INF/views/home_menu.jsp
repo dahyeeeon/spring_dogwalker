@@ -14,7 +14,7 @@
 .header_gnb .list_gnb li{float:left;width:100px;font-size:16px;line-height:40px;text-align:center;list-style:none;padding:0;margin:0;}
 .header_gnb .list_gnb li a{display:block;position:relative;width:auto;height:100%;color:#333}
 .header_gnb .list_gnb li a:after{position:absolute;bottom:0;left:0;width:0;height:2px;background:rgba(0,0,0,0.4);content:'';}
-.header_gnb .list_gnb li:hover a:after{width:100%;-webkit-transition:width .4s;transition:width .4s;}
+.header_gnb .list_gnb li:hover a:after{width:100%;-webkit-transition:width .4s;transition:width .4s !important;}
 @media (max-width: 720px) {
 	.header_gnb .gnb_area h1{margin-top:10px}
 	.header_gnb .gnb_area nav button{display:block;margin-top:10px;width:60px;height:40px;line-height:40px;border:1px solid #333;border-radius:4px;background:none}
@@ -32,7 +32,7 @@
              <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/loginform.do">login</a>
+               <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
           </c:otherwise>
       </c:choose>
       <c:choose>

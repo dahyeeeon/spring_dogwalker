@@ -8,17 +8,11 @@
 <title>petwalker/signup.jsp</title>
 </head>
 <body>
-<h3>회원가입 결과 페이지</h3>
-<p>${msg }</p>
-<a href="loginform.do">로그인 하러 가기</a>
-</body>
+<script>
+ alert("${msg }");
+ location.href="${pageContext.request.contextPath }/petwalker/loginform.do";
+ </script>
 </html>
-
-
-
-
-
-
 
 
 

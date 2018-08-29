@@ -9,31 +9,39 @@
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js" /></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 <style>
 
-	.container{
-		margin-top:140px;
-	}
+   .container{
+      margin-top:140px;
+   }
     #insertbutton{
-       
        float:right;
        margin-top:20px;
-       
+       background-color:#4f837f;
     }
     
     #insertanchor{
        text-decoration:none;
         color:white;
     }
+    footer {
+       margin: 50px 0;
+   }
 
 </style>
 </head>
 <body>
 
 <div class="container">
+   <div style="text-align:center;">
+      <h2>도그 워커 후기 게시판</h2>
+      <p>회원님들이 직접 남긴 후기입니다.</p>
+   </div>
+   <br /> <br />
    <c:forEach var="tmp" items="${list }">
         <div class="well">
            <div class="media">
@@ -44,7 +52,7 @@
               </a>
               <div class="media-body">
                 <h4 class="media-heading">${tmp.title }</h4>
-                  <p>워커 이름 : ${tmp.nickname }</p>
+                  <p>워커 이름 : ${tmp.walker }</p>
                    <p>${tmp.content }</p>
                    <ul class="list-inline list-unstyled">
                        <li><span><i class="glyphicon glyphicon-calendar"></i>${tmp.regdate }</span></li>
@@ -84,7 +92,7 @@
          <c:choose>
             <c:when test="${i eq pageNum }">
                <li class="active">
-                  <a href="list.do?pageNum=${i }">${i }</a>
+                  <a href="list.do?pageNum=${i }" class="panel_update">${i }</a>
                </li>
             </c:when>
             <c:otherwise>
@@ -108,7 +116,7 @@
       </c:choose>      
    </ul>
    
-   <button class="btn_update" id="insertbutton"><a id="insertanchor" href="uploadform.do">업로드하기</a></button>
+   <button class="btn_update" id="insertbutton"><a id="insertanchor" href="uploadform.do">후기 남기기</a></button>
    </div>
 </div>
 <%@include file="../home_footer.jsp" %>

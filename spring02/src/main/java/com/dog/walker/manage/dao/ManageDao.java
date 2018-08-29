@@ -17,4 +17,7 @@ public interface ManageDao {
    public ManageDto getData(int num);
    public ManageDto rsvgetData(String id);
    public List<ManageDto> getList(String input_address);
+   public List<ManageDto> getStarsList(String input_address);
+   public List<ManageDto> getFilePath(String input_address);
+   
 }

@@ -47,8 +47,8 @@
 <body>
 <div class="container">
    <form name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
-        <label for="walker">워커</label>
-        <select name="walker" id="walker">
+        <label for="nickname">워커</label>
+        <select name="nickname" id="nickname">
         <option>워커 선택</option>
         <c:forEach var="tmp" items="${list }">
            <option>${tmp }</option>

@@ -274,7 +274,7 @@ footer {
                      <div class="backside">
                          <div class="card">
                              <div class="card-body text-center mt-4">
-                                 <h4 class="card-title"><a href="#">${tmp.walker}</a></h4>
+                                 <h4 class="card-title"><a href="#">${tmp.nickname}</a></h4>
                                  <p class="card-text">${tmp.content }</p>
                                  <ul class="list-inline">
                                      <li class="list-inline-item">

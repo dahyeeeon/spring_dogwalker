@@ -3,7 +3,7 @@
 <mapper namespace="review">
    
    <sql id="reviewColumn">
-      num,writer,title,content,stars,walker,
+      num,writer,title,content,stars,nickname,
       TO_CHAR(regdate,'YYYY.MM.DD AM HH:MI') AS regdate,imagePath,
       orgImageName, saveImageName, ImageSize, startRowNum, endRowNum,
       prevNum, nextNum
@@ -12,10 +12,10 @@
 
    <insert id="insert" parameterType="ManageDto">
       INSERT INTO manage
-      (num, writer, title, content, stars, walker, regdate,imagePath,orgImageName,saveImageName,
+      (num, writer, title, content, stars, nickname, regdate,imagePath,orgImageName,saveImageName,
       ImageSize)
       VALUES(manage_seq.NEXTVAL, #{writer}, #{title},
-         #{content}, #{stars}, #{walker}, SYSDATE, #{imagePath}, #{orgImageName}, #{saveImageName}, 
+         #{content}, #{stars}, #{nickname}, SYSDATE, #{imagePath}, #{orgImageName}, #{saveImageName}, 
          #{ImageSize})
    </insert>
    

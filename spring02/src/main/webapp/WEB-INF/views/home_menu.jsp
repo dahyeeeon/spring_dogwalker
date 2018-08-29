@@ -30,8 +30,7 @@
              <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/loginform.do">login</a>
-          </c:otherwise>
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>          </c:otherwise>
       </c:choose>
       <c:choose>
          <c:when test="${not empty id }">
@@ -47,7 +46,7 @@
       <nav>
          <button type="button">Menu</button>
          <ul class="list_gnb">
-            <li><a href="#search">All walker</a></li>
+            <li><a href="${pageContext.request.contextPath }/allwalker/list.do">All walker</a></li>
             <li><a href="${pageContext.request.contextPath }/review/list.do">Review</a></li>
             <li><a href="${pageContext.request.contextPath }/community/list.do">Community</a></li>
          </ul>

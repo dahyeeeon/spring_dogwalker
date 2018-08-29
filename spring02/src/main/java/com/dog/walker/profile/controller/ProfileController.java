@@ -24,28 +24,27 @@ public class ProfileController {
 	@Autowired
 	private WalkerProfileService wpService;
 	
-	   @RequestMapping("/petwalker/profile")
-	   public ModelAndView insert(HttpServletRequest request,
-			   @ModelAttribute ManageDto dto) {
+	
+   
+      @RequestMapping("/petwalker/profile") //프로필 등록하는 거
+      public ModelAndView insert(HttpServletRequest request,
+            @ModelAttribute ManageDto dto,PetwalkerDto profiledto,HttpSession session) {
+         
+         // 서비스에 전달할 ModelAndView 객체 생성
+         ModelAndView mView = new ModelAndView();
+         
+         // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
+         // 담겨있는 UsersDto 객체를 전달한다.
+         wpService.profileinsert(request, mView, dto,profiledto,session);
+         //wpService.changeProfile(request,mView,profiledto);
+         
+         // ModelAndView 객체에 view 페이지 정보를 담고
+         return new ModelAndView("redirect:/petwalker/info.do");
+         
+      }
+      
 
-	      // 서비스에 전달할 ModelAndView 객체 생성
-	      ModelAndView mView = new ModelAndView();
-	      // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
-	      // 담겨있는 UsersDto 객체를 전달한다.
-	      wpService.profileinsert(request, mView, dto);
-	 
-	      mView.setViewName("redirect:/petwalker/info.do");
-	      return mView;
-	   }
 
-	   // 회원가입 폼 요청 처리
-	   @RequestMapping("/petwalker/profileform")
-	   public ModelAndView insertForm(HttpServletRequest request,ModelAndView mView) {
-		   wpService.check(request,mView);
-		   mView.setViewName("petwalker/profileform");
-		   return mView;
-	   }
-	   
 	   @RequestMapping("/petwalker/profileupdateform")
 	      public ModelAndView authUpdateForm(HttpServletRequest request,
 	            HttpSession session) {
@@ -67,4 +66,17 @@ public class ProfileController {
 	      }
 	
 	  
-}
+
+      @RequestMapping("/petwalker/profileform")
+      public ModelAndView insertForm(HttpServletRequest request,ModelAndView mView, HttpSession session,PetwalkerDto dto) {
+    	 wpService.getAndCheckIsProfileValue(request,dto,mView,session);
+    	 wpService.check(request,mView);
+         mView.setViewName("petwalker/profileform");
+    	 
+    	 return mView;
+         
+      }
+      
+      
+}	   
+      

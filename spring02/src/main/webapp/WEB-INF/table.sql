@@ -12,14 +12,20 @@ CREATE TABLE pet_walker(
    regdate DATE,
    orgFileName varchar2(300),
    saveFileName varchar2(300),
-   fileSize	long
+   fileSize	long,
+   isProfiled NUMBER default 0
 );
 
 
-select * from pet_walker;
-
 drop table pet_walker;
 
+select * from pet_walker;
+
+<<<<<<< HEAD
+drop table pet_walker;
+
+=======
+>>>>>>> branch 'tina2' of https://github.com/dahyeeeon/spring_dogwalker.git
 CREATE TABLE pet_users(
    id VARCHAR2(30) PRIMARY KEY,
    nickname VARCHAR2(100),

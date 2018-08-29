@@ -99,6 +99,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 			if(isLoginSuccess) {
 			//로그인 처리를 해준다. 
 			session.setAttribute("id", dto.getId());
+			
 			session.setAttribute("isWalker",true);
 			}
 		//request 에 담을 내용을 ModelAndView 객체에 담는다. 

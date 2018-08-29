@@ -10,12 +10,33 @@
 <html>
 
 <head>
+ <!-- Bootstrap core CSS -->
+ <link href="../resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+ <link href="../resources/css/bootstrap.css" rel="stylesheet">
+ <!-- Custom styles for this template -->
+  <link href="../resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>petwalker/loginform.jsp</title>
 <style>
+footer {
+    margin: 20px 0;
+}
+.nav>li{
+   margin-right:80px;
+}
+
+a#MOVE_TOP_BTN {
+    position: fixed;
+    right: 2%;
+    bottom: 50px;
+    display: none;
+    z-index: 998;
+}
 body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
 
 .form-heading { color:#fff; font-size:23px;}
@@ -33,8 +54,9 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
   background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
   margin: 10px auto 30px;
+  margin-top: 150px;
   max-width: 38%;
-  padding: 50px 70px 70px 71px;
+  padding: 50px 70px 50px 71px;
 }
 
 .login-form .form-group {
@@ -47,8 +69,8 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
   text-decoration: underline;
 }
 .login-form  .btn.btn-primary {
-  background: #f0ad4e none repeat scroll 0 0;
-  border-color: #f0ad4e;
+  background: #4f837f none repeat scroll 0 0;
+  border-color: #4f837f;
   color: #ffffff;
   font-size: 14px;
   width: 100%;
@@ -71,10 +93,12 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
 
 </style>
+
 </head>
+
 <body id="LoginForm">
+<%@include file="../home_menu.jsp" %>
 	<div class="container">
-		<h1 class="form-heading">Let's Run</h1>
 		<div class="login-form">
 			<div class="main-div">
 				<div class="panel">
@@ -107,6 +131,7 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
 			<p class="botto-text"></p>
 		</div>
 	</div>
+	<%@include file="../home_footer.jsp" %>
 </body>
 </html>
 

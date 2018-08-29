@@ -97,6 +97,7 @@ public class PetusersController {
 			//로그인후 이동할 url
 			mView.addObject("url", url);
 			//view 페이지 정보
+			
 			mView.setViewName("petusers/login");
 			return mView;
 		}

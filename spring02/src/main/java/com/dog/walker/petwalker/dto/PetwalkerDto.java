@@ -18,12 +18,13 @@ public class PetwalkerDto {
 	private String saveFileName; //저장된 파일명
 	private long fileSize; //파일의 크기 
 	private MultipartFile file;
+	private String isProfiled; //불리언으로 할거임
 	
 	public PetwalkerDto() {}
 
 	public PetwalkerDto(String id, String nickname, String pwd, String kakao, String phone, String addr, String sex,
 			String imagePath, String hasPet, int evaluation, String regdate, String orgFileName, String saveFileName,
-			long fileSize, MultipartFile file) {
+			long fileSize, MultipartFile file, String isProfiled) {
 		super();
 		this.id = id;
 		this.nickname = nickname;
@@ -40,6 +41,7 @@ public class PetwalkerDto {
 		this.saveFileName = saveFileName;
 		this.fileSize = fileSize;
 		this.file = file;
+		this.isProfiled = isProfiled;
 	}
 
 	public String getId() {
@@ -162,5 +164,13 @@ public class PetwalkerDto {
 		this.file = file;
 	}
 
+	public String getIsProfiled() {
+		return isProfiled;
+	}
+
+	public void setIsProfiled(String isProfiled) {
+		this.isProfiled = isProfiled;
+	}
+	
 	
 }

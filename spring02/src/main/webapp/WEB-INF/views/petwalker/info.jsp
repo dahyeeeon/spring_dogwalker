@@ -12,6 +12,7 @@
 </head>
 <body>
 <a href="${pageContext.request.contextPath }/">인덱스로 가기</a>
+<div>${dto.isProfiled }</div>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <div class="container">
       <div class="row">
@@ -72,6 +73,8 @@
                      
                     </tbody>
                   </table>
+                  
+                  
                   
                   <a href="updateform.do" class="btn_update">회원정보 수정</a>
                   <a href="javascript:deleteConfirm()" class="btn_update">회원탈퇴</a>

@@ -7,6 +7,20 @@
 <meta charset="UTF-8">
 <title>petusers/signup_form.jsp</title>
 <style>
+footer {
+    margin: 50px 0;
+}
+.nav>li{
+   margin-right:80px;
+}
+
+a#MOVE_TOP_BTN {
+    position: fixed;
+    right: 2%;
+    bottom: 50px;
+    display: none;
+    z-index: 998;
+}
 .resvReq {
 	text-align: center;
 	padding: 60px 0 180px;
@@ -452,6 +466,7 @@
 </style>
 </head>
 <body>
+<%@include file="../home_menu.jsp" %>
 	<div class="container-fluid">
 		<div class="contents-header"></div>
 		<div class="contents-body">

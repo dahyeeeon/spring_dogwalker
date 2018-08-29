@@ -8,9 +8,10 @@
 <title>petusers/signup.jsp</title>
 </head>
 <body>
-<h3>회원가입 결과 페이지</h3>
-<p>${msg }</p>
-<a href="loginform.do">로그인 하러 가기</a>
+ <script>
+ alert("${msg }");
+ location.href="${pageContext.request.contextPath }/petusers/loginform.do";
+ </script>
 </body>
 </html>
 

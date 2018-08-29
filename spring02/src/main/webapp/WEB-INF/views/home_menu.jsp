@@ -30,7 +30,9 @@
              <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>          </c:otherwise>
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>         
+              </c:otherwise>
+
       </c:choose>
       <c:choose>
          <c:when test="${not empty id }">

@@ -1,8 +1,7 @@
 package com.dog.walker.search.service;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,10 +39,39 @@ public class SearchServiceImpl implements SearchService{
 
 	@Override
 	public void getProfile(String input_address, ModelAndView mView) {
-		List<ManageDto> profileWalker = managedao.getList(input_address);
+		List<ManageDto> profileWalker = managedao.getList(input_address);//이게 디테일 사진 
 		
 		mView.addObject("profileWalker",profileWalker);
 	}
 	
+	
+	/*@Override
+	public void finalresult(String input_address, ModelAndView mView) {
+		
+		//List<ManageDto> starList = new ArrayList<>();
+		for(int i = 0;i<starList.size();i++) {
+
+			List<ManageDto> starList = managedao.getStarsList(input_address);
+			List<ManageDto> filePathList = managedao.getFilePath(input_address);
+			//List<plzDto> plzDto = managedao.
+			//INSERT INTO plz_table () VALUES ()
+			
+		}
+		
+	}*/
+	
+	
+	@Override
+	public void getStars(String input_address,ModelAndView mView) {
+		
+		//List<ManageDto> star_avg = managedao.getStarsList(input_address);
+		
+		/*ManageDto newDto = new ManageDto();
+		newDto.setNickname();*/
+		
+		//mView.addObject("star_avg",star_avg);
+		
+		
+	}
 	
 }

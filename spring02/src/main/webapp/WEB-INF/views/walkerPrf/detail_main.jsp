@@ -74,10 +74,8 @@
 				
 				<h3>${nickname }</h3>
 				
-					<p>Lorem ipsum dolor amet, consectetur adipisicing elit.
-					Incidunt neque hic amet ipsa porro velit nam numquam aspernatur
-					enim blanditiis molestiae dolore iusto possimus consequatur dicta
-					doloribus tempora corporis alias.</p>
+					<p>바쁜 반려견 보호자를 대신하여 저희 도그 워커가 산책을 통해 에너지를 발산시켜 드립니다!
+					반려견의 스트레스를 낮춰주고 교육을 통해 문제 행동 개선을 돕는 도그 워커!</p>
 				<div class="row">
 					<div class="col-xs-4 icons">
 						<div class="round round-lg hollow orange">

@@ -72,18 +72,15 @@ public class ManageDaoImpl implements ManageDao{
       @Override
       public void update(ManageDto dto) {
          session.update("rsv.update",dto);
-         
       }
 
       @Override
       public void delete(int num) {
          session.delete("rsv.delete",num);
-         
       }
 
       @Override
       public ManageDto getData(int num) {
-         
          return session.selectOne("rsv.getData",num);
       }
 
@@ -118,5 +115,18 @@ public class ManageDaoImpl implements ManageDao{
 		
 		return session.selectList("rsv.DtgetList", nickname);
 	}
+      
+      
+      @Override
+      public List<ManageDto> getStarsList(String input_address) {
+         List<ManageDto> list_star = session.selectList("searchMapper.getList",input_address);//nickname이랑 받은 별의 평균 넣어진 리스트
+         return list_star;
+      }
+      
+      @Override
+      public List<ManageDto> getFilePath(String input_address) {
+         List<ManageDto> list_filepath = session.selectList("searchMapper.getFilePath",input_address);//nickname이랑 받은 별의 평균 넣어진 리스트
+         return list_filepath;
+      }
       
 }

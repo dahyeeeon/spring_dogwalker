@@ -18,19 +18,18 @@ public class SearchController {
 	private SearchService sService;
 	
 	
-	@RequestMapping("AddressSearchResult")
+	@RequestMapping("/AddressSearchResult")
 	public ModelAndView searchForm(ModelAndView mView, ManageDto profileDto,@RequestParam String input_address) {
 		
 		sService.getProfile(input_address ,mView);
 		sService.findPetWalker(input_address,mView);
 		sService.getWalkerTotal(input_address, mView);
+		//sService.getStars(input_address,mView);
 		
-		
+
 		mView.addObject("input_address",input_address);
-		
-		
 		mView.setViewName("search/searchWalker");
-		
+
 		return mView;
 	}
 }

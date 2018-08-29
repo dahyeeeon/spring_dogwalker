@@ -346,8 +346,9 @@ img {
 			<div class="col-md-7 left-content">
 
 				<div class="row">
-
+					
 					<c:forEach var="list1" items="${profileWalker }" varStatus="status">
+						
 						<div
 							class="petwalker-card-box col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
 							<div class="relative">
@@ -357,11 +358,12 @@ img {
 								<div class="petwalker-card-top">
 									<div class="petwalker-card-over">
 										<img
-											src="${pageContext.request.contextPath }${list1.imagePath}"
+											src="${pageContext.request.contextPath }${list1.filePath}"
 											alt="이미지!!" class="detailImg" />
 									</div>
 								</div>
-
+								
+								
 								<div class="d-flex flex-row align-items-center">
 									<img
 										src="${pageContext.request.contextPath }${findWalker[status.index].imagePath}"
@@ -417,10 +419,12 @@ img {
 
 	<script type="text/javascript">
 	
+	 var values = new Array();
+	 var values2 = new Array();
 	
 	     function initialize() {
 	    	 
-   	        var values = new Array();
+   	       
    	             
    	        <c:forEach var="tmp" items="${findWalker}" varStatus="status">
    	            values.push("${tmp.addr}");   
@@ -428,20 +432,32 @@ img {
    	        	
    	        if(values[0] == "홍제동"){
    	        	console.log("확인됨");
+   	        	//37.4799348,126.99346020000007
+   	         	var mapLocation = new google.maps.LatLng('37.586121', '126.948805'); // 지도에서 가운데로 위치할 위도와 경도
    	        }
-	    	 
-   	        
-   	        
-   	        	
-   	        var mapLocation = new google.maps.LatLng('37.586121', '126.948805'); // 지도에서 가운데로 위치할 위도와 경도
+	    	if(values[0] == "방배동"){
+	    		console.log("방배동임");
+	    		var mapLocation = new google.maps.LatLng('37.4799348', '126.99346020000007');
+	    	}  
+	    	if(values[0] == "천호동"){
+	    		console.log("천호동임");
+	    		var mapLocation = new google.maps.LatLng('37.5439937', '127.12564520000001');
+	    	}
+	    	  
+   	       
  	        var markLocation1_1 = new google.maps.LatLng('37.584930', '126.951337'); // 마커가 위치할 위도와 경도
  	        var markLocation1_2 = new google.maps.LatLng('37.585985', '126.944342'); // 마커가 위치할 위도와 경도
  	        var markLocation1_3 = new google.maps.LatLng('37.589929', '126.945029'); // 마커가 위치할 위도와 경도
  	        var markLocation1_4 = new google.maps.LatLng('37.583536', '126.946059'); // 마커가 위치할 위도와 경도
+ 	        var markLocation1_5 = new google.maps.LatLng('37.585219', '126.947711'); // 마커가 위치할 위도와 경도
+ 	        var markLocation1_6 = new google.maps.LatLng('37.586214', '126.948655'); // 마커가 위치할 위도와 경도
 	 	        
-	 	       
-   	        
-	       
+ 	        
+ 	       	
+ 	        
+ 	        
+ 	        
+ 	        
 	        var mapOptions = {
 	          center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
 	          zoom: 15, // 지도 zoom단계
@@ -461,10 +477,7 @@ img {
 	                            '',
 	                            new google.maps.Size(size_x, size_y));
 	   
-	       
-	        
-	        
- 	        var marker;
+ 	        var marker1;
 	        var marker2;
 	        var marker3;
 	        var marker4;
@@ -475,57 +488,126 @@ img {
 	        var marker9;
 	        var marker10;
 	        
-	        
-	        marker = new google.maps.Marker({
-	               position: markLocation1_1, // 마커가 위치할 위도와 경도(변수)
-	               map: map,
-	               //icon: image, // 마커로 사용할 이미지(변수)
-//	             info: '말풍선 안에 들어갈 내용',
-	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
-	        });
+	    
 	         
-	        marker2 = new google.maps.Marker({
+	        marker1 = new google.maps.Marker({
 	               position: markLocation1_1, // 마커가 위치할 위도와 경도(변수)
 	               map: map,
-	               //icon: image, // 마커로 사용할 이미지(변수)
+	               icon: image, // 마커로 사용할 이미지(변수)
 //	             info: '말풍선 안에 들어갈 내용',
 	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
 	        }); 
 	        
-	        marker3 = new google.maps.Marker({
+	        marker2 = new google.maps.Marker({
 	               position: markLocation1_2, // 마커가 위치할 위도와 경도(변수)
 	               map: map,
-	               //icon: image, // 마커로 사용할 이미지(변수)
+	               icon: image, // 마커로 사용할 이미지(변수)
 //	             info: '말풍선 안에 들어갈 내용',
 	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
 	        });
 	        
 	        
-	        marker4 = new google.maps.Marker({
+	        marker3 = new google.maps.Marker({
 	               position: markLocation1_3, // 마커가 위치할 위도와 경도(변수)
+	               map: map,
+	               icon: image, // 마커로 사용할 이미지(변수)
+//	             info: '말풍선 안에 들어갈 내용',
+	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+	        });
+	        
+	        marker4 = new google.maps.Marker({
+	               position: markLocation1_4, // 마커가 위치할 위도와 경도(변수)
+	               map: map,
+	               icon: image, // 마커로 사용할 이미지(변수)
+//	             info: '말풍선 안에 들어갈 내용',
+	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+	        });
+	        
+	        marker5 = new google.maps.Marker({
+	               position: markLocation1_5, // 마커가 위치할 위도와 경도(변수)
 	               map: map,
 	               //icon: image, // 마커로 사용할 이미지(변수)
 //	             info: '말풍선 안에 들어갈 내용',
 	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
 	        });
 	        
-	        
-	        
-	        var content = "이곳은 서대전네거리역이다! <br/> 지하철 타러 가자~"; // 말풍선 안에 들어갈 내용
-	        
-	        
-	        // 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
-	        var infowindow = new google.maps.InfoWindow({ content: content});
-	 
-	        google.maps.event.addListener(marker, "click", function() {
-	            infowindow.open(map,marker);
+	        marker6 = new google.maps.Marker({
+	               position: markLocation1_6, // 마커가 위치할 위도와 경도(변수)
+	               map: map,
+	               //icon: image, // 마커로 사용할 이미지(변수)
+//	             info: '말풍선 안에 들어갈 내용',
+	               title: '사용자1' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
 	        });
-	         
+	        
+	        var content = "홍제동 워커 위치입니다"; // 말풍선 안에 들어갈 내용
+	        
+	        
+	        <c:forEach var="tmp2" items="${findWalker}" varStatus="status">
+	            values2.push("${tmp2.nickname}");   
+	        </c:forEach>
+	        
+	        var infowindow = new Array();
+	        
+	        
+	        for(var i = 0;i<values2.length;i++){
+	        	
+	        	infowindow[i] = new google.maps.InfoWindow();
+	        	google.maps.InfoWindow[content] = values2[i];
+	        	
+				console.log(values2[i]); 	        	
+	        	
+	        }
+	        
+	       <c:forEach var="tmp" items="${findWalker}" varStatus="status">
+	       	
+		       var info_${status.index} = new google.maps.InfoWindow({content:"${tmp.nickname}"});
+		       	google.maps.event.addListener(marker1, "click", function() {
+		        	infowindow1_1.open(map,marker);
+		        	
+		        });
+		       
+	       	</c:forEach>
+	       	
+	       /*  // 마커를 클릭했을 때의 이벤트. 말풍선 안에 content 내용
+	       
+	        var infowindow1_1 = new google.maps.InfoWindow({ content: "1"});
+	        var infowindow1_2 = new google.maps.InfoWindow({ content: "사용자이름2"});
+	        var infowindow1_3 = new google.maps.InfoWindow({ content: "사용자이름3"});
+	        var infowindow1_4 = new google.maps.InfoWindow({ content: "사용자이름4"});
+	        var infowindow1_5 = new google.maps.InfoWindow({ content: "사용자이름5"});
+	        var infowindow1_6 = new google.maps.InfoWindow({ content: "사용자이름6"});
+	        
+		  */
 
-	        console.log("이거 실행되니?3");
+		  	google.maps.event.addListener(marker1, "click", function() {
+	        	infowindow1_1.open(map,marker);
+	        });
+	        google.maps.event.addListener(marker2, "click", function() {
+	        	infowindow1_2.open(map,marker2);
+	        }); 
+	        
+	        google.maps.event.addListener(marker3, "click", function() {
+	        	infowindow1_3.open(map,marker3);
+	        }); 
+	        
+	        google.maps.event.addListener(marker3, "click", function() {
+	        	infowindow1_4.open(map,marker4);
+	        }); 
+	        
+	        
+	        google.maps.event.addListener(marker3, "click", function() {
+	        	infowindow1_5.open(map,marker5);
+	        }); 
+	        
+	        
+	        google.maps.event.addListener(marker3, "click", function() {
+	        	infowindow1_6.open(map,marker6);
+	        }); 
+	        
 	        
 	         
 	      }
+	     
 	      google.maps.event.addDomListener(window, 'load', initialize);
 	      
 	</script>

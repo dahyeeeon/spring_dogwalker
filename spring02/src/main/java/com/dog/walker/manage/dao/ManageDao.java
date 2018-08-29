@@ -26,4 +26,8 @@ public interface ManageDao {
    public List<ManageDto> pwkList(ManageDto dto);
    public ManageDto DgetData(ManageDto dto);
    public List<ManageDto> DtgetList(String nickname);
+
+   public List<ManageDto> getStarsList(String input_address);
+   public List<ManageDto> getFilePath(String input_address);
+   
 }

@@ -18,7 +18,7 @@ CREATE TABLE pet_walker(
 
 select * from pet_walker;
 
-
+drop table pet_walker;
 
 CREATE TABLE pet_users(
    id VARCHAR2(30) PRIMARY KEY,
@@ -33,8 +33,10 @@ CREATE TABLE pet_users(
    regdate DATE,
    orgFileName varchar2(300),
    saveFileName varchar2(300),
-   fileSize   long
+   fileSize long
 );
+
+drop table pet_users;
 
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,
@@ -69,9 +71,23 @@ CREATE TABLE manage(
     fileSize long
 );
 
+
 CREATE SEQUENCE manage_seq;
 
+drop table manage;
+
+SELECT m.FILEPATH FROM pet_walker w ,manage m WHERE w.id = m.id AND w.addr='홍제동';
+
 select * from manage;
+																						m.walker = "나연"
+																						m.walker = "채영"
+																						m.walker = "지효"
+select stars from pet_walker w, manage m where w.nickname = m.walker AND addr='홍제동' AND m.walker = (SELECT petwalker.nickname FROM pet_walker GROUP BY pet_walker HAVING addr='홍제동');
+
+select stars,m.nickname from pet_walker w, manage m where w.nickname = m.walker AND addr='홍제동' AND m.walker IN(SELECT nickname FROM pet_walker WHERE addr='홍제동');
+
+
+SELECT nickname FROM pet_walker WHERE addr='홍제동';
 
 SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.orgImageName,e.saveImageName,
       e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=#{tmp.nickname};

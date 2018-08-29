@@ -73,4 +73,6 @@ CREATE SEQUENCE manage_seq;
 
 select * from manage;
 
+SELECT id,nickname FROM pet_walker
+
 

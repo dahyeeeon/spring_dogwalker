@@ -1,6 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="../home_menu.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +13,12 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bars-square.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/fontawesome-stars.css" />
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js" /></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="${pageContext.request.contextPath }/resources/js/jquery.barrating.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap-select.css" />
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap-select.js"></script>
 
 
 
@@ -33,11 +40,38 @@
     transition: height 0.2s;
 }
 
+html{
+	font-size:15px;
+}
+
 .stars
 {
     margin: 20px 0;
     font-size: 24px;
     color: #d17581;
+}
+
+.form{
+	width:100%;
+}
+
+input{
+	margin-bottom:10px;
+}
+
+
+
+#counter {
+
+  border-radius: 0.5em;
+  padding: 0 .5em 0 .5em;
+  font-size: 0.75em;
+  float:right;
+}
+
+
+.container{
+	margin-top:140px;
 }
 
 
@@ -46,14 +80,19 @@
 </head>
 <body>
 <div class="container">
-   <form name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
+
+   <form id="reviewform" name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
+        <div class="form">
         <label for="walker">워커</label>
-        <select name="walker" id="walker">
-        <option>워커 선택</option>
-        <c:forEach var="tmp" items="${list }">
-           <option>${tmp }</option>
-        </c:forEach>
-        </select>
+        <br />
+        <select name="walker" id="walker" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
+        	<c:forEach var="tmp" items="${list }">
+        	    <option>${tmp.nickname } </option>
+        	</c:forEach>
+        	</select>
+        </div>
+        <br />
+        
         <label for="stars">별점</label>
         <select id="example-square" name="stars" id="stars">
                   <option value=""></option>
@@ -64,8 +103,12 @@
                   <option value="5">5</option>
          </select>
         <label for="title">제목</label>
-        <input type="text" name="title" id="title"/>
-        <textarea class="form-control animated" cols="50" id="content" name="content" placeholder="Enter your review here..." rows="5"></textarea>
+        <input type="text" name="title" id="title" style="width:100%"/>
+        <div class="wrap">
+       	 	<textarea class="form-control animated"  minlength="60" cols="50" id="content" name="content" placehlder="Enter your review here..." rows="5"></textarea>
+     		<span id="counter">###</span>
+     		<br />
+     	</div>
       <label for="myFile">이미지</label>
       <input type="file" name="file" id="file"/><br/>
         <div class="text-right">
@@ -74,8 +117,9 @@
               <button class="btn btn-success btn-lg" type="submit">Save</button>
          </div>
          </form>
-</div>
          
+</div>
+         <%@include file="../home_footer.jsp" %>
          <script>
          $(function() {
              $('#example-square').barrating({
@@ -83,6 +127,23 @@
              });
           });
          
+
+
+ 
+         
+         $(function() {
+             $('#content').keyup(function (e){
+                 var content = $(this).val();
+                 $('#counter').html('60/' + content.length );
+             });
+             $('#content').keyup();
+             
+             
+             
+             
+       });
+
+
          
          </script>
 

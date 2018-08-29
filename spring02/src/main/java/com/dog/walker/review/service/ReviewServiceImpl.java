@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
+import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 
 @Service
@@ -141,10 +142,10 @@ public class ReviewServiceImpl implements ReviewService{
 	      // TODO Auto-generated method stub
 	      
 	      
-	      
-	      List<String> list = pdao.getnicknameList();
+	      List<PetwalkerDto> list = pdao.getnicknameList();
 	      
 	      request.setAttribute("list", list);
+	      System.out.println(list);
 
 	   }
 

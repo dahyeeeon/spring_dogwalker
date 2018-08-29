@@ -30,12 +30,12 @@
       WHERE num=#{num}
    </select>
    <select id="rgetList" parameterType="manageDto" resultType="manageDto">
-   		SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.orgImageName,e.saveImageName,
-      e.ImageSize FROM manage e, pet_walker p WHERE e.nickname=p.nickname
+   		SELECT num, title, content, stars, nickname, regdate, imagePath,orgImageName,saveImageName,
+      ImageSize FROM manage WHERE nickname=#{nickname}
    </select>
    <select id="pwkList" parameterType="manageDto" resultType="manageDto">
-   		SELECT e.nickname, e.career, e.experience, e.freeservice, e.filePath, e.orgFileName, e.saveFileName, 
-   		e.filesize FROM manage e, pet_walker p WHERE e.nickname=p.nickname
+   		SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName, 
+   		filesize FROM manage WHERE nickname=#{nickname}
    </select>
    <select id="DgetData" parameterType="manageDto" resultType="manageDto">
    		SELECT num, id, kakao, nickname, career, experience, freeservice FROM manage WHERE nickname=#{nickname}

@@ -32,14 +32,14 @@ public class DetailController {
 	
 	
 	@RequestMapping("/walkerPrf/detail_main")
-	public ModelAndView dMain(HttpServletRequest request ,@RequestParam String walker) {
-		rsvService.getList(request);
-		rsvService.reviewgetList(request);
-		rsvService.pwkList(request);
-		ModelAndView mView=new ModelAndView();
+	public ModelAndView dMain(HttpServletRequest request ,ModelAndView mView) {
 		
-		rsvService.detail(request, mView, walker);
-		return new ModelAndView("walkerPrf/detail_main");
+		rsvService.getList(request);
+		rsvService.reviewgetList(request, mView);
+		rsvService.pwkList(request, mView);
+
+		mView.setViewName("walkerPrf/detail_main");
+		return mView;
 	}
 	
 	@RequestMapping("/walkerPrf/delete")

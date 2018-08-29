@@ -34,18 +34,14 @@ width:100%;
 <body style="margin-top: 180px">
 <%@include file="../home_menu.jsp" %>
    <div class="container">
-   <form action="profile.do" method="post" 
-id="profileform" enctype="multipart/form-data">
+   <form action="profileupdate.do" method="post" 
+id="profileupdate" enctype="multipart/form-data">
       <div class="row">
          <fieldset>  
-	<input type="hidden" name="id" id="id" value="${id }"/>
-	<input type="hidden" name="nickname" id="nickname" value="${nickname }"/>
-	<label for="myFile">이미지</label>
-	<input type="file" name="file1" id="file" multiple="multiple"/><br/>
-         
+	<input type="hidden" name="id" id="id" value="${id }"/>       
             <legend></legend>
             <p>도그워커 경력</p>
-            <textarea name="career" id="career" cols="30" rows="10"></textarea><br />
+            <textarea name="career" id="career" cols="30" rows="10">${dto.career }</textarea><br />
             </fieldset>
             
       </div>
@@ -55,7 +51,8 @@ id="profileform" enctype="multipart/form-data">
          <fieldset>
             <legend></legend>
             <p>경험</p>
-          <textarea name="experience" id="experience" cols="30" rows="10"></textarea><br />
+          <textarea name="experience" id="career" cols="30" rows="10"
+          >${dto.experience}</textarea><br />
 	
          </fieldset>
 
@@ -65,7 +62,7 @@ id="profileform" enctype="multipart/form-data">
          <fieldset>
             <legend></legend>
             <p>무료서비스</p>
-           <textarea name="freeservice" id="freeservice" cols="30" rows="10"></textarea><br />
+           <textarea name="freeservice" id="freeservice" cols="30" rows="10">${dto.freeservice }</textarea><br />
 
          </fieldset>
 

@@ -35,9 +35,27 @@ public class ManageDaoImpl implements ManageDao{
    }
    
    @Override
-      public void profileinsert(ManageDto dto) {
-         session.insert("walkerprofile.insert", dto);
-   }
+   public void profileinsert(ManageDto dto) {
+      session.insert("walkerprofile.insert", dto);
+}
+   
+   @Override
+	public ManageDto check(int num) {
+		return session.selectOne("walkerprofile.select",num);
+	}
+
+	@Override
+	public void profileupdate(ManageDto dto) {
+		session.update("walkerprofile.update",dto);
+		
+	}
+
+	@Override
+	public ManageDto getData2(String id) {
+		ManageDto dto=session.selectOne("walkerprofile.getData", id);
+		return dto;	
+	}
+   
    
     @Override
       public void reservationinsert(ManageDto dto) {

@@ -85,7 +85,6 @@ public class ReserveServiceImpl implements ReserveService {
 		int num = Integer.parseInt(request.getParameter("num"));
 		ManageDto dto = new ManageDto();
 		dto.setNum(num);
-		;
 		ManageDto updateDto = dao.getData(num);
 		request.setAttribute("dto", updateDto);
 
@@ -101,9 +100,18 @@ public class ReserveServiceImpl implements ReserveService {
 	
 
 	@Override
-	public void reviewgetList(HttpServletRequest request) {
+	public void reviewgetList(HttpServletRequest request,  ModelAndView mView) {
+		
+		
+		String nickname=request.getParameter("nickname");
+		mView.addObject("nickname",nickname);
 		
 		ManageDto dto=new ManageDto();
+		
+		dto.setNickname(nickname);
+		
+		
+		
 				
 		//1. FileDto 객체를 전달해서 파일 목록을 불러온다 
 		List<ManageDto> list=dao.rgetList(dto);
@@ -113,8 +121,15 @@ public class ReserveServiceImpl implements ReserveService {
 	}
 
 	@Override
-	public void pwkList(HttpServletRequest request) {
+	public void pwkList(HttpServletRequest request, ModelAndView mView) {
+		
+
+		String nickname=request.getParameter("nickname");
+		mView.addObject("nickname",nickname);
+		
 		ManageDto dto=new ManageDto();
+		
+		dto.setNickname(nickname);
 		
 		List<ManageDto> pwklist=dao.pwkList(dto);
 		

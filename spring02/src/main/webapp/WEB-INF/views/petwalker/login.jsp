@@ -10,8 +10,10 @@
 <body>
 <c:choose>
 	<c:when test="${isLoginSuccess }">
-		<p> <strong>${id }</strong> 님 로그인 되었습니다.</p>
-		<a href="${url }">확인</a>
+		<script>
+	alert("로그인 됐습니다");
+	location.href="${url}";
+</script>
 	</c:when>
 	<c:otherwise>
 		<p> 아이디 혹은 비밀번호가 틀려요.</p>

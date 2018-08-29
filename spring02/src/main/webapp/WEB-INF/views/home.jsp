@@ -275,7 +275,7 @@ footer {
                          <div class="card">
                              <div class="card-body text-center mt-4">
                              	
-                                 <h4 class="card-title"><a href="walkerPrf/detail_main.do?walker=${tmp.nickname }">${tmp.nickname}</a></h4>
+                                 <h4 class="card-title"><a href="walkerPrf/detail_main.do?nickname=${tmp.nickname }">${tmp.nickname}</a></h4>
                                  
                                  <p class="card-text">${tmp.content }</p>
                                  <ul class="list-inline">

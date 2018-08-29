@@ -84,7 +84,6 @@
 					<a href="profileform.do?nickname=${dto.nickname }" class="btn_update">프로필 입력</a>
 					<a href="profileupdateform.do" class="btn_update">프로필 수정</a>
 
->>>>>>> branch 'sumi' of https://github.com/dahyeeeon/spring_dogwalker.git
                 </div>
               </div>
             </div>

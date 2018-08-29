@@ -75,9 +75,9 @@ input{
 
    <form id="reviewform" name="reviewform" action="upload.do" method="post" enctype="multipart/form-data">
         <div class="form">
-        <label for="walker">워커</label>
+        <label for="nickname">워커</label>
         <br />
-        <select name="walker" id="walker" data-height="50px" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
+        <select name="nickname" id="nickname" data-height="50px" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
            <c:forEach var="tmp" items="${list }">
                <option>${tmp.nickname } </option>
            </c:forEach>

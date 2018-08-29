@@ -183,3 +183,5 @@ SELECT e.num, e.title, e.content, e.stars, e.nickname, e.regdate,e.imagePath,e.o
 select career from manage;
 
 SELECT career, experience, freeservice from manage WHERE nickname = '11';
+
+select * from manage; 

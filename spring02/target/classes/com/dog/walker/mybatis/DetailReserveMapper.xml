@@ -37,6 +37,7 @@
    		SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName, 
    		filesize FROM manage WHERE nickname=#{nickname}
    </select>
+
    <select id="DgetData" parameterType="manageDto" resultType="manageDto">
    		SELECT num, id, kakao, nickname, career, experience, freeservice FROM manage WHERE nickname=#{nickname}
    </select>

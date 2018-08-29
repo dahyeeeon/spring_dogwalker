@@ -222,7 +222,7 @@ footer {
                <hr class="d-none d-lg-block mb-0 ml-0">
               <p class="mb-0">산책만 잘해줘도 문제행동이 해결 될 수 있습니다!</p>
               <p class="mb-0">에너지 발산을 도와 스트레스를 줄이고</p>
-              <p class="mb-0">산책매너 교육과 함께 문제행동 개선을 돕는 과정입니다.</p>
+              <p class="mb-0">산책매너 교육과 함께 문제행동 개선을 돕는 과정입니다</p>
              
             </div>
           </div>

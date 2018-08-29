@@ -3,6 +3,7 @@ package com.dog.walker.manage.dao;
 import java.util.List;
 
 import com.dog.walker.manage.dto.ManageDto;
+
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 
@@ -21,5 +22,7 @@ public interface ManageDao {
    public void update(ManageDto dto);
    public void delete(int num);
    public ManageDto getData(int num);
+   public ManageDto rsvgetData(String id);
+   public List<ManageDto> getList(String input_address);
 
 	}

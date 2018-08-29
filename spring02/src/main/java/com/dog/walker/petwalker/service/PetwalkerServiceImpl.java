@@ -104,6 +104,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 			if(isLoginSuccess) {
 			//로그인 처리를 해준다. 
 			session.setAttribute("id", dto.getId());
+			session.setAttribute("isWalker",true);
 			}
 		//request 에 담을 내용을 ModelAndView 객체에 담는다. 
 			mView.addObject("isLoginSuccess", isLoginSuccess);
@@ -176,7 +177,6 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 		//ModelAndView 객체에 메세지를 담는다.
 		mView.addObject("msg",id+" 님 회원 탈퇴 되었습니다.");
 	}
-
 
 
 }

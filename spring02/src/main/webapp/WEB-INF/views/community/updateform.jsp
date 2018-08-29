@@ -22,8 +22,15 @@
 	<textarea name="content" id="content" 
 	style="width:766px;height:412px;display:none">${dto.content }</textarea>
 	<div>
+<<<<<<< HEAD
 
 		<input type="button" onclick="submitContents(this);" value="수정 확인" />
+=======
+		<input type="button" onclick="pasteHTML();" value="본문에 내용 넣기" />
+		<input type="button" onclick="showHTML();" value="본문 내용 가져오기" />
+		<input type="button" onclick="submitContents(this);" value="수정 확인" />
+		<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
+>>>>>>> branch 'master' of https://github.com/dahyeeeon/spring_dogwalker.git
 	</div>	
 </form>
 <script>

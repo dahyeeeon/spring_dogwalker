@@ -85,7 +85,5 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
 	 mView.addObject("nickname",nickname);
 		
 	}
-	
-
 
 }

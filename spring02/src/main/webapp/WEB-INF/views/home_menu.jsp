@@ -3,6 +3,7 @@
 <style>
 .header_gnb{position:fixed;top:0;left:0;z-index:9999;width:100%;background:rgba(255,255,255,0.7)}
 .header_gnb .login_area{border-bottom:1px solid #efefef;height:30px;text-align:right}
+
 .header_gnb .login_area a{display:inline-block;padding:5px 10px 0;margin-right:10px;font-size:12px;line-height:20px;color:#333;vertical-align:top;}
 .header_gnb .gnb_area{overflow:hidden;padding:10px 20px;border-bottom:1px solid #efefef}
 .header_gnb .gnb_area h1{float:left;width:56px;height:40px;margin:0;padding:0;}
@@ -23,34 +24,36 @@
 	.header_gnb .list_gnb{display:none}
 }
 </style>
+
 <header class="header_gnb">
-	<div class="login_area">
-		<c:choose>
-			<c:when test="${not empty id }">
-		 		<a class="nav-link js-scroll-trigger" href="petwalker/logout.do">logout</a>
-			</c:when>
-			<c:otherwise>
-		    	<a class="nav-link js-scroll-trigger" href="petwalker/loginform.do">login</a>
-		    </c:otherwise>
-		</c:choose>
-		<c:choose>
-			<c:when test="${not empty id }">
-				<a href="petwalker/info.do" >${id } 님 마이페이지</a>
-			</c:when>
-			<c:otherwise>
-				<a href="petwalker/signup_form.do">join us</a>
-			</c:otherwise>
-		</c:choose>
-	</div>
-	<div class="gnb_area">
-		<h1><a href="home.do"><img src="${pageContext.request.contextPath }/resources/img/logo (2).png" alt="logo"/></a></h1>
-		<nav>
-			<button type="button">Menu</button>
-			<ul class="list_gnb">
-				<li><a href="#search">All walker</a></li>
-				<li><a href="#bestreview">Review</a></li>
-				<li><a href="community/list.do">Community</a></li>
-			</ul>
-		</nav>
-	</div>
+   <div class="login_area">
+      <c:choose>
+         <c:when test="${not empty id }">
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
+         </c:when>
+         <c:otherwise>
+             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/loginform.do">login</a>
+          </c:otherwise>
+      </c:choose>
+      <c:choose>
+         <c:when test="${not empty id }">
+            <a href="${pageContext.request.contextPath }/petwalker/info.do" >${id } 님 마이페이지</a>
+         </c:when>
+         <c:otherwise>
+            <a href="${pageContext.request.contextPath }/home_signup.do">join us</a>
+         </c:otherwise>
+      </c:choose>
+   </div>
+   <div class="gnb_area">
+      <h1><a href="${pageContext.request.contextPath }/home.do"><img src="${pageContext.request.contextPath }/resources/img/logo (2).png" alt="logo"/></a></h1>
+      <nav>
+         <button type="button">Menu</button>
+         <ul class="list_gnb">
+            <li><a href="#search">All walker</a></li>
+            <li><a href="${pageContext.request.contextPath }/review/list.do">Review</a></li>
+            <li><a href="${pageContext.request.contextPath }/community/list.do">Community</a></li>
+         </ul>
+      </nav>
+   </div>
 </header>
+

@@ -10,20 +10,19 @@ public class PetwalkerDto {
 	private String phone;
 	private String addr;
 	private String sex;
-	private String hasPet;
 	private String imagePath;
+	private String hasPet;
 	private int evaluation;
 	private String regdate;
 	private String orgFileName; //원본 파일명
 	private String saveFileName; //저장된 파일명
 	private long fileSize; //파일의 크기 
-	
 	private MultipartFile file;
-
-	public PetwalkerDto() {}
 	
+	public PetwalkerDto() {}
+
 	public PetwalkerDto(String id, String nickname, String pwd, String kakao, String phone, String addr, String sex,
-			String hasPet, String imagePath, int evaluation, String regdate, String orgFileName, String saveFileName,
+			String imagePath, String hasPet, int evaluation, String regdate, String orgFileName, String saveFileName,
 			long fileSize, MultipartFile file) {
 		super();
 		this.id = id;
@@ -33,8 +32,8 @@ public class PetwalkerDto {
 		this.phone = phone;
 		this.addr = addr;
 		this.sex = sex;
-		this.hasPet = hasPet;
 		this.imagePath = imagePath;
+		this.hasPet = hasPet;
 		this.evaluation = evaluation;
 		this.regdate = regdate;
 		this.orgFileName = orgFileName;
@@ -99,20 +98,20 @@ public class PetwalkerDto {
 		this.sex = sex;
 	}
 
-	public String getHasPet() {
-		return hasPet;
-	}
-
-	public void setHasPet(String hasPet) {
-		this.hasPet = hasPet;
-	}
-
 	public String getImagePath() {
 		return imagePath;
 	}
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+
+	public String getHasPet() {
+		return hasPet;
+	}
+
+	public void setHasPet(String hasPet) {
+		this.hasPet = hasPet;
 	}
 
 	public int getEvaluation() {
@@ -162,6 +161,6 @@ public class PetwalkerDto {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
-	
+
 	
 }

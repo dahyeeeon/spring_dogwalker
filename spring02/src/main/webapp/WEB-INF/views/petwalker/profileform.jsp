@@ -24,10 +24,8 @@ fieldset {
 label{
    text-align: center;
 }
-
 textarea{
 width:100%;
-
 }
 </style>
 </head>

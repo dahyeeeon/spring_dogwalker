@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dog.walker.manage.dto.ManageDto;
+
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 @Repository
@@ -69,7 +70,19 @@ public class ManageDaoImpl implements ManageDao{
       public ManageDto getData(int num) { 
          return session.selectOne("rsv.getData",num);
       }
-
+      @Override
+      public ManageDto rsvgetData(String id) {
+    	  
+    	  return session.selectOne("rsv.rsvgetData",id);
+      }
+   
+      
+      @Override
+      public List<ManageDto> getList(String input_address) {
+         List<ManageDto> list = session.selectList("walkerprofile.getList",input_address);
+         return list;
+      }
+      
 	@Override
 	public ManageDto check(int num) {
 		return session.selectOne("walkerprofile.select",num);
@@ -86,9 +99,8 @@ public class ManageDaoImpl implements ManageDao{
 		ManageDto dto=session.selectOne("walkerprofile.getData", id);
 		return dto;	
 	}
-
+}
 	
 
    
-   
-}
+ 

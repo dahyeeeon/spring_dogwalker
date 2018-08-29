@@ -1,6 +1,7 @@
 package com.dog.walker.profile.service;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -14,3 +15,7 @@ public interface WalkerProfileService {
 	public void profileupdateForm(ModelAndView mView, HttpSession session);
 	
 }
+
+
+
+

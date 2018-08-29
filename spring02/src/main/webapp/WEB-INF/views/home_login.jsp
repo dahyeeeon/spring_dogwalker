@@ -10,7 +10,6 @@
 .nav>li {
    margin-right: 80px;
 }
-
 a#MOVE_TOP_BTN {
    position: fixed;
    right: 2%;
@@ -18,9 +17,7 @@ a#MOVE_TOP_BTN {
    display: none;
    z-index: 998;
 }
-
 body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
-
 .main-div {
   background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
@@ -77,15 +74,13 @@ body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg");
                $('#MOVE_TOP_BTN').fadeOut();
             }
          });
-
          $("#MOVE_TOP_BTN").click(function() {
             $('html, body').animate({
                scrollTop : 0
             }, 400);
             return false;
          });
-      });
-
+     
       var currentPosition = parseInt($(".box").css("top"));
       $(window).scroll(function() {
          var position = $(window).scrollTop();

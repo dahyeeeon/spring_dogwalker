@@ -12,6 +12,7 @@
 </head>
 <body>
 <a href="${pageContext.request.contextPath }/">인덱스로 가기</a>
+<div>${dto.isProfiled }</div>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 
 <div class="container">
@@ -74,6 +75,8 @@
                     </tbody>
                   </table>
                   
+                  
+                  
                   <a href="updateform.do" class="btn_update">회원정보 수정</a>
                   <a href="javascript:deleteConfirm()" class="btn_update">회원탈퇴</a>
                 
@@ -81,6 +84,7 @@
 					<a href="profileform.do?nickname=${dto.nickname }" class="btn_update">프로필 입력</a>
 					<a href="profileupdateform.do" class="btn_update">프로필 수정</a>
 
+>>>>>>> branch 'sumi' of https://github.com/dahyeeeon/spring_dogwalker.git
                 </div>
               </div>
             </div>
@@ -90,11 +94,12 @@
     </div>
 <script>
 
-   function deleteConfirm(){
-      var isDelete=confirm("회원 탈퇴 하시겠습니까?");
-      if(isDelete){
-         location.href="delete.do";
-      }
-   }
-
+	function deleteConfirm(){
+		var isDelete=confirm("회원 탈퇴 하시겠습니까?");
+		if(isDelete){
+			location.href="delete.do";
+		}
+	}
+	
+	
 </script>

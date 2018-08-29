@@ -288,6 +288,8 @@ img {
 </head>
 
 <body>
+
+
    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
          <div class="row">
@@ -352,7 +354,7 @@ img {
                   <div
                      class="petwalker-card-box col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
                      <div class="relative">
-                        <a href="#"> <span class="link-spanner"></span>
+                        <a href="${pageContext.request.contextPath }/walkerPrf/detail_main.do?nickname=${findWalker[status.index].nickname }"> <span class="link-spanner"></span>
                         </a>
 
                         <div class="petwalker-card-top">

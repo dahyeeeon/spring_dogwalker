@@ -20,10 +20,17 @@ a#MOVE_TOP_BTN {
 }
 
 body {
+<<<<<<< HEAD
    margin: 0;
    padding: 0;
    background: #4f837f;
    font-family: verdana;
+=======
+	margin: 0;
+	padding: 0;
+	background: #4f837f;
+	font-family: verdana;
+>>>>>>> branch 'sumi' of https://github.com/dahyeeeon/spring_dogwalker.git
 }
 
 .box {
@@ -108,6 +115,16 @@ body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg");
   max-width: 38%;
   padding: 50px 70px 50px 71px;
 }
+body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
+
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  margin-top: 150px;
+  max-width: 38%;
+  padding: 50px 70px 50px 71px;
+}
 </style>
 
 <!-- Bootstrap core CSS -->
@@ -120,6 +137,7 @@ body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg");
 </head>
 
 <body id="Login">
+<<<<<<< HEAD
    <%@include file="home_menu.jsp"%>
    <!-- Header -->
    <header class="masthead">
@@ -152,6 +170,27 @@ body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg");
                $('#MOVE_TOP_BTN').fadeOut();
             }
          });
+=======
+	<%@include file="home_menu.jsp"%>
+	<!-- Header -->
+	<header class="masthead">
+		<div class="main-div">
+					<p>
+						<img src="resources/img/doglogin.png" />&nbsp &nbsp<a
+							href="petwalker/signup_form.do">도그 워커로 회원가입</a>
+					</p>
+					<br />
+					<p>
+						<img src="resources/img/doglogin.png" />&nbsp &nbsp<a
+							href="petusers/signup_form.do">회원으로 회원가입</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		</section>
+	</div>
+	</header>
+>>>>>>> branch 'sumi' of https://github.com/dahyeeeon/spring_dogwalker.git
 
          $("#MOVE_TOP_BTN").click(function() {
             $('html, body').animate({

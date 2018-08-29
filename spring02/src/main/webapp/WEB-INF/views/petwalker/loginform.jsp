@@ -29,7 +29,6 @@ footer {
 .nav>li{
    margin-right:80px;
 }
-
 a#MOVE_TOP_BTN {
     position: fixed;
     right: 2%;
@@ -38,7 +37,6 @@ a#MOVE_TOP_BTN {
     z-index: 998;
 }
 body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
-
 .form-heading { color:#fff; font-size:23px;}
 .panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
 .panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
@@ -58,7 +56,6 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
   max-width: 38%;
   padding: 50px 70px 50px 71px;
 }
-
 .login-form .form-group {
   margin-bottom:10px;
 }
@@ -91,7 +88,6 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
 }
 .back { text-align: left; margin-top:10px;}
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
-
 </style>
 
 </head>
@@ -134,7 +130,3 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
    <%@include file="../home_footer.jsp" %>
 </body>
 </html>
-
-
-
-

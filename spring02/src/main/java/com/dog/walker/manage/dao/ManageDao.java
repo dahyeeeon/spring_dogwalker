@@ -11,7 +11,7 @@ public interface ManageDao {
    public int getCount(ManageDto dto);
    public void insert(ManageDto dto);
    public List<ManageDto> reviewgetList(ManageDto dto);
- 
+
    public void profileinsert(ManageDto dto);
    public void profileupdate(ManageDto dto);
    public ManageDto getData2(String id);
@@ -22,7 +22,17 @@ public interface ManageDao {
    public void update(ManageDto dto);
    public void delete(int num);
    public ManageDto getData(int num);
-   public ManageDto rsvgetData(String id);
+   public List<ManageDto> rgetList(ManageDto dto);
    public List<ManageDto> getList(String input_address);
 
-	}
+   public List<ManageDto> pwkList(ManageDto dto);
+   public ManageDto DgetData(ManageDto dto);
+   public List<ManageDto> DtgetList(String nickname);
+
+   public List<ManageDto> getStarsList(String input_address);
+   public List<ManageDto> getFilePath(String input_address);
+   
+   public ManageDto rsvgetData(String id);
+   
+}
+

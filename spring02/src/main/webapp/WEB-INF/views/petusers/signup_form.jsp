@@ -13,7 +13,6 @@ footer {
 .nav>li{
    margin-right:80px;
 }
-
 a#MOVE_TOP_BTN {
     position: fixed;
     right: 2%;
@@ -30,24 +29,19 @@ a#MOVE_TOP_BTN {
    background-repeat: no-repeat;
    background-size: 100% auto;
 }
-
 .resvReq .p24 {
    font-size: 1.5rem;
    margin: 0 0 20px;
    color: #000;
 }
-
 @media ( max-width : 576px) {
    .resvReq .p24 {
       font-size: 1rem;
    }
 }
-
-
 .resvReq input {
    font-size: 1.25rem;
 }
-
 @media ( max-width : 576px) {
    .resvReq input {
       font-size: 1rem;
@@ -55,14 +49,12 @@ a#MOVE_TOP_BTN {
       padding-left: 2.2rem;
    }
 }
-
 .resvReq .boarder-box {
    border: 2px solid #999;
    padding: 42px 75px 40px;
    margin: 40px 0;
    text-align: left;
 }
-
 @media ( max-width : 576px) {
    .resvReq .boarder-box {
       margin-left: 10px;
@@ -70,7 +62,6 @@ a#MOVE_TOP_BTN {
       padding: 20px;
    }
 }
-
 .resvReq input[type=text] {
    display: table-cell;
    vertical-align: middle;
@@ -85,13 +76,11 @@ a#MOVE_TOP_BTN {
    background-repeat: no-repeat;
    margin: 0;
 }
-
 .resvReq input[type=text]:focus {
    outline: none;
    border-color: inherit;
    box-shadow: none;
 }
-
 @media ( max-width : 576px) {
    .resvReq input[type=text] {
       font-size: 1rem;
@@ -99,25 +88,21 @@ a#MOVE_TOP_BTN {
       padding-left: 2.3rem;
    }
 }
-
 .datePicker input {
    width: 100%;
    background-image:
       url("https://storage.googleapis.com/pefam-web-cdn/icon_field_cal.png");
 }
-
 .resvReq .leftItem {
    display: inline-block;
    width: 476px;
    margin: 0 76px 0 0;
 }
-
 .resvReq .rightItem {
    display: inline-block;
    width: 476px;
    margin: 0;
 }
-
 .input-btn-append {
    border: 1px solid #999;
    height: 50px;
@@ -127,21 +112,17 @@ a#MOVE_TOP_BTN {
    color: white;
    font-size: 0.875rem;
 }
-
 .input-btn-append:hover {
    cursor: pointer;
    background-color: #13dbcc;
 }
-
 .input-btn-append:disabled {
    background-color: #074e49;
 }
-
 .input-btn-append:focus {
    outline: none;
    background-color: #13dbcc;
 }
-
 .input-control[name=phone] {
    border-top: 1px solid #999;
    border-bottom: 1px solid #999;
@@ -154,7 +135,6 @@ a#MOVE_TOP_BTN {
    background-repeat: no-repeat;
    padding-left: 75px;
 }
-
 @media ( max-width : 576px) {
    .input-control[name=phone] {
       font-size: 1rem;
@@ -162,13 +142,11 @@ a#MOVE_TOP_BTN {
       padding-left: 2.3rem;
    }
 }
-
 .input-control[name=phone]:focus {
    outline: none;
    border-color: inherit;
    box-shadow: none;
 }
-
 .input-control[name=authNum], #sms-login .input-control[name=authNum] {
    border-top: 1px solid #999;
    border-bottom: 1px solid #999;
@@ -181,7 +159,6 @@ a#MOVE_TOP_BTN {
    background-repeat: no-repeat;
    padding-left: 75px;
 }
-
 @media ( max-width : 576px) {
    .input-control[name=authNum], #sms-login .input-control[name=authNum] {
       font-size: 1rem;
@@ -189,20 +166,17 @@ a#MOVE_TOP_BTN {
       padding-left: 2.3rem;
    }
 }
-
 .input-control[name=authNum]:focus, #sms-login .input-control:focus[name=authNum]
    {
    outline: none;
    border-color: inherit;
    box-shadow: none;
 }
-
 .input-name {
    width: 100%;
    background-image:
       url("https://storage.googleapis.com/pefam-web-cdn/icon_field_name.png");
 }
-
 .input-req {
    width: 100%;
    outline: none;
@@ -211,34 +185,27 @@ a#MOVE_TOP_BTN {
    border-radius: 2px;
    font-size: 1rem;
 }
-
 @media ( max-width : 576px) {
    .input-req {
       font-size: 0.8rem;
    }
 }
-
 #sms-login .input-control[name=authNum] {
    border-right: 1px solid #999;
 }
-
 .auth-timer-box {
    position: relative;
 }
-
 .authTimer {
    position: absolute;
    right: 130px;
 }
-
 #sms-login .auth-timer-box {
    height: 50px;
 }
-
 #sms-login .authTimer {
    right: 20px;
 }
-
 .input-img-prepend {
    border-top: 1px solid #999;
    border-bottom: 1px solid #999;
@@ -249,7 +216,6 @@ a#MOVE_TOP_BTN {
    background-color: transparent;
    padding-left: 30px;
 }
-
 .authTimer {
    vertical-align: middle;
    width: auto;
@@ -259,22 +225,18 @@ a#MOVE_TOP_BTN {
    color: #e43949;
    font-size: 0.875rem;
 }
-
 .resvReq h2 {
    font-size: 2rem;
 }
-
 @media ( max-width : 576px) {
    .resvReq h2 {
       font-size: 1.5rem;
    }
 }
-
 .resvReq .nameInput {
    background-image:
       url("https://storage.googleapis.com/pefam-web-cdn/icon_field_name.png");
 }
-
 .resvReq input[type=checkbox]:before {
    content: "";
    display: inline-block;
@@ -283,33 +245,27 @@ a#MOVE_TOP_BTN {
    background-image:
       url("https://storage.googleapis.com/pefam-web-cdn/check_box_off.png");
 }
-
 .resvReq input[type=checkbox]:checked:before {
    background-image:
       url("https://storage.googleapis.com/pefam-web-cdn/check_box_on.png");
 }
-
 .resvReq .colorMain {
    color: #219fdf;
 }
-
 .resvReq .termTitles {
    min-height: 50px;
    margin: 0;
    padding: 0;
 }
-
 .resvReq .agreeAll {
    font-size: 1.25rem;
    line-height: 20px;
    font-weight: 800;
    color: #219fdf;
 }
-
 .resvReq .agreeAll :hover {
    cursor: pointer;
 }
-
 .resvReq a {
    font-size: 1.125rem;
    line-height: 20px;
@@ -318,7 +274,6 @@ a#MOVE_TOP_BTN {
    vertical-align: middle;
    vertical-align: -webkit-baseline-middle;
 }
-
 .btn-main {
    width: 90%;
    max-width: 776px;
@@ -331,41 +286,34 @@ a#MOVE_TOP_BTN {
    border-radius: 500px;
    margin: 90px 10px 0;
 }
-
 @media ( max-width : 576px) {
    .btn-main {
       margin: 30px 10px 0;
    }
 }
-
 .btn-main:hover {
    cursor: pointer;
    background-color: #4f837f;
    border: 2px solid #4f837f;
 }
-
 .btn-main:disabled {
    background-color: #136087;
    border: 2px solid #39a1d7;
 }
-
 .btn-main:focus {
    outline: none;
    background-color: #4f837f;
    border: 2px solid #4f837f;
 }
-
 .btn-main a {
    text-decoration: none;
    color: #fff;
 }
-
 /** RESERVATION LIST **/
 #reservation-list {
    border: 1px solid #000;
    margin-top: 20px;
 }
-
 .resvList {
    text-align: center;
    padding: 60px 0 180px;
@@ -375,7 +323,6 @@ a#MOVE_TOP_BTN {
    background-repeat: no-repeat;
    background-size: 100% auto;
 }
-
 .resvList .resvItem {
    border-bottom: 1px solid #000;
    background-color: #fff;
@@ -389,11 +336,9 @@ a#MOVE_TOP_BTN {
    -ms-flex-align: center;
    align-items: center;
 }
-
 #reservation-list :last-child {
    border-bottom: none;
 }
-
 .resvItem .rounded-circle {
    width: 46px;
    max-width: 46px;
@@ -402,63 +347,51 @@ a#MOVE_TOP_BTN {
    margin: 0 6px;
    display: block;
 }
-
 .resvList .resvItem .emptyImg {
    background-color: #ccc;
 }
-
 .resvList h1 {
    font-size: 2rem;
    margin: 0 0 20px;
    color: #000;
 }
-
 @media ( max-width : 576px) {
    .resvList h1 {
       font-size: 1.5rem;
    }
 }
-
 .resvList p {
    font-color: #000;
    margin: 0;
    padding: 0;
 }
-
 .resvList .p14 {
    font-size: 0.875rem;
 }
-
 @media ( max-width : 576px) {
    .resvList .p14 {
       font-size: 0.7rem;
    }
 }
-
 .resvList .p18 {
    font-size: 1.125rem;
 }
-
 @media ( max-width : 576px) {
    .resvList .p18 {
       font-size: 1.0rem;
    }
 }
-
 .resvList .p24 {
    font-size: 1.5rem;
 }
-
 @media ( max-width : 576px) {
    .resvList .p24 {
       font-size: 1.1rem;
    }
 }
-
 .resvList .colorMain {
    color: #219fdf;
 }
-
 .resvList .grey666 {
    color: #666;
    margin: 0;
@@ -549,14 +482,12 @@ a#MOVE_TOP_BTN {
    <script>
       //폼의 유효성 여부
       var formValid = false;
-
       $("#signupForm").submit(function() {
          //만일 폼의 유효성 여부가 false 이면 
          if (formValid == false) {
             return false;//폼 전송 막기
          }
       });
-
       //아이디 입력란에 입력했을때 실행할 함수 등록 
       $("#id").on("input", function() {
          //입력한 아이디를 읽어와서

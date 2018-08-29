@@ -29,7 +29,6 @@ footer {
 .nav>li{
    margin-right:80px;
 }
-
 a#MOVE_TOP_BTN {
     position: fixed;
     right: 2%;
@@ -57,7 +56,6 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
   max-width: 38%;
   padding: 50px 70px 50px 71px;
 }
-
 .login-form .form-group {
   margin-bottom:10px;
 }
@@ -90,7 +88,6 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
 }
 .back { text-align: left; margin-top:10px;}
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
-
 </style>
 </head>
 <body id="LoginForm">
@@ -131,7 +128,3 @@ body#LoginForm{ background-image:url("http://nycdogwalkers.com/images/slide3x.jp
       <%@include file="../home_footer.jsp" %>
 </body>
 </html>
-
-
-
-

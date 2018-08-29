@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -25,13 +24,11 @@
 
 
 <style>
-
 @font-face {
         font-family: 'Glyphicons Halflings';
         src:url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot');
         src:url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
           url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'),
-          url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
           url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
       }
     .animated {
@@ -39,47 +36,33 @@
     -moz-transition: height 0.2s;
     transition: height 0.2s;
 }
-
 html{
    font-size:15px;
 }
-
 .stars
 {
     margin: 20px 0;
     font-size: 24px;
     color: #d17581;
 }
-
 .form{
    width:100%;
 }
-
 input{
    margin-bottom:10px;
 }
-
-
-
 #counter {
-
   border-radius: 0.5em;
   padding: 0 .5em 0 .5em;
   font-size: 0.75em;
   float:right;
 }
-
-
 .container{
    margin-top:140px;
 }
-
 #walker{
    height: 50px;
 }
-
-
-
 </style>
 </head>
 <body>
@@ -136,8 +119,6 @@ input{
              });
           });
          
-
-
  
          
          $(function() {
@@ -151,8 +132,6 @@ input{
              
              
        });
-
-
          
          </script>
 

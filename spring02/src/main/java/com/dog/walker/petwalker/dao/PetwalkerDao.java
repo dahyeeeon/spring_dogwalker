@@ -13,8 +13,9 @@ public interface PetwalkerDao {
 	public boolean canUseId(String id);
 	public void updatePwd(PetwalkerDto dto);
 	public void updateImg(PetwalkerDto dto);
-
 	public int getCount(String id);
 	public List<PetwalkerDto> getnicknameList(); 
 
+	public void updateProfile(String id);
+	public PetwalkerDto getProfile(String id); 
 }

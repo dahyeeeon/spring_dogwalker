@@ -10,11 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.detail.service.ReserveService;
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.review.service.ReviewService;
 
 @Controller
 public class DetailController {
 	@Autowired
 	private ReserveService rsvService;
+	@Autowired
+	private ReviewService rvService;
 	
 	@RequestMapping("/walkerPrf/insertform")
 	public ModelAndView insertform(HttpServletRequest request) {
@@ -27,10 +30,16 @@ public class DetailController {
 		return new ModelAndView("walkerPrf/insert");
 	}
 	
+	
 	@RequestMapping("/walkerPrf/detail_main")
-	public ModelAndView dMain(HttpServletRequest request) {
+	public ModelAndView dMain(HttpServletRequest request ,ModelAndView mView) {
+		
 		rsvService.getList(request);
-		return new ModelAndView("walkerPrf/detail_main");
+		rsvService.reviewgetList(request, mView);
+		rsvService.pwkList(request, mView);
+
+		mView.setViewName("walkerPrf/detail_main");
+		return mView;
 	}
 	
 	@RequestMapping("/walkerPrf/delete")

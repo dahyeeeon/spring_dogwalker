@@ -77,7 +77,5 @@ id="profileform" enctype="multipart/form-data">
 <%@include file="../home_footer.jsp" %>   
 </body>
 
-
-</body>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>	
 </html>

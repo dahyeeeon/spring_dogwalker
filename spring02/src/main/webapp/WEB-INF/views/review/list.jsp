@@ -14,7 +14,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 <style>
-
    .container{
       margin-top:140px;
    }
@@ -31,7 +30,6 @@
     footer {
        margin: 50px 0;
    }
-
 </style>
 </head>
 <body>
@@ -52,7 +50,7 @@
               </a>
               <div class="media-body">
                 <h4 class="media-heading">${tmp.title }</h4>
-                  <p>워커 이름 : ${tmp.walker }</p>
+                  <p>워커 이름 : ${tmp.nickname }</p>
                    <p>${tmp.content }</p>
                    <ul class="list-inline list-unstyled">
                        <li><span><i class="glyphicon glyphicon-calendar"></i>${tmp.regdate }</span></li>
@@ -62,7 +60,6 @@
                         <li class="print-star" data-stars="${tmp.stars }"></li>
                         <li>|</li>
                         <li>
-                        <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
                             <span><i class="fa fa-facebook-square"></i></span>
                             <span><i class="fa fa-twitter-square"></i></span>
                              <span><i class="fa fa-google-plus-square"></i></span>
@@ -121,7 +118,6 @@
 </div>
 <%@include file="../home_footer.jsp" %>
 <script>   
-
    
    
    
@@ -136,7 +132,6 @@
       }
    });
    
-
     </script>
    
 </body>

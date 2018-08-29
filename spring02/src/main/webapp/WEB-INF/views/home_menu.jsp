@@ -3,7 +3,6 @@
 <style>
 .header_gnb{position:fixed;top:0;left:0;z-index:9999;width:100%;background:rgba(255,255,255,0.7)}
 .header_gnb .login_area{border-bottom:1px solid #efefef;height:30px;text-align:right}
-
 .header_gnb .login_area a{display:inline-block;padding:5px 10px 0;margin-right:10px;font-size:12px;line-height:20px;color:#333;vertical-align:top;}
 .header_gnb .gnb_area{overflow:hidden;padding:10px 20px;border-bottom:1px solid #efefef}
 .header_gnb .gnb_area h1{float:left;width:56px;height:40px;margin:0;padding:0;}
@@ -56,4 +55,3 @@
       </nav>
    </div>
 </header>
-

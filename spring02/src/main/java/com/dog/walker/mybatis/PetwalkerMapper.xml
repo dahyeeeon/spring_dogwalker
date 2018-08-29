@@ -19,9 +19,9 @@
 
 	<insert id="insert" parameterType="petwalkerDto">
 		INSERT INTO pet_walker (id,nickname,pwd,kakao,phone,addr,sex,imagePath,hasPet,evaluation,
-		regdate,orgFileName,saveFileName,fileSize) VALUES(#{id}, 
+		regdate,orgFileName,saveFileName,fileSize,isProfiled) VALUES(#{id}, 
 		#{nickname}, #{pwd}, #{kakao}, #{phone}, #{addr}, #{sex},#{imagePath} ,#{hasPet},
-	    #{evaluation}, SYSDATE,#{orgFileName}, #{saveFileName}, #{fileSize})
+	    #{evaluation}, SYSDATE,#{orgFileName}, #{saveFileName}, #{fileSize}, 0)
 	</insert>
 
 	<update id="update" parameterType="petwalkerDto">
@@ -55,4 +55,9 @@
 	<select id="getnicknameList" resultType="String">
       SELECT nickname FROM pet_walker ORDER BY id DESC
    </select>
+   
+   <update id="updateProfile" parameterType="String" >
+   		UPDATE pet_walker SET isProfiled = 1 WHERE id = #{id}
+   </update>
+   
 </mapper>

@@ -12,13 +12,14 @@ CREATE TABLE pet_walker(
    regdate DATE,
    orgFileName varchar2(300),
    saveFileName varchar2(300),
-   fileSize	long
+   fileSize	long,
+   isProfiled NUMBER default 0
 );
 
 
+drop table pet_walker;
+
 select * from pet_walker;
-
-
 
 CREATE TABLE pet_users(
    id VARCHAR2(30) PRIMARY KEY,

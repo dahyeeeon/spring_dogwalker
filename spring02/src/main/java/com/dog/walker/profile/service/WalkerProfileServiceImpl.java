@@ -1,21 +1,18 @@
 package com.dog.walker.profile.service;
 
 import java.io.File;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 @Service
@@ -23,9 +20,16 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
    @Autowired
    private ManageDao dao;
 
+   @Autowired
+   private PetwalkerDao wdao;
+   
    @Override
-   public void profileinsert(HttpServletRequest request, ModelAndView mView, ManageDto dto) {
+   public void profileinsert(HttpServletRequest request, ModelAndView mView, ManageDto dto,PetwalkerDto dto2,HttpSession session) {
       
+	  String id= (String) session.getAttribute("id");	   	
+	  
+	  System.out.println(id); 
+	  
       //파일을 저장할 폴더의 절대 경로를 얻어온다.
       String realPath=request.getSession()
               .getServletContext().getRealPath("/upload");
@@ -58,7 +62,28 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
         dto.setSaveFileName(saveFileName);
         dto.setFileSize(fileSize);
         dto.setFilePath("/upload/"+saveFileName);
+     
         dao.profileinsert(dto);
+        
+        wdao.updateProfile(id);
       
    }
+
+	@Override
+	public void getAndCheckIsProfileValue(HttpServletRequest request, PetwalkerDto dto,ModelAndView mView,HttpSession session) {
+		// TODO Auto-generated method stub
+		String id=(String)session.getAttribute("id");
+		
+		dto = wdao.getProfile(id);//id에 맞는 petWalkerdto 를 가져온다.
+		mView.addObject("dto",dto);
+		System.out.println(id);
+		System.out.println(dto);
+		
+		//id에 맞는게 
+		//wdao.checkProfile(id);
+	}
+
+	
+   
+   
 }

@@ -88,4 +88,18 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 	      return list;
 	}
 	
+	@Override
+	public void updateProfile(String id) {
+		session.update("petwalker.updateProfile",id);
+	}
+	
+	
+	@Override
+	public PetwalkerDto getProfile(String id) {
+		PetwalkerDto dto=session.selectOne("petwalker.getData", id);
+		return dto;
+	}
+	
+	
+	
 }

@@ -19,86 +19,18 @@ a#MOVE_TOP_BTN {
 	z-index: 998;
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	background: #262626;;
-	font-family: verdana;
-}
+body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
 
-.box {
-	z-index: 999;
-	position: absolute;
-	top: 70%;
-	left: 92%;
-	transform: translate(-50%, -50%);
-	width: 150px;
-	height: 320px;
-	background: #64a19d;
-	box-sizing: border-box;
-	padding: 5px;
-	transition: .5s;
-	overflow: hidden;
-}
-
-.box P {
-	margin: 0;
-	padding: 0;
-	color: #fff;
-	font-size: 14px;
-	transition: .5s;
-	transition-delay: .2s;
-	transform: scale(.8);
-}
-
-.box:before {
-	content: '';
-	position: absolute;
-	width: 0%;
-	height: 0%;
-	top: 0;
-	left: 0;
-	border-top: 2px solid #fff;
-	border-left: 2px solid #fff;
-	opacity: 0;
-	transform: .5s;
-	box-sizing: border-box;
-}
-
-.box:after {
-	content: '';
-	position: absolute;
-	width: 0%;
-	height: 0%;
-	bottom: 0;
-	right: 0;
-	border-bottom: 2px solid #fff;
-	border-right: 2px solid #fff;
-	opacity: 0;
-	transform: .5s;
-	box-sizing: border-box;
-}
-
-.box:hover:before {
-	width: 100%;
-	height: 100%;
-	opacity: 1;
-}
-
-.box:hover:after {
-	width: 100%;
-	height: 100%;
-	opacity: 1;
-}
-
-.box:hover p {
-	transform: scale(1);
-}
-
-.box:hover {
-	box-shadow: 0 25px 30px rgba(0, 0, 0, .5);
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  margin-top: 150px;
+  max-width: 38%;
+  padding: 50px 70px 50px 71px;
 }
 </style>
+
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.css"
 	rel="stylesheet">
@@ -110,21 +42,12 @@ body {
 
 </head>
 
-<body id="page-top">
+<body id="Login">
 	<%@include file="home_menu.jsp"%>
 	<!-- Header -->
 	<header class="masthead">
-	<div class="container d-flex h-100 align-items-center">
-		<section class="jumbotron text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-8">
-					<img src="resources/img/background.jpg" />
-				</div>
-
-				<div class="col-4 lead text-muted mb-0">
-					<br /> <br /> <br /> <br />
-					<p style="margin-left: 25px;">
+		<div class="main-div">
+					<p>
 						<img src="resources/img/doglogin.png" />&nbsp &nbsp<a
 							href="petwalker/loginform.do">  도그 워커로 로그인</a>
 					</p>

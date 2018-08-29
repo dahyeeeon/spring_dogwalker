@@ -22,7 +22,7 @@ a#MOVE_TOP_BTN {
 body {
 	margin: 0;
 	padding: 0;
-	background: #262626;;
+	background: #4f837f;
 	font-family: verdana;
 }
 
@@ -98,7 +98,18 @@ body {
 .box:hover {
 	box-shadow: 0 25px 30px rgba(0, 0, 0, .5);
 }
+body#Login{ background-image:url("http://nycdogwalkers.com/images/slide3x.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
+
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  margin-top: 150px;
+  max-width: 38%;
+  padding: 50px 70px 50px 71px;
+}
 </style>
+
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.css"
 	rel="stylesheet">
@@ -110,21 +121,12 @@ body {
 
 </head>
 
-<body id="page-top">
+<body id="Login">
 	<%@include file="home_menu.jsp"%>
 	<!-- Header -->
 	<header class="masthead">
-	<div class="container d-flex h-100 align-items-center">
-		<section class="jumbotron text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-8">
-					<img src="resources/img/background.jpg" />
-				</div>
-
-				<div class="col-4 lead text-muted mb-0">
-					<br /> <br /> <br /> <br />
-					<p style="margin-left: 21px;">
+		<div class="main-div">
+					<p>
 						<img src="resources/img/doglogin.png" />&nbsp &nbsp<a
 							href="petwalker/signup_form.do">도그 워커로 회원가입</a>
 					</p>

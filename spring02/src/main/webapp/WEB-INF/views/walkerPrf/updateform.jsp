@@ -14,7 +14,7 @@
 	
 <style>
 .row {
-	border: 3px solid lightblue;
+	border: 3px solid #64a19d;
 	 margin: 0 auto;
 	
 }
@@ -105,8 +105,9 @@ label{
 			</fieldset>
 
 		</div><br /><br />
-		
-		<button type="submit" style="margin: 0 auto;">Ãß°¡</button>
+		<div class="row" style="border:none;">
+		<button style="margin:auto; margin-bottom:50px" class="btn btn-default center-block" type="submit">Submit</button>
+		</div>
 </form>		
 
 	</div>

@@ -1,5 +1,7 @@
 package com.dog.walker.petwalker.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +18,6 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 	@Override
 	public void insert(PetwalkerDto dto) {
 		session.insert("petwalker.insert", dto);
-
 	}
 	
 	//펫워커 회원 한 명의 정보를 id로 select해서 리턴하는 메소드
@@ -25,6 +26,9 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 		PetwalkerDto dto=session.selectOne("petwalker.getData", id);
 		return dto;	
 	}
+	
+	
+	
 	
 	//회원 한명의 정보를 수정하는 메소드
 	@Override
@@ -65,4 +69,23 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 
 	}
 
+	@Override
+	public List<PetwalkerDto> getList(String id) {
+		List<PetwalkerDto> list = session.selectList("petwalker.getList",id);
+		return list;
+	}
+
+	
+	@Override
+	public int getCount(String id) {
+		int num = session.selectOne("petwalker.getCount",id); //////////////////////이거 맞나????selectOne?
+		return num;
+	}
+	
+	@Override
+	public List<PetwalkerDto> getnicknameList() {
+	      List<PetwalkerDto> list = session.selectList("petwalker.getidandnicnameList");
+	      return list;
+	}
+	
 }

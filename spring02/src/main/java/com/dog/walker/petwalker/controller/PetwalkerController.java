@@ -156,7 +156,7 @@ public class PetwalkerController {
 			return map;
 		}
 		//비밀번호 수정 반영하는 요청 처리
-		@RequestMapping("/users/pw_update")
+		@RequestMapping("/petwalker/pw_update")
 		public ModelAndView authPwUpdate(HttpServletRequest request,
 				@RequestParam String pwd, HttpSession session) {
 			//서비스를 이용해서 비밀번호 수정 

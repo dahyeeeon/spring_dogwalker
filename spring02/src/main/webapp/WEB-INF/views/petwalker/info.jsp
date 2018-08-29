@@ -6,60 +6,100 @@
 <head>
 <meta charset="UTF-8">
 <title>petwalker/info.jsp</title>
+<style>
+
+</style>
 </head>
 <body>
 <a href="${pageContext.request.contextPath }/">인덱스로 가기</a>
-<h3>개인 정보 입니다.</h3>
-<table>
-	<thead>
-	<tr>
-		<th>프사</th>
-		<th> 
-		<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
-		style="width:100px; height:100px"/>
-		</th>
-	</tr>
-		<tr>
-			<th>항목</th>
-			<th>정보</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>아이디</th>
-			<td>${dto.id }</td>
-		</tr>
-		<tr>
-			<th>카카오ID</th>
-			<td>${dto.kakao }</td>
-		</tr>
-		<tr>
-			<th>휴대폰번호</th>
-			<td>${dto.phone }</td>
-		</tr>
-		<tr>
-			<th>휴대폰번호</th>
-			<td>${dto.phone }</td>
-		</tr>
-		<tr>
-			<th>휴대폰번호</th>
-			<td>${dto.phone }</td>
-		</tr>		
-		<tr>
-			<th>가입일</th>
-			<td>${dto.regdate }</td>
-		</tr>
-	</tbody>
-</table>
-<a href="updateform.do">회원정보 수정</a>
-<a href="javascript:deleteConfirm()">회원 탈퇴</a>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
+<div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+          <div class="panel panel-info">
+            <div class="panel-heading panel_update">
+              <h3 class="panel-title">개인정보</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center">
+                <img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
+               style="width:120px; height:120px"/>
+                  </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>ID</td>
+                        <td>${dto.id }</td>
+                      </tr>
+                      <tr>
+                        <td>KaKao ID</td>
+                        <td>${dto.kakao }</td>
+                      </tr>
+                      <tr>
+                        <td>Nickname</td>
+                        <td>${dto.nickname }</td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Gender</td>
+                        <td>${dto.sex }</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td>${dto.addr }</td>
+                      </tr>
+                      <tr>
+                        <td>phone</td>
+                        <td>${dto.phone }</td>
+                        
+                         </tr>
+                         <tr>
+                        <td>regdate</td>
+                        <td>${dto.regdate }</td>
+                        
+                         </tr>
+                        <td>HasPet</td>
+                        <td>${dto.hasPet }
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                  <a href="updateform.do" class="btn_update">회원정보 수정</a>
+                  <a href="javascript:deleteConfirm()" class="btn_update">회원탈퇴</a>
+                  <a href="profileform.do" class="btn_update">프로필 수정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 <script>
-	function deleteConfirm(){
-		var isDelete=confirm("회원 탈퇴 하시겠습니까?");
-		if(isDelete){
-			location.href="delete.do";
-		}
-	}
+   function deleteConfirm(){
+      var isDelete=confirm("회원 탈퇴 하시겠습니까?");
+      if(isDelete){
+         location.href="delete.do";
+      }
+   }
 </script>
-</body>
-</html>

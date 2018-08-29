@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 @Repository
 public class ManageDaoImpl implements ManageDao{
@@ -38,6 +39,8 @@ public class ManageDaoImpl implements ManageDao{
          session.insert("walkerprofile.insert", dto);
    }
    
+
+   
     @Override
       public void reservationinsert(ManageDto dto) {
          session.insert("rsv.insert", dto);
@@ -63,10 +66,28 @@ public class ManageDaoImpl implements ManageDao{
       }
 
       @Override
-      public ManageDto getData(int num) {
-         
+      public ManageDto getData(int num) { 
          return session.selectOne("rsv.getData",num);
       }
+
+	@Override
+	public ManageDto check(int num) {
+		return session.selectOne("walkerprofile.select",num);
+	}
+
+	@Override
+	public void profileupdate(ManageDto dto) {
+		session.update("walkerprofile.update",dto);
+		
+	}
+
+	@Override
+	public ManageDto getData2(String id) {
+		ManageDto dto=session.selectOne("walkerprofile.getData", id);
+		return dto;	
+	}
+
+	
 
    
    

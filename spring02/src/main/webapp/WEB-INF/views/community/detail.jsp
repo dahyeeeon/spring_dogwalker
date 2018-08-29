@@ -11,7 +11,9 @@
 <style>
 	.content{
 		border: 1px solid #888888;
-		box-shadow: 5px 5px 5px #888888;
+	}
+	.content p{
+		height:200px;
 	}
 	.content img{
 		max-width: 100%;
@@ -54,13 +56,7 @@
 	.comments li{
 		clear: left;
 	}
-	.comments form textarea{
-		width: 500px;
-		height: 100px;
-	}
-	.comments form button{
-		height: 100px;
-	}
+
 </style>
 </head>
 <body>
@@ -104,19 +100,23 @@
 			<td>${dto.title }</td>
 		</tr>
 	</table>
+	<br /><br />
 	<div class="content">${dto.content }</div>
+	<br />
 	<!-- 댓글에 관련된 UI -->
 	<div class="comments">
 		<ul>
 			<c:forEach var="tmp" items="${commentList }">
 				<li class="comment" <c:if test="${tmp.num ne tmp.comment_group }">style="padding-left:50px;"</c:if> >
 					<c:if test="${tmp.num ne tmp.comment_group }">
-						<img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
-		style="width:100px; height:100px"/></c:if>	
+						<img class="col-md-2 col-sm-2 hidden-xs"/>
+						</c:if>	
 				
 					<dl>
 						<dt>
-							<img src="${pageContext.request.contextPath }/resources/images/user_image.gif"/>
+							<img class="col-md-2 col-sm-2 hidden-xs" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"
+							style="width:100px;"/>
+					
 							<span>${tmp.writer }</span>
 							<span>${tmp.regdate }</span>
 							<a href="javascript:" class="reply_link">답글</a> |
@@ -138,8 +138,10 @@
 						<!-- 덧글 대상 -->
 						<input type="hidden" name="target_id" value="${tmp.writer }" />
 						<input type="hidden" name="comment_group" value="${tmp.comment_group }" />
-						<textarea name="content"></textarea>
-						<button type="submit">등록</button>
+						<textarea name="content" cols="40" rows="5"></textarea>
+						<button type="submit" style="height:85px;">등록</button>
+						<p>악플은 안돼요!</p>
+						<br />
 					</form>		
 				</li>
 			</c:forEach>
@@ -155,12 +157,14 @@
 					value="${dto.num }"/>
 				<input type="hidden" name="target_id" 
 					value="${dto.writer }"/>
-				<textarea name="content"></textarea>
-				<button type="submit">등록</button>
+				<textarea name="content" id="coment" cols="100" rows="5"></textarea>
+				<button type="submit" class="btn_update" style="width:  100px;height: 90px;">등록</button>
 			</form>
 		</div>
 	</div>					
 </div>
+
+
 
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script>

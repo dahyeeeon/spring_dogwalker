@@ -4,26 +4,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+label {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+}
+</style>
 <meta charset="UTF-8">
 <title>cafe/insertform.jsp</title>
 <!-- SmartEditor 관련 javascript 로딩 -->
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
 </head>
 <body>
 <h3>카페 새글 입력 페이지 입니다.</h3>
 <form action="insert.do" method="post">
 	<label for="writer">작성자</label>
 	<input type="text" id="writer" 
-		value="${id }" disabled="disabled"/><br/>
-	<label for="title">제목</label>
-	<input type="text" name="title" id="title"/><br/>
+		value="${id }" disabled="disabled"/><br/><br />
+	<label for="title">제 목</label>
+	<input type="text" name="title" id="title" style="width:500px;"/><br/><br />
 	<textarea name="content" id="content" 
 	style="width:766px;height:412px;display:none"></textarea>
+	<br /><br />
 	<div>
-		<input type="button" onclick="pasteHTML();" value="본문에 내용 넣기" />
-		<input type="button" onclick="showHTML();" value="본문 내용 가져오기" />
-		<input type="button" onclick="submitContents(this);" value="서버로 내용 전송" />
-		<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
+		<input type="button" onclick="submitContents(this);" class="btn_update"
+		style="margin-left:700px;" value="글쓰기" />
+
 	</div>	
 </form>
 <script>

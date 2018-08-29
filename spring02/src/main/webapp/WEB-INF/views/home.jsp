@@ -93,10 +93,10 @@ footer {
 }
 </style>
   <!-- Bootstrap core CSS -->
- <link href="resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
- <link href="resources/css/bootstrap.css" rel="stylesheet">
+ <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+ <link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
  <!-- Custom styles for this template -->
-  <link href="resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
@@ -555,7 +555,7 @@ footer {
 
 
  <!-- Bootstrap core JavaScript -->
-<script src="resources/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script>
     $(function() {
         $(window).scroll(function() {

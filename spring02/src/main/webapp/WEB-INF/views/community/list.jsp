@@ -4,23 +4,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+th,td{
+border:1px solid black !important;
+}
+#condition{
+height:25px;
+}
+.pagination > li > a{
+border:hidden !important;
+}
+.pagination{
+display:inline !important;
+margin:0 auto !important;
+}
+
+.page_center{
+margin-right: auto;
+margin-left: auto
+}
+</style>
 <meta charset="UTF-8">
 <title>cafe/list.jsp</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
-<div class="container">
+<div class="container text-center">
 	<c:choose>
 		<c:when test="${ not empty id }">
 			<p><strong>${id }</strong> 님 로그인중...</p>
 		</c:when>
 		<c:otherwise>
-			<a href="${pageContext.request.contextPath}/petwalker/loginform.do">로그인</a>
+			<a href="${pageContext.request.contextPath}/petwalker/loginform.do" class="btncolor">로그인</a>
 		</c:otherwise>
 	</c:choose>
 
-	<a href="insertform.do">새글 작성</a>
-	<h3>카페글 목록 입니다.</h3>
+	<h3>커뮤니티</h3>
+		<!-- keyword 검색어 form -->
+	<form action="list.do" method="post" class="pull-right">
+		<label for="condition">검색조건</label>
+		<select name="condition" id="condition">
+			<option value="titlecontent" <c:if test="${condition eq 'titlecontent' }">selected</c:if>>제목+내용</option>
+			<option value="title" <c:if test="${condition eq 'title' }">selected</c:if>>제목</option>
+			<option value="writer" <c:if test="${condition eq 'writer' }">selected</c:if>>작성자</option>
+		</select>
+		<input value="${keyword }" type="text" name="keyword" placeholder="검색어..." />
+		<button type="submit" class="btncolor">검색</button>
+	</form>
+	<c:choose>
+		<c:when test="${not empty keyword }">
+		<br /><br />
+			<p class="pull-right"><strong>${keyword }</strong> 검색어로 검색된 
+			<strong style="color:#64a19d;">${totalRow }</strong>개의 글이 있습니다.</p>
+		</c:when>
+		<c:otherwise>
+		<br /><br />
+			<p class="pull-right"><strong style="color:#64a19d;">${totalRow }</strong>개의 글이 있습니다.</p>
+		</c:otherwise>
+	</c:choose>	
+	<br /><br />
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -49,13 +91,16 @@
 		</c:forEach>
 		</tbody>
 	</table>
-	
+	<a href="insertform.do" class="btncolor pull-right">새글 작성</a>
+	<br /><br /><br />
 	<!-- 페이징 처리 -->
+	<div class="page_center">
 	<ul class="pagination">
 		<c:choose>
 			<c:when test="${startPageNum ne 1 }">
 				<li>
-					<a href="list.do?pageNum=${startPageNum-1 }&condition=${condition}&keyword=${keyword}">&laquo;</a>
+					<a href="list.do?pageNum=${startPageNum-1 }&condition=${condition}&keyword=${keyword}"
+					>&laquo;</a>
 				</li>
 			</c:when>
 			<c:otherwise>
@@ -69,7 +114,7 @@
 			<c:choose>
 				<c:when test="${i eq pageNum }">
 					<li class="active">
-						<a href="list.do?pageNum=${i }&condition=${condition}&keyword=${keyword}">${i }</a>
+						<a href="list.do?pageNum=${i }&condition=${condition}&keyword=${keyword}" class="btncolor">${i }</a>
 					</li>
 				</c:when>
 				<c:otherwise>
@@ -82,7 +127,7 @@
 		<c:choose>
 			<c:when test="${endPageNum lt totalPageCount }">
 				<li>
-					<a href="list.do?pageNum=${endPageNum+1 }&condition=${condition}&keyword=${keyword}">&raquo;</a>
+					<a href="list.do?pageNum=${endPageNum+1 }&condition=${condition}&keyword=${keyword}" class="btncolor">&raquo;</a>
 				</li>
 			</c:when>
 			<c:otherwise>
@@ -92,27 +137,12 @@
 			</c:otherwise>
 		</c:choose>		
 	</ul>
-	<!-- keyword 검색어 form -->
-	<form action="list.do" method="post">
-		<label for="condition">검색조건</label>
-		<select name="condition" id="condition">
-			<option value="titlecontent" <c:if test="${condition eq 'titlecontent' }">selected</c:if>>제목+내용</option>
-			<option value="title" <c:if test="${condition eq 'title' }">selected</c:if>>제목</option>
-			<option value="writer" <c:if test="${condition eq 'writer' }">selected</c:if>>작성자</option>
-		</select>
-		<input value="${keyword }" type="text" name="keyword" placeholder="검색어..." />
-		<button type="submit">검색</button>
-	</form>
-	<c:choose>
-		<c:when test="${not empty keyword }">
-			<p><strong>${keyword }</strong> 검색어로 검색된 
-			<strong>${totalRow }</strong>개의 글이 있습니다.</p>
-		</c:when>
-		<c:otherwise>
-			<p><strong>${totalRow }</strong>개의 글이 있습니다.</p>
-		</c:otherwise>
-	</c:choose>	
+	</div>
+	
 </div>
+
+<%@include file="../home_footer.jsp" %>
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script>
 	//삭제 확인을 하는 함수 
 	function deleteConfirm(num){
@@ -121,6 +151,12 @@
 			location.href="delete.do?num="+num;
 		}
 	}
+	
+	    	
+	$(".btncolor").addClass('btn_update');
+	
+	$("th").addClass('panel_update');
+	    
 </script>
 </body>
 </html>

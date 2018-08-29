@@ -1,3 +1,4 @@
+
 CREATE TABLE pet_walker(
    id VARCHAR2(30) PRIMARY KEY,
    nickname VARCHAR2(100),

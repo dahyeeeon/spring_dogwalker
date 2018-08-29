@@ -50,6 +50,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 	      if(!file.exists()){//디렉토리가 존재하지 않는다면
 	         file.mkdir();//디렉토리를 만든다.
 	      }
+	
 	      //파일 시스템에 저장할 파일명을 만든다. (겹치치 않게)
 	      String saveFileName=System.currentTimeMillis()+orgFileName;
 	      try{

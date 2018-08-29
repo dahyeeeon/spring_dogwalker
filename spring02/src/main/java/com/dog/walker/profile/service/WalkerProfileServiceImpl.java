@@ -53,12 +53,39 @@ public class WalkerProfileServiceImpl implements WalkerProfileService{
 		  }catch(Exception e){
 		     e.printStackTrace();
 		  }
-		  //FileDto 객체에 추가 정보를 담는다.	 
+		  //FileDto 객체에 추가 정보를 담는다.	
+
 		  dto.setOrgFileName(orgFileName);
 		  dto.setSaveFileName(saveFileName);
 		  dto.setFileSize(fileSize);
 		  dto.setFilePath("/upload/"+saveFileName);
+		  
 		  dao.profileinsert(dto);
+		  
+		 
+	
 		
 	}
+
+	@Override
+	public void profileupdate(ManageDto dto) {
+		dao.profileupdate(dto);
+		
+	}
+	@Override
+	public void profileupdateForm(ModelAndView mView, HttpSession session) {
+		String id=(String)session.getAttribute("id");
+		ManageDto dto=dao.getData2(id);
+		mView.addObject("dto", dto);
+		
+	}
+	@Override
+	public void check(HttpServletRequest request,ModelAndView mView) {
+	String nickname=request.getParameter("nickname");
+	 mView.addObject("nickname",nickname);
+		
+	}
+	
+
+
 }

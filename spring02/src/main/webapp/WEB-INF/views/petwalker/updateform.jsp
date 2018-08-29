@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>petwalker/updateform.jsp</title>
+
 </head>
 <body>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
@@ -14,7 +15,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
-            <div class="panel-heading">
+            <div class="panel-heading panel_update">
               <h3 class="panel-title">회원정보 수정</h3>
             </div>
             <div class="panel-body">
@@ -63,11 +64,11 @@
                         
                          </tr>
                          <tr>
-                        <td><label for="regdate">regdate </label></td>
+                        <td><label for="regdate">가입일 </label></td>
                         <td>${dto.regdate }</td>
                         
                          </tr>
-                        <td><label for="haspet">haspet </label></td>
+                        <td><label for="haspet">펫유무</label></td>
                         <td>${dto.hasPet }
                         </td>
                            
@@ -76,15 +77,15 @@
                     </tbody>
                   </table>
                   
-                 <button type="submit" class="btn btn-primary">수정 확인</button>
-                 <a href="pw_changeform.do" class="btn btn-primary">비밀번호 변경</a>
+                 <button type="submit" class="btn_update">수정 확인</button>
+                 <a href="pw_changeform.do" class="btn_update">비밀번호 변경</a>
  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+</div>
 
 
 

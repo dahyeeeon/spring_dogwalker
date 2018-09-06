@@ -1,4 +1,4 @@
-package com.gura.spring03.cafe.dao;
+package com.dog.walker.cafe.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gura.spring03.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeCommentDto;
 
 @Repository
 public class CafeCommentDaoImpl implements CafeCommentDao{

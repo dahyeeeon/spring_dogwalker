@@ -89,7 +89,8 @@
 		UPDATE board_cafe
 		SET viewCount=viewCount+1
 		WHERE num=#{num}
-	</update>	
+	</update>
+	
 </mapper>
 
 

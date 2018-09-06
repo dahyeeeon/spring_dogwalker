@@ -1,4 +1,4 @@
-package com.gura.spring03.cafe.controller;
+package com.dog.walker.cafe.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gura.spring03.cafe.dto.CafeCommentDto;
-import com.gura.spring03.cafe.service.CafeService;
+import com.dog.walker.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.service.CafeService;
 
 @Controller
 public class CafeController {

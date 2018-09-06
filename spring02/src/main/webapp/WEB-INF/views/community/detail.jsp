@@ -11,7 +11,6 @@
 <style>
 	.content{
 		border: 1px solid #888888;
-<<<<<<< HEAD
 	}
 	.content p{
 		height:200px;
@@ -57,23 +56,20 @@
 	.comments li{
 		clear: left;
 	}
-
+	pre{
+	background-color:white;
+	border:1px;
+	padding:0px !important
+	}
 </style>
 </head>
 <body>
-<div class="container">
+<%@include file="../home_menu.jsp" %>
+<div class="container" style=" margin-top: 100px;">
 	<c:if test="${not empty keyword }">
 		<p> 검색어 : <strong>${keyword }</strong> 에 대한 자세히 보기</p>
 	</c:if>
-	<a href="list.do">글 전체 목록보기</a>
-	<div>
-		<c:if test="${dto.prevNum ne 0}">
-			<a href="detail.do?num=${dto.prevNum }&condition=${condition}&keyword=${keyword}">이전글</a> |
-		</c:if>
-		<c:if test="${dto.nextNum ne 0}">
-			<a href="detail.do?num=${dto.nextNum }&condition=${condition}&keyword=${keyword}">다음글</a>
-		</c:if>
-	</div>
+	
 	<h3>글 자세히 보기 페이지</h3>
 	<c:if test="${sessionScope.id eq dto.writer }">
 		<a href="updateform.do?num=${dto.num }">수정</a>
@@ -103,7 +99,20 @@
 	</table>
 	<br /><br />
 	<div class="content">${dto.content }</div>
+	
 	<br />
+	<div class="pull-right">
+		<a href="list.do">글 전체 목록보기</a>
+		<div>
+			<c:if test="${dto.prevNum ne 0}">
+				<a href="detail.do?num=${dto.prevNum }&condition=${condition}&keyword=${keyword}">이전글</a> |
+			</c:if>
+			<c:if test="${dto.nextNum ne 0}">
+				<a href="detail.do?num=${dto.nextNum }&condition=${condition}&keyword=${keyword}">다음글</a>
+			</c:if>
+		</div>
+	</div>
+	<br /><br /><br />
 	<!-- 댓글에 관련된 UI -->
 	<div class="comments">
 		<ul>
@@ -115,8 +124,8 @@
 				
 					<dl>
 						<dt>
-							<img class="col-md-2 col-sm-2 hidden-xs" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"
-							style="width:100px;"/>
+							<img class="col-md-2 col-sm-2 hidden-xs" src="${pageContext.request.contextPath }/resources/img/comment.jpg"
+							style="width:70px;"/>
 					
 							<span>${tmp.writer }</span>
 							<span>${tmp.regdate }</span>
@@ -125,7 +134,7 @@
 						</dt>
 						<dd>
 							<c:if test="${tmp.num ne tmp.comment_group }">
-								<i class="muted">${tmp.target_id }</i>
+								<i class="muted">${tmp.target_id }님에게 답글</i>
 								<br/>
 							</c:if>
 							<pre>${tmp.content }</pre>
@@ -162,10 +171,11 @@
 				<button type="submit" class="btn_update" style="width:  100px;height: 90px;">등록</button>
 			</form>
 		</div>
-	</div>					
+		
+	</div>
+	
+				
 </div>
-
-
 
 
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>

@@ -8,10 +8,10 @@
 <title>cafe/update.jsp</title>
 </head>
 <body>
-<p>글정보를 수정했습니다.</p>
-<a href="detail.do?num=${param.num }">수정한 글 자세히 보기</a>
-<br/>
-<a href="list.do">글 목록보기</a>
+<script>
+ alert("수정되었습니다.");
+ location.href="${pageContext.request.contextPath }/community/detail.do?num=${param.num }";
+ </script>
 </body>
 </html>
 

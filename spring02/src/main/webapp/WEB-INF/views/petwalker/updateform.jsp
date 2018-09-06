@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="../home_menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>petwalker/updateform.jsp</title>
-
 </head>
-<body>
+<body style="margin-top: 120px">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 
 <div class="container">
@@ -18,14 +18,28 @@
             <div class="panel-heading panel_update">
               <h3 class="panel-title">회원정보 수정</h3>
             </div>
+
+<form action="update.do" method="post" id="updateForm" enctype="multipart/form-data">
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center">
-                <img src="${pageContext.request.contextPath }/${dto.imagePath}"  class="img-responsive img-thumbnail"
+               <div class="col-md-3 col-lg-3 " align="center">
+               <c:choose>
+                	<c:when test="${dto.imagePath != null}">
+                	 <img src="${pageContext.request.contextPath }${dto.imagePath}"  class="img-responsive img-thumbnail"
 					style="width:120px; height:120px"/>
-                  </div>
-<form action="update.do" method="post" id="updateForm">
-                
+					<label for="myFile"><p class="p24"><b>이미지</b>
+					</label> <input type="file"
+                        name="file" id="file"/> <br />
+                	</c:when>
+                	<c:otherwise>
+                	 	<img src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"
+							style="width:100px;"/>
+							<label for="myFile"><p class="p24"><b>이미지</b>
+							</label> <input type="file"
+                        name="file" id="file"/> <br />
+                	</c:otherwise>
+                </c:choose>
+                  </div>                
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>

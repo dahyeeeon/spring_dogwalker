@@ -1,4 +1,4 @@
-package com.gura.spring03.cafe.dto;
+package com.dog.walker.cafe.dto;
 
 public class CafeDto {
 	private int num;

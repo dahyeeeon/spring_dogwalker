@@ -25,7 +25,12 @@
 
 	<update id="update" parameterType="petwalkerDto">
 		UPDATE pet_walker
-		SET kakao = #{kakao}, phone = #{phone}, addr = #{addr}
+		SET
+		imagePath = #{imagePath},
+		orgFileName = #{orgFileName},
+		saveFileName =#{saveFileName},
+		fileSize = #{fileSize},
+		 kakao = #{kakao}, phone = #{phone}, addr = #{addr}
 		WHERE id = #{id}
 	</update>
 

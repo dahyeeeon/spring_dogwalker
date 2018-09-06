@@ -1,4 +1,4 @@
-package com.gura.spring03.cafe.service;
+package com.dog.walker.cafe.service;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gura.spring03.cafe.dao.CafeCommentDao;
-import com.gura.spring03.cafe.dao.CafeDao;
-import com.gura.spring03.cafe.dto.CafeCommentDto;
-import com.gura.spring03.cafe.dto.CafeDto;
+import com.dog.walker.cafe.dao.CafeCommentDao;
+import com.dog.walker.cafe.dao.CafeDao;
+import com.dog.walker.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeDto;
 
 
 @Service
@@ -124,9 +124,11 @@ public class CafeServiceImpl implements CafeService{
 	public void detail(HttpServletRequest request) {
 		//1. 파라미터로 전달되는 글번호 읽어오기
 		int num=Integer.parseInt(request.getParameter("num"));
+		
+		
 		//검색과 관련된 파라미터를 읽어와 본다.
 		String keyword=request.getParameter("keyword");
-		String condition=request.getParameter("condition");		
+		String condition=request.getParameter("condition");	
 		
 		//CafeDto 객체를 생성해서 
 		CafeDto dto=new CafeDto();
@@ -222,19 +224,3 @@ public class CafeServiceImpl implements CafeService{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

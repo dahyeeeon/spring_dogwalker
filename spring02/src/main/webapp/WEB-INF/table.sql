@@ -17,6 +17,7 @@ CREATE TABLE pet_walker(
    isProfiled NUMBER default 0
 );
 select * from manage;
+select * from pet_walker;
 
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,

@@ -120,6 +120,7 @@ footer {
 	<i class="fa fa-plus"></i>
 	<div class="box">
 		<p>서비스 안내</p>
+		<p></p>
 		<p>
 			<strong>문의:02-1234-1234</strong><br/><br/>
 			이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>

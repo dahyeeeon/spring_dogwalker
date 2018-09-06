@@ -34,6 +34,7 @@
                <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
           </c:otherwise>
       </c:choose>
+      
       <c:choose>
          <c:when test="${not empty id }">
             <a href="${pageContext.request.contextPath }/petwalker/info.do" >${id } 님 마이페이지</a>

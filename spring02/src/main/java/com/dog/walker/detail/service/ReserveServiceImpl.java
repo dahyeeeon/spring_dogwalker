@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dog.walker.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeDto;
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
-import com.gura.spring03.cafe.dto.CafeCommentDto;
-import com.gura.spring03.cafe.dto.CafeDto;
 
 @Service
 public class ReserveServiceImpl implements ReserveService {

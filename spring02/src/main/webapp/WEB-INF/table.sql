@@ -16,6 +16,7 @@ CREATE TABLE pet_walker(
    fileSize	long,
    isProfiled NUMBER default 0
 );
+select * from manage;
 select * from pet_walker;
 
 CREATE TABLE manage(

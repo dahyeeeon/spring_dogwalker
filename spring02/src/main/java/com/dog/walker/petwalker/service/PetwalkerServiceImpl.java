@@ -130,7 +130,7 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 	}
 
 	@Override
-	public void update(PetwalkerDto dto) {
+	public void update(PetwalkerDto dto) {  
 		dao.update(dto);
 
 	}

@@ -1,8 +1,8 @@
-package com.gura.spring03.cafe.dao;
+package com.dog.walker.cafe.dao;
 
 import java.util.List;
 
-import com.gura.spring03.cafe.dto.CafeDto;
+import com.dog.walker.cafe.dto.CafeDto;
 
 public interface CafeDao {
 	//새글 저장하는 메소드 

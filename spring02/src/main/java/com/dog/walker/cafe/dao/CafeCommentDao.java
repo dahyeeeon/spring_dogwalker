@@ -1,8 +1,8 @@
-package com.gura.spring03.cafe.dao;
+package com.dog.walker.cafe.dao;
 
 import java.util.List;
 
-import com.gura.spring03.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeCommentDto;
 
 public interface CafeCommentDao {
 	//새로운 댓글의 글번호를 리턴해주는 메소드 

@@ -27,7 +27,7 @@
                FROM manage
                ORDER BY num DESC ) result1
            )
-      WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum} AND content IS NOT NULL
+      WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum} AND content is not null 
    </select>
    
    <select id="getCount" resultType="int">

@@ -31,11 +31,18 @@
 	WHERE id=#{id}
 </select>
 
-
-
 <select id="getList" parameterType = "String" resultType="manageDto">
 
-   SELECT m.* FROM pet_walker w,manage m WHERE w.id = m.id AND w.addr LIKE '%' || SUBSTR(#{input_address},1,3) || '%'
+  <!--  SELECT m.* FROM pet_walker w,manage m WHERE w.id = m.id AND w.addr LIKE '%' || SUBSTR(#{input_address},1,3) || '%' -->
+ 
+   SELECT m.* FROM (SELECT * FROM pet_walker
+			<where>
+				<if test='"#{input_address}" != null'>
+					OR addr LIKE '%' || SUBSTR(#{input_address},1,3) || '%'
+				</if>
+			</where>
+		) w, manage m WHERE w.id = m.id    
+
 </select>
 
 </mapper>

@@ -48,7 +48,7 @@
       <nav>
          <button type="button">Menu</button>
          <ul class="list_gnb">
-            <li><a href="#search">All walker</a></li>
+            <li><a href="${pageContext.request.contextPath }/search/list.do">All walker</a></li>
             <li><a href="${pageContext.request.contextPath }/review/list.do">Review</a></li>
             <li><a href="${pageContext.request.contextPath }/community/list.do">Community</a></li>
          </ul>

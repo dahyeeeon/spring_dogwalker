@@ -78,7 +78,7 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 	
 	@Override
 	public int getCount(String id) {
-		int num = session.selectOne("petwalker.getCount",id); //////////////////////이거 맞나????selectOne?
+		int num = session.selectOne("petwalker.getCount",id); 
 		return num;
 	}
 	

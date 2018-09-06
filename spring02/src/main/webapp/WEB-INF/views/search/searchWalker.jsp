@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,19 +39,7 @@ img {
    background-color: #394899;
 }
 
-/* bootstrap affix 가 동작 하기 위한 css */
-.affix {
-   /* 고정될때 상단에서 떨어질 거리 */
-   top: 60px;
-}
 
-.affix-bottom {
-   position: absolute;
-}
-
-.index-search {
-   
-}
 
 .index-search input {
    height: 50px;
@@ -94,7 +80,8 @@ img {
 }
 
 .main-content {
-   margin-top: 180px;
+   margin-top: 270px;
+   margin-bottom:40px;
 }
 
 .left-content {
@@ -289,16 +276,24 @@ img {
 
 <body>
 
-
-   <div class="navbar navbar-default navbar-fixed-top">
+   <%@include file="../home_menu.jsp" %>
+   <div class="navbar navbar-default navbar-fixed-top" style = "margin-top:90px">
       <div class="container-fluid">
+      	<div class="row">
+      		
+      	</div>
          <div class="row">
+        	
+      	
             <div class="index-search">
+             <%-- <img src="${pageContext.request.contextPath }/resources/img/logo (2).png" alt="로고"  style = "width:100px;height:auto;display:inline"/>
+ --%>
                <input type="text" placeholder="${input_address}" />
             </div>
          </div>
 
          <div class="row">
+        	
             <div class="col-md-4">
                <div class="around">
                   <img
@@ -306,7 +301,7 @@ img {
                      alt="map" /><span>주변에 있는 펫워커 : ${TotalNum }명</span>
                </div>
             </div>
-
+		
             <div class="col-md-8">
                <div class="options-box btn-group">
 
@@ -340,41 +335,39 @@ img {
 
       </div>
 
-
    </div>
 
-   <div class="container-fluid main-content" style ="margin-bottom:50px">
+   <div class="container-fluid main-content" >
       <div class="row">
          <div class="col-md-7 left-content">
 
             <div class="row">
                
-               <c:forEach var="list1" items="${profileWalker }" varStatus="status">
+               <c:forEach var="list1" items="${searchList }" >
                   
                   <div
                      class="petwalker-card-box col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
                      <div class="relative">
-                        <a href="${pageContext.request.contextPath }/walkerPrf/detail_main.do?nickname=${findWalker[status.index].nickname }"> <span class="link-spanner"></span>
+                        <a href="${pageContext.request.contextPath }/walkerPrf/detail_main.do?nickname=${list1.nickname }"> <span class="link-spanner"></span>
                         </a>
 
                         <div class="petwalker-card-top">
                            <div class="petwalker-card-over">
                               <img
-                                 src="${pageContext.request.contextPath }${list1.filePath}"
-                                 alt="이미지!!" class="detailImg" />
+                                 src="${pageContext.request.contextPath }/${list1.addProfilePath}" alt="이미지!!" class="detailImg" />
                            </div>
                         </div>
                         
                         
                         <div class="d-flex flex-row align-items-center">
                            <img
-                              src="${pageContext.request.contextPath }${findWalker[status.index].imagePath}"
+                              src="${pageContext.request.contextPath }/${list1.profilePath}"
                               alt="프로필사진" class="petwalker-card-profile" />
                            <div class="petsitter-card-text-box" style="margin-top: 10px">
-                              <span class="petsitter-card-realname" style ="font-size:1.8rem; color:#000; font-weight:bold">${findWalker[status.index].id }</span>
-                              <span class="petsitter-card-title">/ ${findWalker[status.index].nickname }</span><br />
+                              <span class="petsitter-card-realname" style ="font-size:1.8rem; color:#000; font-weight:bold">${list1.id }</span>
+                              <span class="petsitter-card-title">/ ${list1.nickname }</span><br />
                               <span class="petsitter-card-address" style = "font-size:1.3rem; color:#737373 ">${input_address}</span> <span
-                                 class="petsitter-card-sex">${findWalker[status.index].sex }</span>
+                                 class="petsitter-card-sex">${list1.sex }</span>
                            </div>
                         </div>
                         
@@ -390,14 +383,14 @@ img {
                               </div>
                            </div>
                         
-                           
+                           <!-- 리스트 돌릴 때 여기서 담겨진 nickname 이랑 list1에 담겨진 nickname 과 같으면  출력-->
                            <div class="petsitter-card-price" style = "margin-left:50px; margin-top:10px;"><b>16,000원 부터 / 일</b></div>
                         
                         </div>
                         
                      </div>
                   </div>
-               </c:forEach>
+               </c:forEach> 
             </div>
 
 
@@ -454,9 +447,6 @@ img {
             var markLocation1_5 = new google.maps.LatLng('37.585219', '126.947711'); // 마커가 위치할 위도와 경도
             var markLocation1_6 = new google.maps.LatLng('37.586214', '126.948655'); // 마커가 위치할 위도와 경도
                
-            
-              
-            
             
             
             

@@ -92,6 +92,11 @@ body {
 footer {
     margin: 50px 0;
 }
+
+.search_input_class{
+	width:500px;
+	
+}
 </style>
   <!-- Bootstrap core CSS -->
  <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -239,12 +244,13 @@ footer {
 <section id="search" class="signup-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-lg-8 mx-auto text-center">
+      <div class="col-md-10 col-lg-8 mx-auto text-center" style = "position:relative">
         <h2 class="text-white mb-5">우리 동네 도그워커 검색하기</h2>
 
         <form class="form-inline d-flex" action="AddressSearchResult.do" method = "post" >
-          <input type="text" class="form-control" name="input_address" id="input_address">
-          <button type="submit" class="btn btn-primary mx-auto"><i class="fa fa-paw fa-2x"></i></button>
+          <input class="input-req" type="text" name="input_address" id="input_address" placeholder="주소를 입력해주세요" /><br />
+          <!-- <input type="text" class="form-control search_input_class" name="input_address" id="input_address"> -->
+          <button type="submit" class="btn btn-primary" style = "position : absolute; top:82px; left:610px"><i class="fa fa-paw fa-2x"></i></button>
         </form>
 
       </div>

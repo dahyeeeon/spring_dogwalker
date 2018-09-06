@@ -10,6 +10,7 @@ import com.gura.spring03.cafe.dto.CafeCommentDto;
 
 @Repository
 public class CafeCommentDaoImpl implements CafeCommentDao{
+	
 	@Autowired
 	private SqlSession session;
 

@@ -145,7 +145,6 @@ public class ReviewServiceImpl implements ReviewService{
 	      List<PetwalkerDto> list = pdao.getnicknameList();
 	      
 	      request.setAttribute("list", list);
-	      System.out.println(list);
 
 	   }
 

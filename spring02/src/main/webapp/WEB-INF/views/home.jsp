@@ -265,7 +265,7 @@ footer {
          <c:forEach var="tmp" items="${list }">
                 <div class="col-xs-12 col-sm-6 col-md-4">
              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                 <div class="mainflip">
+                 <div class="mainflip"> 
                      <div class="frontside">
                          <div class="card">
                              <div class="card-body text-center">
@@ -284,28 +284,7 @@ footer {
                                  
 
                                  <p class="card-text">${tmp.content }</p>
-                                 <ul class="list-inline">
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="walkerPrf/detail_main.do">
-                                             <i class="fa fa-facebook"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-twitter"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-skype"></i>
-                                         </a>
-                                     </li>
-                                     <li class="list-inline-item">
-                                         <a class="social-icon text-xs-center" target="_blank" href="#">
-                                             <i class="fa fa-google"></i>
-                                         </a>
-                                     </li>
-                                 </ul>
+                               
                              </div>
                          </div>
                      </div>

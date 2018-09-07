@@ -25,7 +25,7 @@ public interface ManageDao {
    public List<ManageDto> rgetList(ManageDto dto);
    public List<ManageDto> getList(String input_address);
 
-   public List<ManageDto> pwkList(ManageDto dto);
+   public ManageDto pwkGetData(String nickname);
    public ManageDto DgetData(ManageDto dto);
    public List<ManageDto> DtgetList(String nickname);
 

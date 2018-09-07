@@ -28,20 +28,28 @@
    <div class="login_area">
       <c:choose>
          <c:when test="${not empty id }">
-             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
+            <a class="nav-link js-scroll-trigger" href="petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-               <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
-          </c:otherwise>
-      </c:choose>
-      <c:choose>
-         <c:when test="${not empty id }">
-            <a href="${pageContext.request.contextPath }/petwalker/info.do" >${id } 님 마이페이지</a>
-         </c:when>
-         <c:otherwise>
-            <a href="${pageContext.request.contextPath }/home_signup.do">join us</a>
+            <a class="nav-link js-scroll-trigger" href="home_login.do">login</a>
          </c:otherwise>
       </c:choose>
+      <c:choose>
+            <c:when test="${ (not empty id) and (isWalker eq true)  }">
+               <p>
+                  <strong><a href="petwalker/info.do">${id }</a></strong>님 마이페이지
+               </p>
+            </c:when>
+            <c:when test="${ (not empty id) and (isWalker eq false)  }">
+               <p>
+                  <strong><a href="petusers/info.do">${id }</a></strong>님 마이페이지
+               </p>
+            </c:when>
+            <c:otherwise>
+               <a class="nav-link js-scroll-trigger" href="home_signup.do">join
+                  us</a>
+            </c:otherwise>
+         </c:choose>
    </div>
    <div class="gnb_area">
       <h1><a href="${pageContext.request.contextPath }/home.do"><img src="${pageContext.request.contextPath }/resources/img/logo (2).png" alt="logo"/></a></h1>

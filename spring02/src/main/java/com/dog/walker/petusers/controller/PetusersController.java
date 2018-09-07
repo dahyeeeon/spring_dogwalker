@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petusers.dto.PetusersDto;
 import com.dog.walker.petusers.service.PetusersService;
+import com.dog.walker.reservation.service.ReservationService;
 
 @Controller
 public class PetusersController {
@@ -120,6 +121,22 @@ public class PetusersController {
 			mView.setViewName("petusers/info");
 			//ModelAndView 객체를 리턴해 준다. 
 			return mView;
+		}
+		
+		@Autowired
+		private ReservationService rService;
+		
+		@RequestMapping("/petusers/reservation")
+		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
+			
+			
+			
+			rService.getList2(mView, request);
+			mView.setViewName("petusers/reservation");
+			
+			return mView;
+			
+			
 		}
 		//회원 가입 정보 수정폼 요청 처리
 		@RequestMapping("/petusers/updateform")

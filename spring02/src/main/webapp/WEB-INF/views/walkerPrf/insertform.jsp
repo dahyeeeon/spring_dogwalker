@@ -35,18 +35,20 @@ label{
    <form action="insert.do" method="post">
       <div class="row">
          <fieldset>
-
-         
-
-         
-            <legend></legend>
+            <legend></legend>       
+            <label for="petwalker"></label>
+            <input type="hidden" name="petwalker" id="petwalker" value="${petwalker }"/>   
+            <input type="hidden" name="id" value="${petUser.id}" />
+            <input type="hidden" name="kakao" value="${petUser.kakao}" />
+            <input type="hidden" name="nickname" value="${petUser.nickname}" />
             <p>신청자 정보 </p>
-            <label for="id"></label> <input type="text" name="id" id="id"
-               placeholder="아이디 입력" /><br> <label for="kakao"></label> <input
-               type="text" name="kakao" id="kakao" placeholder="카카오 아이디 입력" /><br>
-            <label for="nickname"></label> <input type="text" name="nickname"
-               id="nickname" placeholder="닉네임 입력" /><br />
-               
+            <label for="id"></label> 
+            <input type="text"  id="id" value="${petUser.id}" disabled /><br> 
+            <label for="kakao"></label>
+            <input type="text"  id="kakao" value="${petUser.kakao}" disabled /><br>
+            <label for="nickname"></label> 
+            <input type="text" id="nickname" value="${petUser.nickname}" disabled /><br />
+            
             </fieldset>
             
       </div>

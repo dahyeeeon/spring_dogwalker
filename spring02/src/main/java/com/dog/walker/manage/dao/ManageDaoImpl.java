@@ -88,10 +88,10 @@ public class ManageDaoImpl implements ManageDao{
 	}
 
 	@Override
-	public List<ManageDto> pwkList(ManageDto dto) {
-		List<ManageDto> list=session.selectList("rsv.pwkList", dto);
-		return list;
-	}
+	   public ManageDto pwkGetData(String nickname) {
+	      ManageDto dto=session.selectOne("rsv.pwkGetData", nickname);
+	      return dto;
+	   }
 
 	@Override
 	public ManageDto DgetData(ManageDto dto) {

@@ -33,7 +33,7 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/review/uploadform")
-	public ModelAndView ReviewUploadform(HttpServletRequest request) {
+	public ModelAndView authReviewUploadform(HttpServletRequest request) {
 	      
 	      rService.reviewpetwalkergetList(request);
 	      
@@ -41,7 +41,7 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/review/upload")
-	public ModelAndView authReviewUpload(HttpServletRequest request, @ModelAttribute ManageDto dto) {
+	public ModelAndView ReviewUpload(HttpServletRequest request, @ModelAttribute ManageDto dto) {
 		// 서비스에 전달할 ModelAndView 객체 생성
 		ModelAndView mView = new ModelAndView();
 		// 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가

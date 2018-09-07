@@ -55,18 +55,18 @@
    <div class="container">
 
       <div class="row">
-         <div class="col-sm-7">
+         <div class="col-sm-7 center-block">
 
-            <div class="fotorama" data-autoplay="true" data-nav="thumbs"
+            <div class="fotorama center-block" data-autoplay="true" data-nav="thumbs"
                data-allowfullscreen="true">
-               <c:forEach var="tmp" items="${pwklist }">
-               <img src="${pageContext.request.contextPath }/${tmp.filePath }"
-                  class="img-responsive img-thumbnail" /> <img
-                  src="${pageContext.request.contextPath }/${tmp.filePath }"
-                  class="img-responsive img-thumbnail" /> <img
-                  src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
-                  class="img-responsive img-thumbnail" />
-               </c:forEach>
+            
+               <img src="${pageContext.request.contextPath }/${pwk.filePath }"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/> 
+               <img src="${pageContext.request.contextPath }/${pwk.filePath }"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/> 
+               <img src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/>
+              
             </div>
 
          </div>
@@ -108,7 +108,7 @@
 
             <div class="action" style="text-align: center; margin-top: 50px;">
                <button class="btn btn-default" type="submit">
-                  <a href="insertform.do"> reservation </a>
+                  <a href="insertform.do?petwalker=${nickname }"> reservation </a>
                </button>
 
             </div>
@@ -117,22 +117,22 @@
       
       <div class="row bottomCol">
          <h3>펫 워커 경험</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.experience }</p>
-         </c:forEach>         
+         
+         <p>${pwk.experience }</p>
+             
       </div>
       
       <div class="row bottomCol">
          <h3>워커 경력</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.career }</p>
-         </c:forEach>
+        
+         <p>${pwk.career }</p>
+        
       </div>
       <div class="row bottomCol">
          <h3>워커로서 제공 가능한 무료 서비스</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.freeservice }</p>
-         </c:forEach>
+        
+         <p>${pwk.freeservice }</p>
+       
       </div>
       <div class="row bottomCol">
          <h3>받은 리뷰들</h3>
@@ -168,28 +168,7 @@
             
          </c:forEach>
       </div>
-      <div class="row bottomCol" style="margin-bottom: 130px">
-         <h3>예약 목록</h3>
-         <table class="table table-border">
-            <thead>
-               <tr>
-                  <th>날짜</th>
-                  <th>시간대</th>
-               </tr>
-            </thead>
-            <tbody>
-               <c:forEach var="tmp" items="${rsvlist }">
-                  <tr>
-                     <td>${tmp.selectDate }</td>
-                     <td>${tmp.timeSlot }</td>
-                     <td><a href="javascript:deleteConfirm(${tmp.num })">삭제</a></td>
-                     <td><a href="updateform.do?num=${tmp.num }">수정</a></td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-         </table>
-      </div>
-
+   
 
    </div>
 

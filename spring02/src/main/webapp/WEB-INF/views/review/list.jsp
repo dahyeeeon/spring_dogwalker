@@ -50,20 +50,12 @@
               </a>
               <div class="media-body">
                 <h4 class="media-heading">${tmp.title }</h4>
-                  <p>워커 이름 : ${tmp.nickname }</p>
+                  <p>워커 이름 : ${tmp.nickname }</p> <p class="print-star" data-stars="${tmp.stars }">별점 : </p>
                    <p>${tmp.content }</p>
                    <ul class="list-inline list-unstyled">
                        <li><span><i class="glyphicon glyphicon-calendar"></i>${tmp.regdate }</span></li>
                         <li>|</li>
-                        <li><span> ${tmp.writer}</span></li>
-                        <li>|</li>
-                        <li class="print-star" data-stars="${tmp.stars }"></li>
-                        <li>|</li>
-                        <li>
-                            <span><i class="fa fa-facebook-square"></i></span>
-                            <span><i class="fa fa-twitter-square"></i></span>
-                             <span><i class="fa fa-google-plus-square"></i></span>
-                        </li>
+                        <li><span>작성자 : ${tmp.writer}</span></li>
                </ul>
                 </div>
           </div>

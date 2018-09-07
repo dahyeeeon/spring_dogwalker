@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.petwalker.service.PetwalkerService;
+import com.dog.walker.reservation.service.ReservationService;
 
 @Controller
 public class PetwalkerController {
@@ -109,8 +110,26 @@ public class PetwalkerController {
 			return "petwalker/logout";
 		}
 	//개인 정보 보기 요청 처리
+		
+		@Autowired
+		private ReservationService rService;
+		
+		@RequestMapping("/petwalker/reservation")
+		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
+			
+			
+			
+			rService.getList(mView, request);
+			mView.setViewName("petwalker/reservation");
+			
+			return mView;
+			
+			
+		}
+		
 		@RequestMapping("/petwalker/info")
 		public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {
+		
 			ModelAndView mView=new ModelAndView();
 
 			pService.info(mView, session);
@@ -118,6 +137,7 @@ public class PetwalkerController {
 			//view 페이지의 정보를 담아서 
 			mView.setViewName("petwalker/info");
 			//ModelAndView 객체를 리턴해 준다. 
+			
 			return mView;
 		}
 		//회원 가입 정보 수정폼 요청 처리

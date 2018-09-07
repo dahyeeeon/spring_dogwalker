@@ -7,13 +7,17 @@
 <meta charset="UTF-8">
 <title>petwalker/info.jsp</title>
 <style>
-
+	.bottomCol {
+   		border-top: 3px solid #64a19d;
+   		margin: 0 auto;
+	}
 </style>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
 <a href="${pageContext.request.contextPath }/">인덱스로 가기</a>
 <div>${dto.isProfiled }</div>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
 
 <div class="container">
       <div class="row">
@@ -83,6 +87,9 @@
                 
 					<a href="profileform.do?nickname=${dto.nickname }" class="btn_update">프로필 입력</a>
 					<a href="profileupdateform.do" class="btn_update">프로필 수정</a>
+					
+					<a href="reservation.do?nickname=${dto.nickname }" class="btn_update">예약보기</a>
+					
 
                 </div>
               </div>
@@ -90,6 +97,7 @@
           </div>
         </div>
       </div>
+
     </div>
 <script>
 

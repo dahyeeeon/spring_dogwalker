@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="rsv">
-   <select id="getList" resultType="manageDto" parameterType="manageDto">
-      SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv
+
+   <select id="getList" resultType="reservationDto" parameterType="reservationDto" >
+      SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv, petwalker, isReserved
       FROM reservation
-      ORDER BY num ASC
+      WHERE petwalker=#{nickname}
    </select>
-   <insert id="insert" parameterType="manageDto">
+   
+   <select id="getList2" resultType="reservationDto" parameterType="reservationDto" >
+      SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv, petwalker, isReserved
+      FROM reservation
+      WHERE nickname=#{nickname}
+   </select>
+   
+   
+   <select id="pUserGetData" parameterType="String" resultType="com.dog.walker.petusers.dto.PetusersDto">
+      SELECT id, kakao, nickname FROM pet_users WHERE id=#{id}
+   </select>
+
+   <insert id="insert" parameterType="reservationDto" >
       INSERT INTO reservation
-      (num, id, kakao, nickname,dogSize,selectDate,timeSlot,cctv)
+      (num, id, kakao, nickname,dogSize,selectDate,timeSlot,cctv,petwalker,isReserved)
       VALUES(manage_seq.NEXTVAL, #{id}, #{kakao}, #{nickname},
-      #{dogSize},#{selectDate},#{timeSlot},#{cctv})
+      #{dogSize},#{selectDate},#{timeSlot},#{cctv}, #{petwalker}, 0)
    </insert>
-   <update id="update" parameterType="manageDto">
-      UPDATE reservation
-      SET id=#{id}, kakao=#{kakao}, nickname=#{nickname},
-      dogSize=#{dogSize},selectDate=#{selectDate},
-      timeSlot=#{timeSlot},cctv=#{cctv}
-      WHERE num=#{num}
-   </update>
+   
+   
    <delete id="delete" parameterType="int">
       DELETE FROM reservation
       WHERE num=#{num}
    </delete>
-   <select id="getData" parameterType="int" 
-      resultType="manageDto">
-      SELECT num, id, kakao, nickname,dogSize,selectDate,timeSlot,cctv
-      FROM reservation
-      WHERE num=#{num}
-   </select>
+   
    <select id="rgetList" parameterType="manageDto" resultType="manageDto">
    		SELECT num, title, content, stars, nickname, regdate, imagePath,orgImageName,saveImageName,
-      ImageSize FROM manage WHERE nickname=#{nickname}
-   </select>
-   <select id="pwkList" parameterType="manageDto" resultType="manageDto">
-   		SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName, 
-   		filesize FROM manage WHERE nickname=#{nickname}
-   </select>
-
-   <select id="DgetData" parameterType="manageDto" resultType="manageDto">
-   		SELECT num, id, kakao, nickname, career, experience, freeservice FROM manage WHERE nickname=#{nickname}
+        ImageSize FROM manage WHERE nickname=#{nickname} AND content is not null
    </select>
    
-   <select id="DtgetList" parameterType="String" resultType="manageDto">
-   SELECT career, experience, freeservice from manage WHERE nickname=#{nickname}
-</select>
+   
+	<select id="pwkGetData" parameterType="manageDto" resultType="manageDto">
+         SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName, 
+         filesize FROM manage WHERE nickname=#{nickname} AND content is null
+   </select>
+
+
    
 </mapper>

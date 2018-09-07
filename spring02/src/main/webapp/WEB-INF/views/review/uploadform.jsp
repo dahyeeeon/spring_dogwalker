@@ -97,7 +97,7 @@ input{
         <label for="title">제목</label>
         <input type="text" name="title" id="title" style="width:100%"/>
         <div class="wrap">
-              <textarea class="form-control animated"  minlength="60" cols="50" id="content" name="content" placehlder="Enter your review here..." rows="5"></textarea>
+              <textarea class="form-control animated"  minlength="40" cols="50" id="content" name="content" placehlder="Enter your review here..." rows="5"></textarea>
            <span id="counter">###</span>
            <br />
         </div>
@@ -124,7 +124,7 @@ input{
          $(function() {
              $('#content').keyup(function (e){
                  var content = $(this).val();
-                 $('#counter').html('60/' + content.length );
+                 $('#counter').html('40/' + content.length );
              });
              $('#content').keyup();
              

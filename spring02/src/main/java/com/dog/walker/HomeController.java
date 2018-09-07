@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dog.walker.detail.service.ReserveService;
+import com.dog.walker.detail.service.DetailService;
 import com.dog.walker.review.service.ReviewService;
 
 @Controller
@@ -22,7 +22,7 @@ public class HomeController {
 	@Autowired
 	private ReviewService rService;
 	@Autowired
-	private ReserveService rsvService;
+	private DetailService rsvService;
 	@Autowired
 	private ReviewService rvService;
 	

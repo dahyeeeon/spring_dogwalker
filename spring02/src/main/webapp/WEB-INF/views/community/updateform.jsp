@@ -8,8 +8,11 @@
 <title>cafe/updateform.jsp</title>
 <!-- SmartEditor 관련 javascript 로딩 -->
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
+<%@include file="../home_menu.jsp" %>
+<div class="container" style=" margin-top: 100px;">
 <h3>카페 글 수정 페이지 입니다.</h3>
 <form action="update.do" method="post">
 	<input type="hidden" name="num" value="${dto.num }" />
@@ -18,21 +21,14 @@
 		value="${dto.writer }" disabled="disabled"/><br/>
 	<label for="title">제목</label>
 	<input type="text" name="title" id="title" 
-		value="${dto.title }"/><br/>
+		value="${dto.title }" size="40"/><br/>
 	<textarea name="content" id="content" 
 	style="width:766px;height:412px;display:none">${dto.content }</textarea>
 	<div>
-<<<<<<< HEAD
-
-		<input type="button" onclick="submitContents(this);" value="수정 확인" />
-=======
-		<input type="button" onclick="pasteHTML();" value="본문에 내용 넣기" />
-		<input type="button" onclick="showHTML();" value="본문 내용 가져오기" />
-		<input type="button" onclick="submitContents(this);" value="수정 확인" />
-		<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />
->>>>>>> branch 'master' of https://github.com/dahyeeeon/spring_dogwalker.git
+		<input type="button" class="btn_update" style="margin-left:700px;" onclick="submitContents(this);" value="수정 확인" />
 	</div>	
 </form>
+</div>
 <script>
 var oEditors = [];
 //추가 글꼴 목록

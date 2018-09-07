@@ -453,7 +453,7 @@ a#MOVE_TOP_BTN {
                      <p class="p24">
                         <b>주소</b>
                      </p>
-                     <input class="input-req" type="text" name="addr" id="addr" placeholder="주소를 입력해주세요" /><br />
+                     <input class="input-req" type="text" name="addr" id="input_address" placeholder="주소를 입력해주세요" /><br />
                      <lagend><p class="p24"><b>성별</b></p></lagend>
                      <label> <input type="radio" name="sex" id="sex"
                         value="woman" checked="checked" />여자
@@ -518,5 +518,21 @@ a#MOVE_TOP_BTN {
          });
       });
    </script>
+   
+   
+   <script>
+	   $(function() {
+	       var placesAutocomplete = places({
+	         container: document.querySelector('#input_address')
+	       });
+	  });
+
+   
+   </script>
+   
+   
+
+	<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+ 	  
 </body>
 </html>

@@ -16,8 +16,8 @@ import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.reservation.dao.ReservationDao;
 import com.dog.walker.reservation.dto.ReservationDto;
-import com.gura.spring03.cafe.dto.CafeCommentDto;
-import com.gura.spring03.cafe.dto.CafeDto;
+import com.dog.walker.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeDto;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {

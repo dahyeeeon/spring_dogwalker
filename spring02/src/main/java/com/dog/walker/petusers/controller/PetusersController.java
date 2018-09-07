@@ -21,99 +21,100 @@ import com.dog.walker.reservation.service.ReservationService;
 @Controller
 public class PetusersController {
 
-	@Autowired
-	private PetusersService uService;
+   @Autowired
+   private PetusersService uService;
 
-	 // 회원가입 요청 처리
-	   @RequestMapping("/petusers/signup")
-	   public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetusersDto dto) {
-	      // 서비스에 전달할 ModelAndView 객체 생성
-	      ModelAndView mView = new ModelAndView();
-	      // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
-	      // 담겨있는 UsersDto 객체를 전달한다.
-	      uService.signup(request,mView, dto);
-	      // ModelAndView 객체에 view 페이지 정보를 담고
-	      mView.setViewName("petusers/signup");
-	      // 리턴해준다.
-	      return mView;
-	   }
+    // 회원가입 요청 처리
+      @RequestMapping("/petusers/signup")
+      public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetusersDto dto) {
+         // 서비스에 전달할 ModelAndView 객체 생성
+         ModelAndView mView = new ModelAndView();
+         // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
+         // 담겨있는 UsersDto 객체를 전달한다.
+         uService.signup(request,mView, dto);
+         // ModelAndView 객체에 view 페이지 정보를 담고
+         mView.setViewName("petusers/signup");
+         // 리턴해준다.
+         return mView;
+      }
 
-	// 회원가입 폼 요청 처리
-	@RequestMapping("/petusers/signup_form")
-	public String signupForm() {
-		return "petusers/signup_form";
-	}
+   // 회원가입 폼 요청 처리
+   @RequestMapping("/petusers/signup_form")
+   public String signupForm() {
+      return "petusers/signup_form";
+   }
 
-	@RequestMapping("/petusers/checkid")
-	@ResponseBody
-	public Map<String, Object> checkid(@RequestParam String inputId) {
-		// 서비스 객체를 이용해서 사용가능 여부를 boolean type
-		// 으로 리턴 받는다.
-		boolean canUse = uService.canUseId(inputId);
-		// Map 에 담는다.
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("canUse", canUse);
-		// {"canUse":true} or {"canUse":false}
-		return map;
-	}
+   @RequestMapping("/petusers/checkid")
+   @ResponseBody
+   public Map<String, Object> checkid(@RequestParam String inputId) {
+      // 서비스 객체를 이용해서 사용가능 여부를 boolean type
+      // 으로 리턴 받는다.
+      boolean canUse = uService.canUseId(inputId);
+      // Map 에 담는다.
+      Map<String, Object> map = new HashMap<String, Object>();
+      map.put("canUse", canUse);
+      // {"canUse":true} or {"canUse":false}
+      return map;
+   }
 
-	// 로그인 폼 요청 처리
-	@RequestMapping("/petusers/loginform")
-	public String loginForm(HttpServletRequest request) {
-		// 로그인 후 이동할 url 주소를 읽어온다.
-		String url = request.getParameter("url");
-		// 만일 전달되지 않았으면
-		if (url == null) {
-			// 인덱스로 이동할수 있도록
-			url = request.getContextPath() + "/";
-		}
-		// request 에 담기
-		request.setAttribute("url", url);
+   // 로그인 폼 요청 처리
+   @RequestMapping("/petusers/loginform")
+   public String loginForm(HttpServletRequest request) {
+      // 로그인 후 이동할 url 주소를 읽어온다.
+      String url = request.getParameter("url");
+      // 만일 전달되지 않았으면
+      if (url == null) {
+         // 인덱스로 이동할수 있도록
+         url = request.getContextPath() + "/";
+      }
+      // request 에 담기
+      request.setAttribute("url", url);
 
-		return "petusers/loginform";
-	}
+      return "petusers/loginform";
+   }
 
-	public ModelAndView loginForm2(@RequestParam(defaultValue = "") String url, HttpServletRequest request) {
+   public ModelAndView loginForm2(@RequestParam(defaultValue = "") String url, HttpServletRequest request) {
 
-		// 만일 전달되지 않았으면
-		if (url.equals("")) {
-			// 인덱스로 이동할수 있도록
-			url = request.getContextPath() + "/";
-		}
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("url", url);
-		mView.setViewName("petusers/loginform");
+      // 만일 전달되지 않았으면
+      if (url.equals("")) {
+         // 인덱스로 이동할수 있도록
+         url = request.getContextPath() + "/";
+      }
+      ModelAndView mView = new ModelAndView();
+      mView.addObject("url", url);
+      mView.setViewName("petusers/loginform");
 
-		return mView;
-	}
-	
-	//로그인 요청 처리
-		@RequestMapping("/petusers/login")
-		public ModelAndView login(@ModelAttribute PetusersDto dto,
-				@RequestParam String url, HttpSession session) {
-			ModelAndView mView=new ModelAndView();
-			//서비스를 통해서 로그인 처리를 한다.
-			uService.login(mView, dto, session);
-			
-			//로그인후 이동할 url
-			mView.addObject("url", url);
-			//view 페이지 정보
-			
-			mView.setViewName("petusers/login");
-			return mView;
-		}
-	//로그아웃 요청 처리
-		@RequestMapping("/petusers/logout")
-		public String logout(HttpSession session) {
-			//세션 초기화 
-			session.invalidate();
-			//view 페이지 정보 리턴 
-			return "petusers/logout";
-		}
-	//개인 정보 보기 요청 처리
-		@RequestMapping("/petusers/info")
-		public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {
-			ModelAndView mView=new ModelAndView();
+      return mView;
+   }
+   
+   //로그인 요청 처리
+      @RequestMapping("/petusers/login")
+      public ModelAndView login(@ModelAttribute PetusersDto dto,
+            @RequestParam String url, HttpSession session) {
+         ModelAndView mView=new ModelAndView();
+         //서비스를 통해서 로그인 처리를 한다.
+         uService.login(mView, dto, session);
+         
+         //로그인후 이동할 url
+         mView.addObject("url", url);
+         //view 페이지 정보
+         
+         mView.setViewName("petusers/login");
+         return mView;
+      }
+   //로그아웃 요청 처리
+      @RequestMapping("/petusers/logout")
+      public String logout(HttpSession session) {
+         //세션 초기화 
+         session.invalidate();
+         //view 페이지 정보 리턴 
+         return "petusers/logout";
+      }
+      
+   //개인 정보 보기 요청 처리
+      @RequestMapping("/petusers/info")
+      public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {
+         ModelAndView mView=new ModelAndView();
 
 			uService.info(mView, session);
 			
@@ -194,3 +195,4 @@ public class PetusersController {
 			return mView;
 		}
 }
+

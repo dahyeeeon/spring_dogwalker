@@ -15,8 +15,17 @@
 .bottomCol {
    border-top: 3px solid #64a19d;
    margin: 0 auto;
+   margin-top: 15px;
 }
-
+.bottomCol > h3{
+   margin-left: 40px;
+}
+.wk > p{
+   margin-left: 60px;
+}
+.wk{
+   margin-top: 15px;
+}
 .round>p {
    font-size: 12px;
    color: black;
@@ -117,30 +126,29 @@
       
       <div class="row bottomCol">
          <h3>펫 워커 경험</h3>
-         
-         <p>${pwk.experience }</p>
-             
       </div>
-      
+      <div class="row right-block wk">
+         <p>${pwk.experience }</p>
+      </div>
       <div class="row bottomCol">
          <h3>워커 경력</h3>
-        
-         <p>${pwk.career }</p>
-        
       </div>
+      <div class="row right-block wk">
+         <p>${pwk.career }</p>
+        </div>
       <div class="row bottomCol">
          <h3>워커로서 제공 가능한 무료 서비스</h3>
-        
+     </div>
+     <div class="row right-block wk">
          <p>${pwk.freeservice }</p>
-       
-      </div>
+     </div>
       <div class="row bottomCol">
          <h3>받은 리뷰들</h3>
          
          <c:forEach var="tmp" items="${list }">
          
             <div class="well row right-block">
-               <div class="media">
+               <div class="media" style="margin-left: 60px;">
                   <a class="pull-left" href="#"> <img
                      class="media-object img-responsive img-thumbnail"
                      style="width: 100px; height: 100px"

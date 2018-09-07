@@ -27,7 +27,7 @@ public class AuthAspect {
 					}else {
 						url=request.getRequestURI()+"?"+query;
 					}
-					mView.setViewName("redirect:/petwalker/loginform.do?url="+url);
+					mView.setViewName("redirect:/home_login.do?url="+url);
 					return mView;
 				}
 			}

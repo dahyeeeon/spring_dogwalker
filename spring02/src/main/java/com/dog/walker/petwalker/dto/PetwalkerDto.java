@@ -2,6 +2,7 @@ package com.dog.walker.petwalker.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+
 public class PetwalkerDto {
 	private String id;
 	private String nickname;
@@ -19,6 +20,7 @@ public class PetwalkerDto {
 	private long fileSize; //파일의 크기 
 	private MultipartFile file;
 	private String isProfiled; //불리언으로 할거임
+	
 	
 	public PetwalkerDto() {}
 

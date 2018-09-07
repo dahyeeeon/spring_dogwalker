@@ -14,8 +14,8 @@ import com.dog.walker.manage.dto.ManageDto;
 import com.dog.walker.petusers.dto.PetusersDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.reservation.dao.ReservationDao;
-import com.gura.spring03.cafe.dto.CafeCommentDto;
-import com.gura.spring03.cafe.dto.CafeDto;
+import com.dog.walker.cafe.dto.CafeCommentDto;
+import com.dog.walker.cafe.dto.CafeDto;
 
 @Service
 public class DetailServiceImpl implements DetailService {

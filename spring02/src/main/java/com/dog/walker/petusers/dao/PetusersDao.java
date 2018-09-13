@@ -10,4 +10,5 @@ public interface PetusersDao {
 	public boolean canUseId(String id);
 	public void updatePwd(PetusersDto dto);
 	public void updateImg(PetusersDto dto);
+	public void isConfirmed(String nickname);
 }

@@ -114,18 +114,33 @@ public class PetwalkerController {
 		@Autowired
 		private ReservationService rService;
 		
+		
+		//리절브예약
+		@RequestMapping("/petwalker/reserved")
+		public ModelAndView Reserved(@RequestParam int num,HttpServletRequest request, ModelAndView mView) {	
+			rService.isReserved(request, num);
+			
+			return new ModelAndView("redirect:/petwalker/reservation.do");
+			
+
+		}
+		
+		
+		
 		@RequestMapping("/petwalker/reservation")
-		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
+		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView, HttpSession session) {
 			
 			
+			//rService.isReserved(request, mView, nickname);
 			
-			rService.getList(mView, request);
+			rService.getList(mView, request, session);
 			mView.setViewName("petwalker/reservation");
 			
 			return mView;
 			
 			
 		}
+		
 		
 		@RequestMapping("/petwalker/info")
 		public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {
@@ -195,4 +210,8 @@ public class PetwalkerController {
 			mView.setViewName("petwalker/delete");
 			return mView;
 		}
+		
+		
+		
+		
 }

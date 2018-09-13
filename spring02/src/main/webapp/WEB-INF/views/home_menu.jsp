@@ -140,21 +140,21 @@
    <div class="login_area">
       <c:choose>
          <c:when test="${not empty id }">
-            <a class="nav-link js-scroll-trigger" href="petwalker/logout.do">logout</a>
+            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-            <a class="nav-link js-scroll-trigger" href="home_login.do">login</a>
+            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
          </c:otherwise>
       </c:choose>
       <c:choose>
             <c:when test="${ (not empty id) and (isWalker eq true)  }">
                <p>
-                  <strong><a href="petwalker/info.do">${id }</a></strong>님 마이페이지
+                  <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
                </p>
             </c:when>
             <c:when test="${ (not empty id) and (isWalker eq false)  }">
                <p>
-                  <strong><a href="petusers/info.do">${id }</a></strong>님 마이페이지
+                  <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
                </p>
             </c:when>
             <c:otherwise>

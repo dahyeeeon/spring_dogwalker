@@ -41,4 +41,10 @@ public class ReservationDaoImpl implements ReservationDao {
 		return session.selectList("rsv.getList2", dto);
 	}
 
+	@Override
+	public void rsvConfirm(int num) {
+		session.update("rsv.rsvConfirm", num);
+		
+	}
+
 }

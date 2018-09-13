@@ -43,7 +43,7 @@ public class DetailController {
 
 
 	@RequestMapping("/walkerPrf/insertform")
-	public ModelAndView insertform(HttpServletRequest request,ModelAndView mView) {
+	public ModelAndView authinsertform(HttpServletRequest request,ModelAndView mView) {
 		rService.check(request,mView);
 		dService.rsvInsertform(request, mView);
 		mView.setViewName("walkerPrf/insertform");
@@ -54,17 +54,16 @@ public class DetailController {
 	
 
 	@RequestMapping("/walkerPrf/insert")
-	public ModelAndView ReservationInsert(HttpServletRequest request, @ModelAttribute ReservationDto dto) {
+	public ModelAndView authReservationInsert(HttpServletRequest request, @ModelAttribute ReservationDto dto) {
 		// 서비스에 전달할 ModelAndView 객체 생성
 		ModelAndView mView = new ModelAndView();
 		rService.insert(request, mView, dto);
-		mView.setViewName("walkerPrf/detail_main");
+		mView.setViewName("walkerPrf/insert");
 		return mView;
 	}
 	
 	
-	
-	
+
 	
 	
 	

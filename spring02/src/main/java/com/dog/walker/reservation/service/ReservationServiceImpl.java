@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petusers.dao.PetusersDao;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.reservation.dao.ReservationDao;
@@ -24,16 +25,21 @@ public class ReservationServiceImpl implements ReservationService {
 	
 	@Autowired
 	private ReservationDao dao;
+	
+	@Autowired
+	private PetusersDao pudao;
 
 	@Override
-	public void getList(ModelAndView mView, HttpServletRequest request) {
+	public void getList(ModelAndView mView, HttpServletRequest request, HttpSession session) {
 		
-		String nickname=request.getParameter("nickname");
-		mView.addObject("nickname",nickname);
+
+		String id=(String)session.getAttribute("id");
 		
 		ReservationDto dto= new ReservationDto();
 		
-		dto.setNickname(nickname);
+		dto.setId(id);
+		
+
 
 		//1. FileDto 객체를 전달해서 파일 목록을 불러온다 
 		List<ReservationDto> list=dao.reservationgetList(dto);
@@ -92,6 +98,22 @@ public class ReservationServiceImpl implements ReservationService {
 
 
 	}
+
+
+	@Override
+	public void isReserved(HttpServletRequest request, int num) {
+		
+		num = Integer.parseInt(request.getParameter("num"));
+		
+		dao.rsvConfirm(num);
+		
+		
+	}
+
+
+	
+
+	
 
 
 	

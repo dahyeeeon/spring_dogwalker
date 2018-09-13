@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class AuthAspect {
 	@Around("execution(* auth*(..))")
-	public Object loginChech(ProceedingJoinPoint joinPoint) throws Throwable{
+	public Object loginCheck(ProceedingJoinPoint joinPoint) throws Throwable{
 		Object[] args=joinPoint.getArgs();
 		for(Object tmp:args) {
 			if(tmp instanceof HttpServletRequest) {

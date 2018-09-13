@@ -5,7 +5,7 @@
    <select id="getList" resultType="reservationDto" parameterType="reservationDto" >
       SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv, petwalker, isReserved
       FROM reservation
-      WHERE petwalker=#{nickname}
+      WHERE petwalker=#{id}
    </select>
    
    <select id="getList2" resultType="reservationDto" parameterType="reservationDto" >
@@ -27,10 +27,6 @@
    </insert>
    
    
-   <delete id="delete" parameterType="int">
-      DELETE FROM reservation
-      WHERE num=#{num}
-   </delete>
    
    <select id="rgetList" parameterType="manageDto" resultType="manageDto">
    		SELECT num, title, content, stars, nickname, regdate, imagePath,orgImageName,saveImageName,
@@ -43,6 +39,11 @@
          filesize FROM manage WHERE nickname=#{nickname} AND content is null
    </select>
 
-
+	 <update id="rsvConfirm" parameterType="int" >
+   		UPDATE reservation SET isReserved = 1 WHERE num=#{num}
+   </update>
+    <update id="rsvConfirm2" parameterType="int" >
+   		UPDATE reservation SET isReserved = 2 WHERE num=#{num}
+   </update>
    
 </mapper>

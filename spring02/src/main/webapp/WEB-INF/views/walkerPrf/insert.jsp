@@ -9,7 +9,8 @@
 <body>
 <script>
 	alert("예약 됐습니다");
-	location.href="detail_main.do";
+	location.href="${pageContext.request.contextPath }/walkerPrf/detail_main.do?nickname=${param.petwalker}";
 </script>
+
 </body>
 </html>

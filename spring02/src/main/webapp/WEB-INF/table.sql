@@ -345,5 +345,7 @@ select m.filePath filePath, p.imagePath imagePath, p.nickname nickname, p.id id 
 		ON m.nickname = p.nickname;
 
 
->>>>>>> refs/remotes/origin/soda
+select * from pet_users;
+select * from reservation where nickname=1;
 
+select * from reservation where petwalker=22;

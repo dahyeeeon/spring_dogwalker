@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.reservation.dto.ReservationDto;
@@ -15,7 +16,6 @@ public class ReservationController {
 	@Autowired
 	private ReservationService rService;
 	
-
 
 	@RequestMapping("/walkerPrf/insertform")
 	public ModelAndView insertform(HttpServletRequest request) {
@@ -28,9 +28,14 @@ public class ReservationController {
 		// 서비스에 전달할 ModelAndView 객체 생성
 		ModelAndView mView = new ModelAndView();
 		rService.insert(request, mView, dto);
-		return new ModelAndView("redirect:/walkerPrf/detail_main.do");
+		return new ModelAndView("redirect:/walkerPrf/insert");
 	}
 	
+
+	@RequestMapping("/petwalker/notReserved")
+	public ModelAndView notReserved(HttpServletRequest request) {
+		return new ModelAndView("petwalker/reservation");
+	}
 	
 	
 }

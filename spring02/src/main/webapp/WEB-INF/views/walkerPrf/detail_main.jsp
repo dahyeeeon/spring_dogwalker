@@ -188,14 +188,7 @@
    <script src="../resources/vendor/jquery-easing/jquery.easing.js"></script>
    <script src="../resources/vendor/bootstrap/js/grayscale.js"></script>
    <%@include file="../home_footer.jsp"%>
-   <script>
-      function deleteConfirm(num) {
-         var isDelete = confirm("예약을 삭제하시겠습니까?");
-         if (isDelete) {
-            location.href = "delete.do?num=" + num;
-         }
-      }
-   </script>
+   
 </body>
 
 </html>

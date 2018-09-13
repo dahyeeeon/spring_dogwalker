@@ -40,7 +40,7 @@
    </select>
 
 	 <update id="rsvConfirm" parameterType="int" >
-   		UPDATE reservation SET isReserved = 1 WHERE num=#{num}
+   		UPDATE reservation SET isReserved = isReserved+1 WHERE num=#{num}
    </update>
     <update id="rsvConfirm2" parameterType="int" >
    		UPDATE reservation SET isReserved = 2 WHERE num=#{num}

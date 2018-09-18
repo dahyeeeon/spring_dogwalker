@@ -8,7 +8,6 @@
 <title>cafe/insert.jsp</title>
 </head>
 <body>
- 
 <script>
 alert("${id }님이 작성한 새글이 등록 되었습니다.");
 location.href="${pageContext.request.contextPath }/community/list.do";

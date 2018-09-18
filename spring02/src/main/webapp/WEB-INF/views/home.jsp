@@ -94,43 +94,40 @@ footer {
 }
 
 .search_input_class{
-	width:500px;
-	
+   width:500px;
+   
 }
-</style>
-  <!-- Bootstrap core CSS -->
- <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
- <link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
 
- <!-- Custom styles for this template -->
-  <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+
+</style>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
-
-<body id="page-top">
-
 <%@include file="home_menu.jsp" %>
+<body id="page-top">
 <!-- Wrapper for slides -->
 <div class="item active">
-   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
- </div>
+   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles" style="width:100%;">
+</div>
 
 <div class="expand">
-	<i class="fa fa-plus"></i>
-	<div class="box">
-		<p>서비스 안내</p>
-		<p></p>
-		<p>
-			<strong>문의:02-1234-1234</strong><br/><br/>
-			이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
-	  		예약 관련 : <br/>최소  1주 전<br/><br/>
-	  		취소 관련 : <br/>3일 이내 취소 가능
-	  	</p>
-	</div>
+   <i class="fa fa-plus"></i>
+   <div class="box">
+      <p>서비스 안내</p>
+      <p></p>
+      <p><strong>문의:02-1234-1234</strong><br/><br/>
+      이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
+        예약 관련 : <br/>최소  1주 전<br/><br/>
+        취소 관련 : <br/>3일 이내 취소 가능
+        </p>
+   </div>
 </div>
 <div class="container">
-	<div class="row">
+   <div class="row">
         <div class="col-xs-12">
         <h4>이용방법</h4>
             <ul class="nav nav-pills nav-justified thumbnail">
@@ -175,7 +172,7 @@ footer {
                 </li>
             </ul>
         </div>
-	</div>
+   </div>
 </div>
 
 

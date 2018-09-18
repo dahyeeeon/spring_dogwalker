@@ -70,31 +70,23 @@
 		<p> 검색어 : <strong>${keyword }</strong> 에 대한 자세히 보기</p>
 	</c:if>
 	
-	<h3>글 자세히 보기 페이지</h3>
+	<h3>글 자세히 보기</h3>
 	<c:if test="${sessionScope.id eq dto.writer }">
 		<a href="updateform.do?num=${dto.num }">수정</a>
 		<a href="javascript:deleteConfirm()">삭제</a>
-		<script>
-			function deleteConfirm(){
-				var isDelete=confirm("글을 삭제 하시겠습니까?");
-				if(isDelete){
-					location.href="community/delete.do?num=${dto.num}";
-				}
-			}
-		</script>
 	</c:if>
 	<table>
 		<tr>
-			<th>글번호</th>
-			<td>${dto.num }</td>
+			<th>글 번 호</th>
+			<td>&nbsp;&nbsp;&nbsp;${dto.num }</td>
 		</tr>
 		<tr>
-			<th>작성자</th>
-			<td>${dto.writer }</td>
+			<th>작 성 자</th>
+			<td>&nbsp;&nbsp;&nbsp;${dto.writer }</td>
 		</tr>
 		<tr>
-			<th>제목</th>
-			<td>${dto.title }</td>
+			<th>제 목</th>
+			<td>&nbsp;&nbsp;&nbsp;${dto.title }</td>
 		</tr>
 	</table>
 	<br /><br />
@@ -176,41 +168,45 @@
 	
 				
 </div>
-
-
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script>
+function deleteConfirm(){
+	var isDelete=confirm("글을 삭제 하시겠습니까?");
+	if(isDelete){
+		location.href="community/delete.do?num=${dto.num}";
+	}
+}
 	//로그인 했는지 여부
-	var isLogin=${isLogin};
-	
-	//댓글 전송 이벤트가 일어 났을때 실행할 함수 등록
-	$(".comment_form > form, .comment form").submit(function(){
-		if(!isLogin){//로그인 하지 않았으면
-			var isGoLogin=confirm("로그인이 필요 합니다.");
-			if(isGoLogin){
-				//로그인 페이지로 이동하기
-				location.href="${pageContext.request.contextPath}"+
-					"/petwalker/loginform.do"+
-					"?url=${pageContext.request.contextPath}"+
-					"/community/detail.do?num=${dto.num}";
-			}
-			return false;//폼 전송 막기 
+var isLogin=${isLogin};
+
+//댓글 전송 이벤트가 일어 났을때 실행할 함수 등록
+$(".comment_form > form, .comment form").submit(function(){
+	if(!isLogin){//로그인 하지 않았으면
+		var isGoLogin=confirm("로그인이 필요 합니다.");
+		if(isGoLogin){
+			//로그인 페이지로 이동하기
+			location.href="${pageContext.request.contextPath}"+
+				"/petwalker/loginform.do"+
+				"?url=${pageContext.request.contextPath}"+
+				"/community/detail.do?num=${dto.num}";
 		}
-	});
+		return false;//폼 전송 막기 
+	}
+});
+
+// 답글 링크를 눌렀을때 실행할 함수 등록 
+$(".comment .reply_link").click(function(){
+	if($(this).text()=="답글"){
+		$(this).text("취소");
+	}else{
+		$(this).text("답글");
+	}
 	
-	// 답글 링크를 눌렀을때 실행할 함수 등록 
-	$(".comment .reply_link").click(function(){
-		if($(this).text()=="답글"){
-			$(this).text("취소");
-		}else{
-			$(this).text("답글");
-		}
-		
-		$(this)
-		.parent().parent().parent()
-		.find("form")
-		.slideToggle(200);
-	});
+	$(this)
+	.parent().parent().parent()
+	.find("form")
+	.slideToggle(200);
+});
 </script>
 </body>
 </html>

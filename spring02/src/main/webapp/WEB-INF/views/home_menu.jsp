@@ -1,8 +1,4 @@
-
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 .header_gnb {
    position: fixed;
@@ -143,23 +139,21 @@
             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
-         </c:otherwise>
+               <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/home_login.do">login</a>
+          </c:otherwise>
       </c:choose>
-      <c:choose>
-            <c:when test="${ (not empty id) and (isWalker eq true)  }">
-               <p>
-                  <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
-               </p>
-            </c:when>
-            <c:when test="${ (not empty id) and (isWalker eq false)  }">
-               <p>
-                  <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
-               </p>
-            </c:when>
-            <c:otherwise>
-               <a class="nav-link js-scroll-trigger" href="home_signup.do">join
-                  us</a>
+      
+     <c:choose>
+         <c:when test="${ (not empty id) and (isWalker eq true)  }">
+               <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
+         </c:when>
+         <c:when test="${ (not empty id) and (isWalker eq false)  }">
+            
+               <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
+            
+         </c:when>
+         <c:otherwise>
+            <a href="${pageContext.request.contextPath }/home_signup.do">join us</a>
             </c:otherwise>
          </c:choose>
    </div>

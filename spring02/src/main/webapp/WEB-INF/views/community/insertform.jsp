@@ -8,35 +8,40 @@
 label {
     display: inline-block;
     text-align: center;
-    width: 50px;
 }
 </style>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 <meta charset="UTF-8">
 <title>cafe/insertform.jsp</title>
 <!-- SmartEditor 관련 javascript 로딩 -->
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+
 
 </head>
 <body>
 <%@include file="../home_menu.jsp" %>
 <div class="container" style=" margin-top: 100px;">
-<h3>카페 새글 입력 페이지 입니다.</h3>
-<form action="insert.do" method="post">
-	<label for="writer">작성자</label>
-	<input type="text" id="writer" 
-		value="${id }" disabled="disabled"/><br/><br />
-	<label for="title">제 목</label>
-	<input type="text" name="title" id="title" style="width:500px;"/><br/><br />
-	<textarea name="content" id="content" 
-	style="width:766px;height:412px;display:none"></textarea>
-	<br /><br />
-	<div>
-		<input type="button" onclick="submitContents(this);" class="btn_update"
-		style="margin-left:700px;" value="글쓰기" />
-
-	</div>	
-</form>
+	<h3>카페 새글 입력 페이지 입니다.</h3>
+	<form action="insert.do" method="post">
+		<label for="writer">작성자</label>
+		<input type="text" id="writer" 
+			value="${id }" disabled="disabled"/><br/><br />
+		<label for="title">제 목</label>
+		<input type="text" name="title" id="title" style="width:500px;"/><br/><br />
+		<textarea name="content" id="content" 
+		style="width:766px;height:412px;display:none"></textarea>
+		<br /><br />
+		<div>
+			<input type="button" onclick="submitContents(this);" class="btn_update"
+			style="margin-left:700px;" value="글쓰기" />
+	
+		</div>	
+	</form>
 </div>
 
 <script>

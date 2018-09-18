@@ -13,21 +13,21 @@
 <body>
 <%@include file="../home_menu.jsp" %>
 <div class="container" style=" margin-top: 100px;">
-<h3>카페 글 수정 페이지 입니다.</h3>
-<form action="update.do" method="post">
-	<input type="hidden" name="num" value="${dto.num }" />
-	<label for="writer">작성자</label>
-	<input type="text" id="writer" 
-		value="${dto.writer }" disabled="disabled"/><br/>
-	<label for="title">제목</label>
-	<input type="text" name="title" id="title" 
-		value="${dto.title }" size="40"/><br/>
-	<textarea name="content" id="content" 
-	style="width:766px;height:412px;display:none">${dto.content }</textarea>
-	<div>
-		<input type="button" class="btn_update" style="margin-left:700px;" onclick="submitContents(this);" value="수정 확인" />
-	</div>	
-</form>
+	<h3>카페 글 수정 페이지 입니다.</h3>
+	<form action="update.do" method="post">
+		<input type="hidden" name="num" value="${dto.num }" />
+		<label for="writer">작성자</label>
+		<input type="text" id="writer" 
+			value="${dto.writer }" disabled="disabled"/><br/>
+		<label for="title">제목</label>
+		<input type="text" name="title" id="title" 
+			value="${dto.title }" size="40"/><br/>
+		<textarea name="content" id="content" 
+		style="width:766px;height:412px;display:none">${dto.content }</textarea>
+		<div>
+			<input type="button" class="btn_update" style="margin-left:700px;" onclick="submitContents(this);" value="수정 확인" />
+		</div>	
+	</form>
 </div>
 <script>
 var oEditors = [];

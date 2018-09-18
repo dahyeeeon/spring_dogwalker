@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.petusers.dto.PetusersDto;
 import com.dog.walker.petusers.service.PetusersService;
+import com.dog.walker.reservation.service.ReservationService;
 
 @Controller
 public class PetusersController {
@@ -109,71 +110,90 @@ public class PetusersController {
          //view 페이지 정보 리턴 
          return "petusers/logout";
       }
+      
    //개인 정보 보기 요청 처리
       @RequestMapping("/petusers/info")
       public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {
          ModelAndView mView=new ModelAndView();
 
-         uService.info(mView, session);
-         
-         //view 페이지의 정보를 담아서 
-         mView.setViewName("petusers/info");
-         //ModelAndView 객체를 리턴해 준다. 
-         return mView;
-      }
-      //회원 가입 정보 수정폼 요청 처리
-      @RequestMapping("/petusers/updateform")
-      public ModelAndView authUpdateForm(HttpServletRequest request,
-            HttpSession session) {
-         //ModelAndView 객체를 생성해서 
-         ModelAndView mView=new ModelAndView();
-         //서비스에 인자로 전달해서 회원정보가 담기게 하고 
-         uService.updateForm(mView, session);
-         //view 페이지에서 회원 정보 수정 폼을 출력한다.
-         mView.setViewName("petusers/updateform");
-         return mView;
-      }
-      //회원 정보 수정 요청 처리
-      @RequestMapping("/petusers/update")
-      public ModelAndView authUpdate(HttpServletRequest request,
-            @ModelAttribute PetusersDto dto) {
-         uService.update(dto);
-         //개인 정보 보기 페이지로 리다일렉트 이동 
-         return new ModelAndView("redirect:/petusers/info.do");
-      }
-      @RequestMapping("/petusers/pw_changeform")
-      public ModelAndView authPwUpdateForm(HttpServletRequest request) {
-         
-         return new ModelAndView("petusers/pw_changeform");
-      }
-      @RequestMapping("/petusers/pw_check")
-      @ResponseBody
-      public Map<String, Object> pwCheck(@RequestParam String inputPwd,
-            HttpSession session){
-         boolean isValid=uService.isValidPwd(inputPwd, session);
-         Map<String, Object> map=new HashMap<String, Object>();
-         map.put("isValid", isValid);
-         // {"isValid":true} or {"isValid":false} 
-         return map;
-      }
-      //비밀번호 수정 반영하는 요청 처리
-      @RequestMapping("/users/pw_update")
-      public ModelAndView authPwUpdate(HttpServletRequest request,
-            @RequestParam String pwd, HttpSession session) {
-         //서비스를 이용해서 비밀번호 수정 
-         uService.updatePwd(pwd, session);
-         //개인정보 보기로 리다일렉트 
-         return new ModelAndView("redirect:/petusers/info.do");
-      }
-      
-      //회원 탈퇴 요청 처리
-      @RequestMapping("/petusers/delete")
-      public ModelAndView authDelete(HttpServletRequest request,
-            ModelAndView mView) {
-         //서비스를 통해서 회원 탈퇴 처리를 하고 
-         uService.delete(mView, request.getSession());
-         //view 페이지로 이동해서 응답하기
-         mView.setViewName("petusers/delete");
-         return mView;
-      }
+			uService.info(mView, session);
+			
+			//view 페이지의 정보를 담아서 
+			mView.setViewName("petusers/info");
+			//ModelAndView 객체를 리턴해 준다. 
+			return mView;
+		}
+		
+		@Autowired
+		private ReservationService rService;
+		
+		//펫 유저 예약테이블
+		@RequestMapping("/petusers/reservation")
+		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
+			
+			
+			
+			rService.getList2(mView, request);
+			mView.setViewName("petusers/reservation");
+			
+			return mView;
+			
+			
+		}
+		//회원 가입 정보 수정폼 요청 처리
+		@RequestMapping("/petusers/updateform")
+		public ModelAndView authUpdateForm(HttpServletRequest request,
+				HttpSession session) {
+			//ModelAndView 객체를 생성해서 
+			ModelAndView mView=new ModelAndView();
+			//서비스에 인자로 전달해서 회원정보가 담기게 하고 
+			uService.updateForm(mView, session);
+			//view 페이지에서 회원 정보 수정 폼을 출력한다.
+			mView.setViewName("petusers/updateform");
+			return mView;
+		}
+		//회원 정보 수정 요청 처리
+		@RequestMapping("/petusers/update")
+		public ModelAndView authUpdate(HttpServletRequest request,
+				@ModelAttribute PetusersDto dto) {
+			uService.update(dto);
+			//개인 정보 보기 페이지로 리다일렉트 이동 
+			return new ModelAndView("redirect:/petusers/info.do");
+		}
+		@RequestMapping("/petusers/pw_changeform")
+		public ModelAndView authPwUpdateForm(HttpServletRequest request) {
+			
+			return new ModelAndView("petusers/pw_changeform");
+		}
+		@RequestMapping("/petusers/pw_check")
+		@ResponseBody
+		public Map<String, Object> pwCheck(@RequestParam String inputPwd,
+				HttpSession session){
+			boolean isValid=uService.isValidPwd(inputPwd, session);
+			Map<String, Object> map=new HashMap<String, Object>();
+			map.put("isValid", isValid);
+			// {"isValid":true} or {"isValid":false} 
+			return map;
+		}
+		//비밀번호 수정 반영하는 요청 처리
+		@RequestMapping("/users/pw_update")
+		public ModelAndView authPwUpdate(HttpServletRequest request,
+				@RequestParam String pwd, HttpSession session) {
+			//서비스를 이용해서 비밀번호 수정 
+			uService.updatePwd(pwd, session);
+			//개인정보 보기로 리다일렉트 
+			return new ModelAndView("redirect:/petusers/info.do");
+		}
+		
+		//회원 탈퇴 요청 처리
+		@RequestMapping("/petusers/delete")
+		public ModelAndView authDelete(HttpServletRequest request,
+				ModelAndView mView) {
+			//서비스를 통해서 회원 탈퇴 처리를 하고 
+			uService.delete(mView, request.getSession());
+			//view 페이지로 이동해서 응답하기
+			mView.setViewName("petusers/delete");
+			return mView;
+		}
 }
+

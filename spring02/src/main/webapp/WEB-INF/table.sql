@@ -1,4 +1,3 @@
-
 CREATE TABLE pet_walker(
    id VARCHAR2(30) PRIMARY KEY,
    nickname VARCHAR2(100),
@@ -16,8 +15,29 @@ CREATE TABLE pet_walker(
    fileSize	long,
    isProfiled NUMBER default 0
 );
+<<<<<<< HEAD
+
+
+CREATE TABLE pet_users(
+   id VARCHAR2(30) PRIMARY KEY,
+   nickname VARCHAR2(100),
+   pwd VARCHAR2(100),
+   kakao VARCHAR2(100),
+   phone VARCHAR2(100),
+   addr VARCHAR2(100),
+   sex VARCHAR2(10),
+   hasPet VARCHAR2(10),
+   imagePath VARCHAR2(100),
+   regdate DATE,
+   orgFileName varchar2(300),
+   saveFileName varchar2(300),
+   fileSize long,
+   isConfirmed NUMBER default 0 
+);
+=======
 select * from manage;
 select * from pet_walker;
+>>>>>>> refs/remotes/origin/soda
 
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,
@@ -48,26 +68,22 @@ CREATE TABLE manage(
    freeservice varchar2(500),
    filePath VARCHAR2(100),
    orgFileName varchar2(300),
-    saveFileName varchar2(300),
-    fileSize long
+   saveFileName varchar2(300),
+   fileSize long
 );
 
-CREATE SEQUENCE manage_seq;
-
-
-select * from manage;
-
---drop table walker_profile;
---Create table walker_profile(
---   id varchar2(30) PRIMARY KEY,
---   career varchar2(500),
---   experience varchar2(500),
---   freeservice varchar2(500),
---   imagePath VARCHAR2(100),
---   orgFileName varchar2(300),
---    saveFileName varchar2(300),
---    fileSize long
---)
+CREATE TABLE reservation(
+   num NUMBER PRIMARY KEY,
+   id VARCHAR2(30),
+   kakao VARCHAR2(100),
+   nickname VARCHAR2(50),
+   dogSize VARCHAR2(100),
+   selectDate VARCHAR2(100),
+   timeSlot VARCHAR2(80),
+   cctv VARCHAR2(50),
+   petwalker VARCHAR2(50),
+   isReserved NUMBER default 0
+);
 
 create table board_Cafe(
 num NUMBER PRIMARY KEY,
@@ -85,6 +101,7 @@ nextNum number
 create Sequence board_cafe_seq;
 
 create table board_cafe_comment(
+<<<<<<< HEAD
 num NUMBER PRIMARY KEY,
 writer varchar2(100),
 content varchar2(500),
@@ -93,12 +110,22 @@ ref_group number,
 comment_group number,
 regdate DATE,
 imagePath varchar2()
+=======
+	num NUMBER PRIMARY KEY,
+	writer varchar2(100),
+	content varchar2(500),
+	target_id varchar2(100),
+	ref_group number,
+	comment_group number,
+	regdate DATE
+>>>>>>> refs/remotes/origin/sumi2
 )
 
-select * from board_cafe;
 
-select * from walker_profile;
 
+<<<<<<< HEAD
+CREATE SEQUENCE reservation_seq;
+=======
 drop table pet_walker;
 
 select * from pet_walker;
@@ -156,13 +183,28 @@ CREATE TABLE manage(
     fileSize long
 );
 
+>>>>>>> refs/remotes/origin/soda
 
 CREATE SEQUENCE manage_seq;
 
+<<<<<<< HEAD
 drop table manage;
+=======
+<<<<<<< HEAD
+DROP table pet_walker;
+DROP table pet_users;
+DROP table manage;
+DROP table reservation;
+=======
+drop table pet_walker;
+>>>>>>> refs/remotes/origin/soda
+>>>>>>> refs/remotes/origin/sumi2
 
-SELECT m.FILEPATH FROM pet_walker w ,manage m WHERE w.id = m.id AND w.addr='홍제동';
+DROP SEQUENCE manage_seq;
 
+<<<<<<< HEAD
+select * from pet_walker;
+=======
 
 
 select * from manage;
@@ -182,9 +224,17 @@ select career from manage;
 
 SELECT career, experience, freeservice from manage WHERE nickname = '11';
 
+>>>>>>> refs/remotes/origin/soda
 select * from manage; 
 
 
+<<<<<<< HEAD
+select * from reservation;
+
+select * frofm reservation where petwalker='채영';
+
+select * from reservation where id='triplej'
+=======
 CREATE TABLE pet_walker(
    id VARCHAR2(30) PRIMARY KEY,
    nickname VARCHAR2(100),
@@ -313,4 +363,7 @@ select m.filePath filePath, p.imagePath imagePath, p.nickname nickname, p.id id 
 FROM manage m JOIN pet_walker p ON m.nickname = p.nickname;
 
 
+select * from pet_users;
+select * from reservation where nickname=1;
 
+select * from reservation where petwalker=22;

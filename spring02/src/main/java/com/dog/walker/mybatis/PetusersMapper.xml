@@ -54,5 +54,8 @@
 		set imagePath=#{imagePath}
 		where id=#{id}
 	</update>
-
+	
+	<update id="isConfirmed" parameterType="int">
+		update pet_users set isConfirmed=1 where nickname=#{nickname}
+	</update>
 </mapper>

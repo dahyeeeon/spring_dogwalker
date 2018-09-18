@@ -59,5 +59,11 @@ public class PetusersDaoImpl implements PetusersDao {
 		
 	}
 
+	@Override
+	public void isConfirmed(String nickname) {
+		session.update("petusers.isConfirmed", nickname);
+		
+	}
+
 
 }

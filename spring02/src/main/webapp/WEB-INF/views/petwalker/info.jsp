@@ -8,11 +8,20 @@
 <meta charset="UTF-8">
 <title>petwalker/info.jsp</title>
 <style>
-
+	.bottomCol {
+   		border-top: 3px solid #64a19d;
+   		margin: 0 auto;
+	}
 </style>
-</head>
-<body style="margin-top: 120px">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+</head>
+
+
+
+
+<body style="margin-top: 120px">
+
+
 
 <div class="container">
       <div class="row">
@@ -96,13 +105,16 @@
                       <a href="profileupdateform.do" class="btn_update">프로필 수정</a>
                    </c:otherwise>
                 </c:choose>
+                <a href="reservation.do?id=${dto.id }" class="btn_update">예약보기</a>
                 </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 <script>
 

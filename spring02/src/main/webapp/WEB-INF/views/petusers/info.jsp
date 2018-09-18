@@ -51,6 +51,11 @@
 		</tr>
 	</tbody>
 </table>
+
+<a href="reservation.do?nickname=${dto.nickname }" class="btn_update">예약보기</a>
+
+
+
 <a href="updateform.do">회원정보 수정</a>
 <a href="javascript:deleteConfirm()">회원 탈퇴</a>
 <script>

@@ -15,8 +15,17 @@
 .bottomCol {
    border-top: 3px solid #64a19d;
    margin: 0 auto;
+   margin-top: 15px;
 }
-
+.bottomCol > h3{
+   margin-left: 40px;
+}
+.wk > p{
+   margin-left: 60px;
+}
+.wk{
+   margin-top: 15px;
+}
 .round>p {
    font-size: 12px;
    color: black;
@@ -26,6 +35,10 @@
    margin-left: -30px;
 }
 </style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+<link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
 <link
    href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css"
    rel="stylesheet">
@@ -55,18 +68,18 @@
    <div class="container">
 
       <div class="row">
-         <div class="col-sm-7">
+         <div class="col-sm-7 center-block">
 
-            <div class="fotorama" data-autoplay="true" data-nav="thumbs"
+            <div class="fotorama center-block" data-autoplay="true" data-nav="thumbs"
                data-allowfullscreen="true">
-               <c:forEach var="tmp" items="${pwklist }">
-               <img src="${pageContext.request.contextPath }/${tmp.filePath }"
-                  class="img-responsive img-thumbnail" /> <img
-                  src="${pageContext.request.contextPath }/${tmp.filePath }"
-                  class="img-responsive img-thumbnail" /> <img
-                  src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
-                  class="img-responsive img-thumbnail" />
-               </c:forEach>
+            
+               <img src="${pageContext.request.contextPath }/${pwk.filePath }"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/> 
+               <img src="${pageContext.request.contextPath }/${pwk.filePath }"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/> 
+               <img src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
+                  class="img-responsive img-thumbnail" style="height:260px; width:500px"/>
+              
             </div>
 
          </div>
@@ -107,9 +120,20 @@
 
 
             <div class="action" style="text-align: center; margin-top: 50px;">
-               <button class="btn btn-default" type="submit">
-                  <a href="insertform.do"> reservation </a>
-               </button>
+            <c:choose>
+                     <c:when test = "${id == petUser.id}">
+                     	<button class="btn btn-default" type="submit">
+                  			<a href="insertform.do?petwalker=${nickname }"> RESERVATION </a>
+              			 </button>
+                     </c:when>
+                     <c:otherwise>
+                     	<button id="b" class="btn btn-default" style="color: red; cursor: no-drop"> RESERVATION </button>
+                     	<script>
+                     		$("#b").click(function(){alert("유저만 예약 가능합니다!")})                     		
+                     	</script>
+                     </c:otherwise>
+            </c:choose>
+               
 
             </div>
          </div>
@@ -117,30 +141,29 @@
       
       <div class="row bottomCol">
          <h3>펫 워커 경험</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.experience }</p>
-         </c:forEach>         
       </div>
-      
+      <div class="row right-block wk">
+         <p>${pwk.experience }</p>
+      </div>
       <div class="row bottomCol">
          <h3>워커 경력</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.career }</p>
-         </c:forEach>
       </div>
+      <div class="row right-block wk">
+         <p>${pwk.career }</p>
+        </div>
       <div class="row bottomCol">
          <h3>워커로서 제공 가능한 무료 서비스</h3>
-         <c:forEach var="tmp" items="${pwklist }">
-         <p>${tmp.freeservice }</p>
-         </c:forEach>
-      </div>
-      <div class="row bottomCol">
+     </div>
+     <div class="row right-block wk">
+         <p>${pwk.freeservice }</p>
+     </div>
+     <div class="row bottomCol">
          <h3>받은 리뷰들</h3>
          
          <c:forEach var="tmp" items="${list }">
          
             <div class="well row right-block">
-               <div class="media">
+               <div class="media" style="margin-left: 60px;">
                   <a class="pull-left" href="#"> <img
                      class="media-object img-responsive img-thumbnail"
                      style="width: 100px; height: 100px"
@@ -155,12 +178,7 @@
                         <li>|</li>
                         <li class="print-star" data-stars="${tmp.stars }"></li>
                         <li>|</li>
-                        <li>
-                           <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                           <span><i class="fa fa-facebook-square"></i></span> <span><i
-                              class="fa fa-twitter-square"></i></span> <span><i
-                              class="fa fa-google-plus-square"></i></span>
-                        </li>
+                        
                      </ul>
                   </div>
                </div>
@@ -168,28 +186,6 @@
             
          </c:forEach>
       </div>
-      <div class="row bottomCol" style="margin-bottom: 130px">
-         <h3>예약 목록</h3>
-         <table class="table table-border">
-            <thead>
-               <tr>
-                  <th>날짜</th>
-                  <th>시간대</th>
-               </tr>
-            </thead>
-            <tbody>
-               <c:forEach var="tmp" items="${rsvlist }">
-                  <tr>
-                     <td>${tmp.selectDate }</td>
-                     <td>${tmp.timeSlot }</td>
-                     <td><a href="javascript:deleteConfirm(${tmp.num })">삭제</a></td>
-                     <td><a href="updateform.do?num=${tmp.num }">수정</a></td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-         </table>
-      </div>
-
 
    </div>
 
@@ -201,14 +197,7 @@
    <script src="../resources/vendor/jquery-easing/jquery.easing.js"></script>
    <script src="../resources/vendor/bootstrap/js/grayscale.js"></script>
    <%@include file="../home_footer.jsp"%>
-   <script>
-      function deleteConfirm(num) {
-         var isDelete = confirm("예약을 삭제하시겠습니까?");
-         if (isDelete) {
-            location.href = "delete.do?num=" + num;
-         }
-      }
-   </script>
+   
 </body>
 
 </html>

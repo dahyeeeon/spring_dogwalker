@@ -6,9 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Lets Run!</title>
-<link
-   href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css"
-   rel="stylesheet">
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
    
@@ -32,21 +31,23 @@ label{
 <body style="margin-top: 180px">
 <%@include file="../home_menu.jsp" %>
    <div class="container">
-   <form action="insert.do" method="post">
+   <form action="insert.do" method="post" id="rsvForm">
       <div class="row">
          <fieldset>
-
-         
-
-         
-            <legend></legend>
+            <legend></legend>       
+            <label for="petwalker"></label>
+            <input type="hidden" name="petwalker" id="petwalker" value="${petwalker }"/>   
+            <input type="hidden" name="id" value="${petUser.id}" />
+            <input type="hidden" name="kakao" value="${petUser.kakao}" />
+            <input type="hidden" name="nickname" value="${petUser.nickname}" />
             <p>신청자 정보 </p>
-            <label for="id"></label> <input type="text" name="id" id="id"
-               placeholder="아이디 입력" /><br> <label for="kakao"></label> <input
-               type="text" name="kakao" id="kakao" placeholder="카카오 아이디 입력" /><br>
-            <label for="nickname"></label> <input type="text" name="nickname"
-               id="nickname" placeholder="닉네임 입력" /><br />
-               
+            <label for="id"></label> 
+            <input type="text"  id="id" value="${petUser.id}" disabled /><br> 
+            <label for="kakao"></label>
+            <input type="text"  id="kakao" value="${petUser.kakao}" disabled /><br>
+            <label for="nickname"></label> 
+            <input type="text" id="nickname" value="${petUser.nickname}" disabled /><br />
+            
             </fieldset>
             
       </div>
@@ -56,9 +57,11 @@ label{
          <fieldset>
             <legend></legend>
             <p>개 크기</p>
-            <label for="dogSize">소형</label> <input type="radio" name="dogSize"
-               value="small" /> <label for="dogSize">중형</label> <input
-               type="radio" name="dogSize" value="middle" /> <label for="dogSize">대형</label>
+            <label for="dogSize">소형</label> 
+            <input type="radio" name="dogSize" value="small" required /> 
+            <label for="dogSize">중형</label> 
+            <input type="radio" name="dogSize" value="middle" /> 
+            <label for="dogSize">대형</label>
             <input type="radio" name="dogSize" value="big" />
          </fieldset>
 
@@ -68,8 +71,8 @@ label{
          <fieldset>
             <legend></legend>
             <p>예약 가능한 날짜</p>
-            <label for="selectDate">날짜 선택</label> <input type="date"
-               name="selectDate" value="rsvDate" />
+            <label for="selectDate">날짜 선택</label> 
+            <input type="date" name="selectDate" value="rsvDate" required/>
          </fieldset>
 
       </div><br /><br />
@@ -79,7 +82,7 @@ label{
             <legend></legend>
             <p>예약 가능한 시간</p>
             <label for="timeSlot">시간대 선택</label><br /> <select name="timeSlot"
-               id="timeSlot">
+               id="timeSlot" required>
                <option value="">--선택--</option>
                <option value="morning">아침</option>
                <option value="afternoon">점심</option>
@@ -95,7 +98,7 @@ label{
             <legend></legend>
             <p>펫 캠</p>
             <label for="cctv">펫 캠 옵션</label> <br /> <select name="cctv"
-               id="cctv">
+               id="cctv" required>
                <option value="">--선택--</option>
                <option value="true">옵션 추가</option>
                <option value="false">옵션 추가하지 않음</option>
@@ -105,12 +108,13 @@ label{
 
       </div><br /><br />
       <div class="row" style="border:none;">
-      <button style="margin:auto; margin-bottom:50px" class="btn btn-default center-block" type="submit">Submit</button>
+      <button id="btn" style="margin:auto; margin-bottom:50px" class="btn btn-default center-block" type="submit">Submit</button>
       </div>
       
 </form>      
 
    </div>
-<%@include file="../home_footer.jsp" %>   
+<%@include file="../home_footer.jsp" %> 
+
 </body>
 </html>

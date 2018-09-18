@@ -114,8 +114,11 @@ public class PetwalkerServiceImpl implements PetwalkerService {
 		String id = (String) session.getAttribute("id");
 		// 해당 회원정보를 얻어와서
 		PetwalkerDto dto = dao.getData(id);
-		// ModelAndView 객체에 담는다 (request 에 담는 작업 대신...)
+		
+		String nickname = dto.getNickname();
 		mView.addObject("dto", dto);
+		mView.addObject("nickname", nickname);
+		
 	}
 
 	@Override

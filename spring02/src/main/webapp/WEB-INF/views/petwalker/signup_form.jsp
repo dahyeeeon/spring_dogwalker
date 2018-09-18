@@ -464,7 +464,8 @@ a#MOVE_TOP_BTN {
                      <lagend><p class="p24"><b>펫 소유</b></p></lagend>
                      <label> <input type="radio" name="hasPet" id="hasPet"
                         value="yes" checked="checked" />예
-                     </label> <label> <input type="radio" name="hasPet" id="hasPet"
+                     </label> 
+                     <label> <input type="radio" name="hasPet" id="hasPet"
                         value="no" checked="checked" />아니요
                         <br />
                      </label> <br /> <label for="myFile"><p class="p24"><b>이미지</b></p></label> <input type="file"

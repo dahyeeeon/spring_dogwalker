@@ -371,23 +371,26 @@ img {
                            </div>
                         </div>
                         
-                        
-                        <div class="row" >
-                           <div class="petwalker-card-bottom" style="padding:1px;">
-                              <div class="petsitter-card-star-box" style = "float:left">
-                                 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
-                                 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
-                                 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
-                                 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
-                                 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
-                              </div>
-                           </div>
-                        
-                           <!-- 리스트 돌릴 때 여기서 담겨진 nickname 이랑 list1에 담겨진 nickname 과 같으면  출력-->
-                           <div class="petsitter-card-price" style = "margin-left:50px; margin-top:10px;"><b>16,000원 부터 / 일</b></div>
-                        
-                        </div>
-                        
+                        <c:forEach var="list2" items="${starList }">
+	                        <div class="row" >
+	                           <div class="petwalker-card-bottom" style="padding:1px;">
+	                              <div class="petsitter-card-star-box" style = "float:left">
+	                              
+                              		<c:if test="${list1.nickname eq list2.nickname }">
+                              			<span><strong>리뷰 평점은 : </strong>${list2.stars }</span>
+                              			<%-- <c:forEach begin="1" end="${list2.stars }" >
+	                              			 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
+                              			</c:forEach> --%>
+                              		</c:if>
+	                              	
+	                              	</div>
+	                           </div>
+                        	
+	                        </div>
+	                        
+                        </c:forEach>
+	                    <div class="petsitter-card-price" style = "margin-left:50px; margin-top:10px;"><b>16,000원 부터 / 일</b></div>
+	                        
                      </div>
                   </div>
                </c:forEach> 
@@ -417,9 +420,10 @@ img {
     var values = new Array();
     var values2 = new Array();
    
+    //
+    
         function initialize() {
-           
-             
+        	//초기화 시키고
                    
               <c:forEach var="tmp" items="${findWalker}" varStatus="status">
                   values.push("${tmp.addr}");   
@@ -447,8 +451,6 @@ img {
             var markLocation1_5 = new google.maps.LatLng('37.585219', '126.947711'); // 마커가 위치할 위도와 경도
             var markLocation1_6 = new google.maps.LatLng('37.586214', '126.948655'); // 마커가 위치할 위도와 경도
                
-            
-            
             
            var mapOptions = {
              center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
@@ -480,7 +482,6 @@ img {
            var marker9;
            var marker10;
            
-       
             
            marker1 = new google.maps.Marker({
                   position: markLocation1_1, // 마커가 위치할 위도와 경도(변수)
@@ -550,15 +551,14 @@ img {
               
            }
            
+           //
           <c:forEach var="tmp" items="${findWalker}" varStatus="status">
-             
              var info_${status.index} = new google.maps.InfoWindow({content:"${tmp.nickname}"});
                 google.maps.event.addListener(marker1, "click", function() {
                  infowindow1_1.open(map,marker);
-                 
               });
              
-             </c:forEach>
+          </c:forEach>
              
           /*  // 마커를 클릭했을 때의 이벤트. 말풍선 안에 content 내용
           

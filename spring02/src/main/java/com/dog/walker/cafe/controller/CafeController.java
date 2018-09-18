@@ -1,6 +1,7 @@
 package com.dog.walker.cafe.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,9 +47,9 @@ public class CafeController {
 	//새 댓글 저장 요청처리
 	@RequestMapping("/community/comment_insert")
 	public ModelAndView authCommentInsert
-		(HttpServletRequest request , @ModelAttribute CafeCommentDto dto) {
-		
-		cafeService.commentInsert(dto);;
+		(HttpServletRequest request , @ModelAttribute CafeCommentDto dto ,HttpSession session) {
+	
+		cafeService.commentInsert(dto,session);
 		
 		return new ModelAndView
 			("redirect:/community/detail.do?num="+dto.getRef_group());

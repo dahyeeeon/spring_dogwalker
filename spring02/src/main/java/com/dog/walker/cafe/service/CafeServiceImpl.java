@@ -3,6 +3,7 @@ package com.dog.walker.cafe.service;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,25 @@ import com.dog.walker.cafe.dao.CafeCommentDao;
 import com.dog.walker.cafe.dao.CafeDao;
 import com.dog.walker.cafe.dto.CafeCommentDto;
 import com.dog.walker.cafe.dto.CafeDto;
+import com.dog.walker.petusers.dao.PetusersDao;
+import com.dog.walker.petusers.dto.PetusersDto;
+import com.dog.walker.petwalker.dao.PetwalkerDao;
+import com.dog.walker.petwalker.dto.PetwalkerDto;
 
 
 @Service
 public class CafeServiceImpl implements CafeService{
 	@Autowired
 	private CafeDao cafeDao;
+	
 	@Autowired
 	private CafeCommentDao cafeCommentDao;
+	
+	@Autowired
+	private PetwalkerDao petWalkerDao;
+	
+	@Autowired
+	private PetusersDao petUsersDao;
 	
 	//한 페이지에 나타낼 로우의 갯수
 	private static final int PAGE_ROW_COUNT=5;
@@ -171,8 +183,17 @@ public class CafeServiceImpl implements CafeService{
 	}
 
 	@Override
-	public void commentInsert(CafeCommentDto dto) {
+	public void commentInsert(CafeCommentDto dto,HttpSession session) {
 		
+		if(session.getAttribute("isWalker").equals(false)) {
+			PetusersDto uDto = petUsersDao.getData(dto.getWriter());
+			dto.setImagePath(uDto.getImagePath());
+			
+		}else {
+			PetwalkerDto pDto = petWalkerDao.getData(dto.getWriter());
+			dto.setImagePath(pDto.getImagePath());
+		}
+	
 		//저장할 댓글의 번호를 미리 얻어낸다.
 		int seq=cafeCommentDao.getSequence();
 		//댓글을 DB 에 저장
@@ -182,8 +203,10 @@ public class CafeServiceImpl implements CafeService{
 		if(comment_group==0) {//원글의 댓글인 경우
 			dto.setComment_group(seq);
 		}
+		
 		//새 댓글을 저장한다. 
-		cafeCommentDao.insert(dto);		
+		cafeCommentDao.insert(dto);	
+		
 	}
 
 	@Override

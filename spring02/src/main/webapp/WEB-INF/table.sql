@@ -91,7 +91,8 @@ content varchar2(500),
 target_id varchar2(100),
 ref_group number,
 comment_group number,
-regdate DATE
+regdate DATE,
+imagePath varchar2()
 )
 
 select * from board_cafe;
@@ -158,7 +159,7 @@ CREATE TABLE manage(
 
 CREATE SEQUENCE manage_seq;
 
-drop table pet_walker;
+drop table manage;
 
 SELECT m.FILEPATH FROM pet_walker w ,manage m WHERE w.id = m.id AND w.addr='홍제동';
 
@@ -293,11 +294,15 @@ create table board_cafe_comment(
    target_id varchar2(100),
    ref_group number,
    comment_group number,
-   regdate DATE
+   regdate DATE,
+   imagePath VARCHAR2(100)
 )
 
+drop table board_cafe_comment;
 
-	SELECT nickname, AVG(stars) FROM manage WHERE nickname 
+select * from board_cafe_comment;
+
+SELECT nickname, AVG(stars) FROM manage WHERE nickname 
 IN (SELECT nickname FROM pet_walker 
 WHERE substr(addr,1,3)='홍제동')
 GROUP BY nickname 
@@ -305,8 +310,7 @@ GROUP BY nickname
 
 
 select m.filePath filePath, p.imagePath imagePath, p.nickname nickname, p.id id , substr(p.addr,1,3) addr, p.hasPet hasPet,p.sex sex 
-		FROM manage m JOIN pet_walker p 
-		ON m.nickname = p.nickname;
+FROM manage m JOIN pet_walker p ON m.nickname = p.nickname;
 
 
 

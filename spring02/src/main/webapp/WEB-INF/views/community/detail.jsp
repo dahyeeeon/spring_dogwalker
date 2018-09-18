@@ -124,7 +124,7 @@
 				
 					<dl>
 						<dt>
-							<img class="col-md-2 col-sm-2 hidden-xs" src="${pageContext.request.contextPath }/resources/img/comment.jpg"
+							<img class="col-md-2 col-sm-2 hidden-xs" src="${pageContext.request.contextPath }/${tmp.imagePath}"
 							style="width:70px;"/>
 					
 							<span>${tmp.writer }</span>

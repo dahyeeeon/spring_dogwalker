@@ -11,6 +11,12 @@
 		resultType="petusersDto">
 		SELECT * FROM pet_users WHERE id=#{id}
 	</select>
+	
+	<select id="getData2" parameterType="string"
+		resultType="petusersDto">
+		SELECT * FROM pet_users WHERE writer=#{writer}
+	</select>
+	
 
 	<insert id="insert" parameterType="petusersDto">
 		INSERT INTO pet_users

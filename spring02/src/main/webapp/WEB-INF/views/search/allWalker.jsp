@@ -309,6 +309,7 @@ img {
 									</div>
 								</div>
 
+
 								<div class="d-flex flex-row align-items-center">
 									<img
 										src="${pageContext.request.contextPath }/${list1.profilePath}"
@@ -318,34 +319,32 @@ img {
 											style="font-size: 1.8rem; color: #000; font-weight: bold">${list1.id }</span>
 										<span class="petsitter-card-title">/ ${list1.nickname }</span><br />
 										<span class="petsitter-card-address"
-											style="font-size: 1.3rem; color: #737373">${list1.addr}</span>
+											style="font-size: 1.3rem; color: #737373">${input_address}</span>
 										<span class="petsitter-card-sex">${list1.sex }</span>
 									</div>
 								</div>
 
-								<div class="row">
-									<div class="petwalker-card-bottom" style="padding: 1px;">
-										<div class="petsitter-card-star-box" style="float: left">
-											<img
-												src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png"
-												class="star star-off"> <img
-												src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png"
-												class="star star-off"> <img
-												src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png"
-												class="star star-off"> <img
-												src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png"
-												class="star star-off"> <img
-												src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png"
-												class="star star-off">
+								<c:forEach var="list2" items="${starList }">
+									<div class="row">
+										<div class="petwalker-card-bottom" style="padding: 1px;">
+											<div class="petsitter-card-star-box" style="float: left">
+
+												<c:if test="${list1.nickname eq list2.nickname }">
+													<span><strong>리뷰 평점은 : </strong>${list2.stars }</span>
+													<%-- <c:forEach begin="1" end="${list2.stars }" >
+	                              			 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
+                              			</c:forEach> --%>
+												</c:if>
+
+											</div>
 										</div>
+
 									</div>
 
-
-									<div class="petsitter-card-price"
-										style="margin-left: 50px; margin-top: 10px;">
-										<b>16,000원 부터 / 일</b>
-									</div>
-
+								</c:forEach>
+								<div class="petsitter-card-price"
+									style="margin-left: 50px; margin-top: 10px;">
+									<b>16,000원 부터 / 일</b>
 								</div>
 
 							</div>

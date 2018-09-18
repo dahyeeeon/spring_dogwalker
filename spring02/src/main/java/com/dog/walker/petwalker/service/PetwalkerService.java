@@ -14,7 +14,7 @@ public interface PetwalkerService {
 	public void login(ModelAndView mView, PetwalkerDto dto, HttpSession session);
 	public void info(ModelAndView mView, HttpSession session);
 	public void updateForm(ModelAndView mView, HttpSession session);
-	public void update(PetwalkerDto dto);
+	public void update(HttpServletRequest request ,PetwalkerDto dto);
 	public boolean isValidPwd(String inputPwd, HttpSession session);
 	public void updatePwd(String pwd, HttpSession session);
 	public void updateImg(String pwd, HttpSession session);

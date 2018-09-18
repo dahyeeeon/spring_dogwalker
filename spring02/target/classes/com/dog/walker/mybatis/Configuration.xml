@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <settings>
    <setting name="jdbcTypeForNull" value="VARCHAR"/>
  </settings>
+ 
 	<typeAliases>
 		<typeAlias type="com.dog.walker.petwalker.dto.PetwalkerDto" alias="petwalkerDto" />
 		<typeAlias type="com.dog.walker.manage.dto.ManageDto" alias="manageDto" />
@@ -14,7 +15,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.dog.walker.petusers.dto.PetusersDto" alias="petusersDto" />
 		<typeAlias type="com.dog.walker.search.dto.SearchDto" alias="searchDto" />
 		<typeAlias type="com.dog.walker.search.dto.StarDto" alias="starDto"/>
-
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/dog/walker/mybatis/PetwalkerMapper.xml" />

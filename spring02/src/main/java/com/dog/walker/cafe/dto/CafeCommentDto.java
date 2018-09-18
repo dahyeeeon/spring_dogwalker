@@ -2,17 +2,18 @@ package com.dog.walker.cafe.dto;
 
 public class CafeCommentDto {
 	private int num; //글번호
-	private String writer;
+	private String writer;//댓글 작성자
 	private String content;
 	private String target_id; //댓글의 대상이 되는 글 작성자 id 
 	private int ref_group; //댓글의 그룹 번호
 	private int comment_group; //댓글 내에서의 그룹 
 	private String regdate;
+	private String imagePath;
 	
 	public CafeCommentDto() {}
 
 	public CafeCommentDto(int num, String writer, String content, String target_id, int ref_group, int comment_group,
-			String regdate) {
+			String regdate, String imagePath) {
 		super();
 		this.num = num;
 		this.writer = writer;
@@ -21,6 +22,7 @@ public class CafeCommentDto {
 		this.ref_group = ref_group;
 		this.comment_group = comment_group;
 		this.regdate = regdate;
+		this.imagePath = imagePath;
 	}
 
 	public int getNum() {
@@ -78,6 +80,15 @@ public class CafeCommentDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	
 	
 	
 }

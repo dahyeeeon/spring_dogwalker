@@ -77,7 +77,7 @@ input{
         <div class="form">
         <label for="nickname">워커</label>
         <br />
-        <select name="nickname" id="nickname" data-height="50px" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  multiple title="후기를 남길 워커를 선택하세요">
+        <select name="nickname" id="nickname" data-height="50px" data-width="50%" data-style="btn-info" class="selectpicker " data-live-search="true"  title="후기를 남길 워커를 선택하세요">
            <c:forEach var="tmp" items="${list }">
                <option>${tmp.nickname } </option>
            </c:forEach>
@@ -119,7 +119,6 @@ input{
              });
           });
          
- 
          
          $(function() {
              $('#content').keyup(function (e){
@@ -127,10 +126,6 @@ input{
                  $('#counter').html('60/' + content.length );
              });
              $('#content').keyup();
-             
-             
-             
-             
        });
          
          </script>

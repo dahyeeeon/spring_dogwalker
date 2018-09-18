@@ -120,6 +120,8 @@ public class PetwalkerController {
 			//ModelAndView 객체를 리턴해 준다. 
 			return mView;
 		}
+		
+		
 		//회원 가입 정보 수정폼 요청 처리
 		@RequestMapping("/petwalker/updateform")
 		public ModelAndView authUpdateForm(HttpServletRequest request,
@@ -132,14 +134,18 @@ public class PetwalkerController {
 			mView.setViewName("petwalker/updateform");
 			return mView;
 		}
+		
+		
 		//회원 정보 수정 요청 처리
 		@RequestMapping("/petwalker/update")
 		public ModelAndView authUpdate(HttpServletRequest request,
 				@ModelAttribute PetwalkerDto dto) {
-			pService.update(dto);
-			//개인 정보 보기 페이지로 리다일렉트 이동 
+			pService.update(request,dto);
+
 			return new ModelAndView("redirect:/petwalker/info.do");
 		}
+		
+		
 		@RequestMapping("/petwalker/pw_changeform")
 		public ModelAndView authPwUpdateForm(HttpServletRequest request) {
 			

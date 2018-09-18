@@ -29,7 +29,6 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 	
 	
 	
-	
 	//회원 한명의 정보를 수정하는 메소드
 	@Override
 	public void update(PetwalkerDto dto) {

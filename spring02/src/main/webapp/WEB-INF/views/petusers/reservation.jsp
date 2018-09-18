@@ -37,12 +37,25 @@
                      <td>${tmp.timeSlot }</td>
                      <td>${tmp.dogSize }</td>
                      <td>${tmp.cctv }</td>
-                     <td>${tmp.isReserved }</td>
+                     <c:choose>
+                     <c:when test = "${tmp.isReserved == 1 }">
+                     	<td>수락</td>
+                     </c:when>
+                     <c:when test = "${tmp.isReserved == 0 }">
+                     	<td>보류</td>
+                     </c:when>
+                     <c:when test = "${tmp.isReserved == 2 }">
+                     	<td>거절</td>
+                     </c:when>
+                     
+                     </c:choose>
                   </tr>
+                  
                </c:forEach>
             </tbody>
          </table>
       </div>
       </div>
 </body>
+
 </html>

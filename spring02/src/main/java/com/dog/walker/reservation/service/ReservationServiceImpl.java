@@ -104,8 +104,9 @@ public class ReservationServiceImpl implements ReservationService {
 	public void isReserved(HttpServletRequest request, int num) {
 		
 		num = Integer.parseInt(request.getParameter("num"));
-		
+		String nickname= request.getParameter("nickname");
 		dao.rsvConfirm(num);
+		pudao.isConfirmed(nickname);
 		
 		
 	}

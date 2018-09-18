@@ -127,6 +127,7 @@ public class PetusersController {
 		@Autowired
 		private ReservationService rService;
 		
+		//펫 유저 예약테이블
 		@RequestMapping("/petusers/reservation")
 		public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
 			

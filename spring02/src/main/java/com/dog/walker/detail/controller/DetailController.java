@@ -31,7 +31,7 @@ public class DetailController {
 
 		dService.reviewgetList(request, mView);
 		dService.pwk(request, mView);
-
+		dService.rsvInsertform(request, mView);
 		mView.setViewName("walkerPrf/detail_main");
 		return mView;
 	}

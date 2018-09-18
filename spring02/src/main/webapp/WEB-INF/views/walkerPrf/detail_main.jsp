@@ -35,6 +35,10 @@
    margin-left: -30px;
 }
 </style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+<link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
 <link
    href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css"
    rel="stylesheet">
@@ -116,9 +120,20 @@
 
 
             <div class="action" style="text-align: center; margin-top: 50px;">
-               <button class="btn btn-default" type="submit">
-                  <a href="insertform.do?petwalker=${nickname }"> reservation </a>
-               </button>
+            <c:choose>
+                     <c:when test = "${id == petUser.id}">
+                     	<button class="btn btn-default" type="submit">
+                  			<a href="insertform.do?petwalker=${nickname }"> RESERVATION </a>
+              			 </button>
+                     </c:when>
+                     <c:otherwise>
+                     	<button id="b" class="btn btn-default" style="color: red; cursor: no-drop"> RESERVATION </button>
+                     	<script>
+                     		$("#b").click(function(){alert("유저만 예약 가능합니다!")})                     		
+                     	</script>
+                     </c:otherwise>
+            </c:choose>
+               
 
             </div>
          </div>
@@ -142,7 +157,7 @@
      <div class="row right-block wk">
          <p>${pwk.freeservice }</p>
      </div>
-      <div class="row bottomCol">
+     <div class="row bottomCol">
          <h3>받은 리뷰들</h3>
          
          <c:forEach var="tmp" items="${list }">
@@ -163,12 +178,7 @@
                         <li>|</li>
                         <li class="print-star" data-stars="${tmp.stars }"></li>
                         <li>|</li>
-                        <li>
-                           <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                           <span><i class="fa fa-facebook-square"></i></span> <span><i
-                              class="fa fa-twitter-square"></i></span> <span><i
-                              class="fa fa-google-plus-square"></i></span>
-                        </li>
+                        
                      </ul>
                   </div>
                </div>
@@ -176,7 +186,6 @@
             
          </c:forEach>
       </div>
-   
 
    </div>
 

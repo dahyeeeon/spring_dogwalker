@@ -33,7 +33,7 @@ public class HomeController {
    
    @RequestMapping("/home")
    public String home(Locale locale, Model model, HttpServletRequest request) {
-      logger.info("/home.do 요청 처리함!");
+      logger.info("/home.do 요청 처리함!!");
       rService.reviewgetList(request);
       return "home";
    }

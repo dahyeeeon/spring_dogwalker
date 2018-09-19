@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html">
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-	alert("¿¹¾à µÆ½À´Ï´Ù");
+	alert("ì˜ˆì•½ ëìŠµë‹ˆë‹¤");
 	location.href="${pageContext.request.contextPath }/walkerPrf/detail_main.do?nickname=${param.petwalker}";
 </script>
 

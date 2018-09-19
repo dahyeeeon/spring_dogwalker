@@ -83,6 +83,9 @@ img {
 	margin-left: -30px;
 }
 </style>
+
+
+
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -128,7 +131,7 @@ img {
 	src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <!-- 16 KB -->
 <!-- 아이콘 -->
-
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 </head>
 <body style="margin-top: 180px">
 

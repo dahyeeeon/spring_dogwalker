@@ -15,7 +15,6 @@ CREATE TABLE pet_walker(
    fileSize	long,
    isProfiled NUMBER default 0
 );
-<<<<<<< HEAD
 
 
 CREATE TABLE pet_users(
@@ -34,10 +33,8 @@ CREATE TABLE pet_users(
    fileSize long,
    isConfirmed NUMBER default 0 
 );
-=======
 select * from manage;
 select * from pet_walker;
->>>>>>> refs/remotes/origin/soda
 
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,
@@ -101,7 +98,6 @@ nextNum number
 create Sequence board_cafe_seq;
 
 create table board_cafe_comment(
-<<<<<<< HEAD
 num NUMBER PRIMARY KEY,
 writer varchar2(100),
 content varchar2(500),
@@ -110,14 +106,13 @@ ref_group number,
 comment_group number,
 regdate DATE,
 imagePath varchar2()
-=======
-	num NUMBER PRIMARY KEY,
-	writer varchar2(100),
-	content varchar2(500),
-	target_id varchar2(100),
-	ref_group number,
-	comment_group number,
-	regdate DATE
+num NUMBER PRIMARY KEY,
+writer varchar2(100),
+content varchar2(500),
+target_id varchar2(100),
+ref_group number,
+comment_group number,
+regdate DATE
 >>>>>>> refs/remotes/origin/sumi2
 )
 

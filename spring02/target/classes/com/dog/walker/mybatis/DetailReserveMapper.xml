@@ -35,7 +35,7 @@
    
    
 	<select id="pwkGetData" parameterType="manageDto" resultType="manageDto">
-         SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName, 
+         SELECT nickname, career, experience, freeservice, filePath, orgFileName, saveFileName,
          filesize FROM manage WHERE nickname=#{nickname} AND content is null
    </select>
 

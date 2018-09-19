@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Let's Run, Pet walker!</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/form.css" />
 <style>
 
  .fotorama__wrap {
@@ -127,8 +128,7 @@ img {
 	src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <!-- 16 KB -->
 <!-- 아이콘 -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath }/resources/css/form.css" />
+
 </head>
 <body style="margin-top: 180px">
 
@@ -141,14 +141,11 @@ img {
 				<div class="fotorama" data-autoplay="true"
 					data-nav="thumbs" data-allowfullscreen="true">
 
-					<img src="${pageContext.request.contextPath }/${pwk.filePath }"
-						class="img-responsive img-thumbnail"
-						style="height: 260px; width: 500px" /> <img
-						src="${pageContext.request.contextPath }/${pwk.filePath }"
-						class="img-responsive img-thumbnail"
-						style="height: 260px; width: 500px" /> <img
-						src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
-						class="img-responsive img-thumbnail"
+					<img src="${pageContext.request.contextPath}/${pwk.filePath }" class="img-responsive img-thumbnail"
+						style="height: 260px; width: 500px" /> 
+					<img src="${pageContext.request.contextPath}/${pwk.filePath }" class="img-responsive img-thumbnail"
+						style="height: 260px; width: 500px" /> 
+					<img src="${pageContext.request.contextPath }/resources/img/dog4.jpg" class="img-responsive img-thumbnail"
 						style="height: 260px; width: 500px" />
 
 				</div>
@@ -258,7 +255,7 @@ img {
 						</div>
 					</div>
 				</div>
-
+				
 				<!-- Add Pagination -->
 				<div class="swiper-pagination"></div>
 				<!-- Add Arrows -->
@@ -270,15 +267,10 @@ img {
 
 		</div>
 
+		</div>
 
 
-
-		<!-- Bootstrap core JavaScript -->
-		<script src="../resources/vendor/jquery/jquery.js"></script>
-		<script src="../resources/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-		<script src="../resources/vendor/jquery-easing/jquery.easing.js"></script>
-		<script src="../resources/vendor/bootstrap/js/grayscale.js"></script>
-
+		
 		<script>
 			var swiper = new Swiper('.swiper-container', {
 				navigation : {
@@ -288,5 +280,5 @@ img {
 			});
 		</script>
 </body>
-
+<%@include file="../home_footer.jsp"%>
 </html>

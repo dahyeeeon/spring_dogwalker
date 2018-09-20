@@ -42,7 +42,11 @@
 							<input type="text" id="id" class="input-req form-control"
 								name="id" placeholder="아이디를 입력해주세요" ng-model="id"
 								ng-required="true" ng-change="onIdInput()"
-								ng-pattern="/^[a-zA-Z0-9]{2,8}$/" />
+								ng-pattern="/^[a-zA-Z0-9]{2,8}$/" /> <span
+								class="form-control-feedback glyphicon glyphicon-ok"
+								ng-show="signupForm.id.$valid && canUseId"></span> <span
+								class="form-control-feedback glyphicon glyphicon-remove"
+								ng-show="(signupForm.id.$invalid || !canUseId) && signupForm.id.$dirty"></span>
 							<p class="help-block"
 								ng-show="signupForm.id.$error.required && signupForm.id.$dirty">반드시
 								입력하세요.</p>

@@ -98,7 +98,7 @@ footer {
 	
 }
 </style>
- <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
@@ -307,7 +307,9 @@ footer {
 
 
  <!-- Bootstrap core JavaScript -->
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 
 <script>
     $(function() {

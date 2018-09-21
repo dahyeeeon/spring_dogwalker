@@ -23,9 +23,22 @@ fieldset {
     padding: 0;
     margin: auto;
     border: 0;
+    padding-bottom: 25px;
 }
 label{
    text-align: center;
+}
+.btn{
+	color: #64a19d;
+}
+
+#prvbtn{
+margin-bottom:45px; 
+background-color:#D5D5D5; 
+text-align: center;
+vertical-align: middle;
+padding: 8px 12px 8px 12px;
+
 }
 </style>
 </head>
@@ -41,7 +54,7 @@ label{
             <input type="hidden" name="id" value="${petUser.id}" />
             <input type="hidden" name="kakao" value="${petUser.kakao}" />
             <input type="hidden" name="nickname" value="${petUser.nickname}" />
-            <p>신청자 정보 </p>
+            <p style="text-align: center">신청자 정보 </p>
             <label for="id"></label> 
             <input type="text"  id="id" value="${petUser.id}" disabled /><br> 
             <label for="kakao"></label>
@@ -57,7 +70,7 @@ label{
 
          <fieldset>
             <legend></legend>
-            <p>개 크기</p>
+            <p style="text-align: center">강아지 사이즈</p>
             <label for="dogSize">소형</label> 
             <input type="radio" name="dogSize" value="small" required /> 
             <label for="dogSize">중형</label> 
@@ -71,8 +84,8 @@ label{
 
          <fieldset>
             <legend></legend>
-            <p>예약 가능한 날짜</p>
-            <label for="selectDate">날짜 선택</label> 
+            <p style="text-align: center">예약 가능한 날짜</p>
+            <label for="selectDate">날짜 선택</label> <br />
             <input type="date" name="selectDate" value="rsvDate" required/>
          </fieldset>
 
@@ -81,7 +94,7 @@ label{
 
          <fieldset>
             <legend></legend>
-            <p>예약 가능한 시간</p>
+            <p style="text-align: center">예약 가능한 시간</p>
             <label for="timeSlot">시간대 선택</label><br /> <select name="timeSlot"
                id="timeSlot" required>
                <option value="">--선택--</option>
@@ -97,7 +110,7 @@ label{
 
          <fieldset>
             <legend></legend>
-            <p>펫 캠</p>
+            <p style="text-align: center">펫 캠</p>
             <label for="cctv">펫 캠 옵션</label> <br /> <select name="cctv"
                id="cctv" required>
                <option value="">--선택--</option>
@@ -109,9 +122,10 @@ label{
 
       </div><br /><br />
       <div class="row" style="border:none;">
-      <button id="btn" style="margin:auto; margin-bottom:50px" class="btn btn-default center-block" type="submit">Submit</button>
-      </div>
+      <button id="btn" style="margin:auto; margin-bottom:50px" class="btn btn-default center-block" onclick="insert.do">Submit</button>
       
+      </div>
+      <button id="prvbtn" class="btn btn-default" onclick="location.href='detail_main.do?nickname=${nickname }'"> Preview </button>
 </form>      
 
    </div>

@@ -156,7 +156,7 @@ img {
 			</div>
 			<div class="col-sm-5">
 
-				<h3>${nickname }</h3>
+				<h3>${pwk.nickname }</h3>
 
 				<p>바쁜 반려견 보호자를 대신하여 저희 도그 워커가 산책을 통해 에너지를 발산시켜 드립니다! 반려견의 스트레스를
 					낮춰주고 교육을 통해 문제 행동 개선을 돕는 도그 워커!</p>
@@ -193,16 +193,18 @@ img {
 				<div class="action" style="text-align: center; margin-top: 50px;">
 					<c:choose>
 						<c:when test="${id == petUser.id}">
-							<button class="btn btn-default" type="submit">
-								<a href="insertform.do?petwalker=${nickname }"> RESERVATION
-								</a>
+						
+							<button class="btn btn-default" type="button"
+							onclick="location.href='insertform.do?petwalker=${pwk.nickname }'">
+								RESERVATION
 							</button>
 						</c:when>
+				
 						<c:otherwise>
-							<button id="b" class="btn btn-default"
+							<button class="btn btn-default rsvb"
 								style="cursor: no-drop">RESERVATION</button>
 							<script>
-								$("#b").click(function() {
+								$(".rsvb").click(function() {
 									alert("유저만 예약 가능합니다!")
 								})
 							</script>

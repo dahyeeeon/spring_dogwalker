@@ -32,10 +32,7 @@ public class ReservationController {
 	}
 	
 
-	@RequestMapping("/petwalker/notReserved")
-	public ModelAndView notReserved(HttpServletRequest request) {
-		return new ModelAndView("petwalker/reservation");
-	}
+	
 	
 	
 }

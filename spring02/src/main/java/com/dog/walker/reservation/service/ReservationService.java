@@ -14,5 +14,6 @@ public interface ReservationService {
 	public void getList2(ModelAndView mView, HttpServletRequest request);
 	public void insert(HttpServletRequest request, ModelAndView mView, ReservationDto dto);
 	public void isReserved(HttpServletRequest request, int num);
+	public void NotReserved(HttpServletRequest request, int num);
 	
 }

@@ -8,8 +8,9 @@
 <meta charset="UTF-8">
 <title>petwalker/updateform.jsp</title>
 </head>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <body style="margin-top: 120px">
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+	
 	<div class="container">
 		<div class="row">
 			<div

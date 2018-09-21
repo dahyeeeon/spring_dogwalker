@@ -47,4 +47,10 @@ public class ReservationDaoImpl implements ReservationDao {
 		
 	}
 
+	@Override
+	public void rsvConfirmX(int num) {
+		session.update("rsv.rsvConfirmX",num);
+		
+	}
+
 }

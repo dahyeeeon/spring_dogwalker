@@ -29,8 +29,9 @@ public class DetailServiceImpl implements DetailService {
 	   public void rsvInsertform(HttpServletRequest request, ModelAndView mView) {
 	      
 	      String id=(String)request.getSession().getAttribute("id");
+	      String nickname=request.getParameter("petwalker");
 	      mView.addObject("id",id);
-	      
+	      mView.addObject("nickname",nickname);
 	      PetusersDto petUser = rsvdao.pUserGetData(id);
 	      request.setAttribute("petUser", petUser);
 	      
@@ -61,7 +62,7 @@ public class DetailServiceImpl implements DetailService {
 	      
 
 	      String nickname=request.getParameter("nickname");
-	      mView.addObject("nickname",nickname);
+	     
 	      
 	      ManageDto dto=new ManageDto();
 	      

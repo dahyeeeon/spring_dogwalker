@@ -28,11 +28,12 @@ public class DetailController {
 	
 	@RequestMapping("/walkerPrf/detail_main")
 	public ModelAndView dMain(HttpServletRequest request ,ModelAndView mView) {
-
+		
 		dService.reviewgetList(request, mView);
 		dService.pwk(request, mView);
 		dService.rsvInsertform(request, mView);
 		mView.setViewName("walkerPrf/detail_main");
+		
 		return mView;
 	}
 	
@@ -46,9 +47,9 @@ public class DetailController {
 	public ModelAndView authinsertform(HttpServletRequest request,ModelAndView mView) {
 		rService.check(request,mView);
 		dService.rsvInsertform(request, mView);
+		dService.pwk(request, mView);
 		mView.setViewName("walkerPrf/insertform");
 		
-   	 
    	 	return mView;
 	} 
 	

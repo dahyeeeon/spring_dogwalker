@@ -12,9 +12,14 @@
    		margin: 0 auto;
 	}
 </style>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<%@include file="../home_menu.jsp"%>
 </head>
-<body>
+<body style="margin-top: 180px">
 <div class="container">
       <div class="row bottomCol" style="margin-bottom: 130px">
          <h3>예약 목록</h3>
@@ -26,7 +31,7 @@
                   <th>시간대</th>
                   <th>사이즈</th>
                   <th>펫캠</th>
-                  <th>수락</th>
+                  <th>신청한 예약</th>
                </tr>
             </thead>
             <tbody>
@@ -57,5 +62,5 @@
       </div>
       </div>
 </body>
-
+<%@include file="../home_footer.jsp"%>
 </html>

@@ -12,5 +12,5 @@ public interface ReservationDao {
 		public List<ReservationDto> reservationgetList2(ReservationDto dto);
 		public PetusersDto pUserGetData(String id);
 		public void rsvConfirm(int num);
-
+		public void rsvConfirmX(int num);
 }

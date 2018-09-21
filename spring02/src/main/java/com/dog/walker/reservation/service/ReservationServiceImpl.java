@@ -112,6 +112,15 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 
+	@Override
+	public void NotReserved(HttpServletRequest request, int num) {
+		num = Integer.parseInt(request.getParameter("num"));
+		dao.rsvConfirmX(num);
+		
+		
+	}
+
+
 	
 
 	

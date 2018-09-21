@@ -55,7 +55,11 @@
 		where id=#{id}
 	</update>
 	
-	<update id="isConfirmed" parameterType="int">
-		update pet_users set isConfirmed=1 where nickname=#{nickname}
+	<update id="isConfirmed" parameterType="String">
+		update pet_users set isConfirmed=isConfirmed+1 where nickname=#{nickname}
+	</update>
+	
+	<update id="isReviewed" parameterType="String">
+		update pet_users set isConfirmed=isConfirmed-1 where id=#{id}
 	</update>
 </mapper>

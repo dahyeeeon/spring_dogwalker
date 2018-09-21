@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dog.walker.manage.dao.ManageDao;
 import com.dog.walker.manage.dto.ManageDto;
+import com.dog.walker.petusers.dao.PetusersDao;
+import com.dog.walker.petusers.dto.PetusersDto;
 import com.dog.walker.petwalker.dao.PetwalkerDao;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 
@@ -24,12 +26,13 @@ public class ReviewServiceImpl implements ReviewService{
 	
 	@Autowired
 	private PetwalkerDao pdao;
+	
+	@Autowired
+	private PetusersDao pudao;
 
 	@Override
 	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto) {
-		  
 		 
-		
 	      //파일을 저장할 폴더의 절대 경로를 얻어온다.
 	      String realPath=request.getSession()
 	            .getServletContext().getRealPath("/upload");
@@ -75,10 +78,10 @@ public class ReviewServiceImpl implements ReviewService{
 		  //FileDao 객체를 이용해서 DB 에 저장하기
 		  dao.insert(dto);
 		  
-		
-
-
-		
+		  pudao.isReviewed(id);
+		  
+		 
+		  
 	}
 	
 	//한 페이지에 나타낼 로우의 갯수
@@ -135,6 +138,16 @@ public class ReviewServiceImpl implements ReviewService{
 		// 전체 row 의 갯수도 전달하기
 		request.setAttribute("totalRow", totalRow);	
 		
+		
+		String id=(String)request.getSession().getAttribute("id");
+
+		if(id != null) {
+			PetusersDto user_dto = pudao.getData(id);
+		
+			int canWrite= user_dto.getIsConfirmed();
+			
+			request.setAttribute("canWrite", canWrite);
+		}
 	}
 
 	@Override

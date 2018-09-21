@@ -39,7 +39,7 @@
                      <td>${tmp.timeSlot }</td>
                      <td>${tmp.dogSize }</td>
                      <td>${tmp.cctv }</td>
-                     <td><a href="javascript:rsvConfirm(${tmp.num })">O</a><button><a href="javascript:rsvConfirm(${tmp.num })">X</a></button></td>
+                     <td><a href="javascript:rsvConfirm(${tmp.num },${tmp.nickname })">O</a><button><a href="javascript:rsvConfirm(${tmp.num })">X</a></button></td>
                   </tr>
                </c:forEach>
             </tbody>
@@ -49,10 +49,10 @@
 </body>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script>
-	function rsvConfirm(num){
+	function rsvConfirm(num,nickname){
 		var isReserved = confirm("이 예약을 수락 하시겠습니까?");
 		if(isReserved){
-			location.href="reserved.do?num="+num;
+			location.href="reserved.do?num="+num+"&nickname="+nickname;
 		}else if(!isReserved){
 			location.href="notReserved.do?num="+num;
 		}

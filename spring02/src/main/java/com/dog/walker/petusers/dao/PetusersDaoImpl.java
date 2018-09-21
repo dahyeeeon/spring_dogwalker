@@ -65,5 +65,12 @@ public class PetusersDaoImpl implements PetusersDao {
 		
 	}
 
+	@Override
+	public void isReviewed(String id) {
+		session.update("petusers.isReviewed", id);
+		
+	}
+	
+	
 
 }

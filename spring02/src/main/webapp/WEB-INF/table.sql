@@ -253,7 +253,6 @@ CREATE TABLE pet_walker(
    isProfiled NUMBER default 0
 );
 
-
 drop table pet_walker;
 
 CREATE TABLE pet_users(
@@ -387,7 +386,7 @@ CREATE TABLE pet_walker(
    sex VARCHAR2(10),
    hasPet VARCHAR2(10),
    imagePath VARCHAR2(100),
-   evaluation NUMBER default 0,s
+   evaluation NUMBER default 0,
    regdate DATE,
    orgFileName varchar2(300),
    saveFileName varchar2(300),
@@ -412,6 +411,9 @@ CREATE TABLE pet_users(
    isConfirmed NUMBER default 0 
 );
 
+select * from pet_users;
+
+drop table pet_users;
 
 CREATE TABLE manage(
    num NUMBER PRIMARY KEY,

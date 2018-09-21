@@ -136,7 +136,7 @@
                      dna
                   </div>
                   <div role="tabpanel" class="tab-pane" id="dogjoinTab">
-                     얍
+                    	너가 안올동안~
                   </div>
                </div>
             </div>

@@ -205,7 +205,7 @@ img {
 								style="cursor: no-drop">RESERVATION</button>
 							<script>
 								$(".rsvb").click(function() {
-									alert("유저만 예약 가능합니다!")
+									alert("유저만 예약 가능합니다! ")
 								})
 							</script>
 						</c:otherwise>

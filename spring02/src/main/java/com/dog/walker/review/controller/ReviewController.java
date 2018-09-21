@@ -1,6 +1,7 @@
 package com.dog.walker.review.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,11 +24,11 @@ public class ReviewController {
 
 	
 	@RequestMapping("/review/list")
-	public ModelAndView list(HttpServletRequest request) {
+	public ModelAndView list(HttpServletRequest request,HttpSession session) {
 		//인자로 전달받은 HttpServletRequest 객체를 서비스에 전달해서
 		//비즈니스 로직을 수행하고 
 		//view 페이지에서 필요한 데이터가 request 영역에 담기게 한다.
-		rService.reviewgetList(request);
+		rService.reviewgetList(request,session);
 		//view 페이지로 forward 이동
 		return new ModelAndView("review/list");
 	}

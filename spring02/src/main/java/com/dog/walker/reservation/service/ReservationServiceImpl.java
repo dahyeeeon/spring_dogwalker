@@ -105,10 +105,9 @@ public class ReservationServiceImpl implements ReservationService {
 		
 		num = Integer.parseInt(request.getParameter("num"));
 		String nickname= request.getParameter("nickname");
+		System.out.println("받은 닉네임은:"+nickname);
 		dao.rsvConfirm(num);
-		pudao.isConfirmed(nickname);
-		
-		
+		pudao.isConfirmed(nickname);	
 	}
 
 
@@ -121,11 +120,5 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 
-	
-
-	
-
-
-	
 
 }

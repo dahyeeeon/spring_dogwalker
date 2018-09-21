@@ -4,6 +4,7 @@ package com.dog.walker;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,12 +33,11 @@ public class HomeController {
          LoggerFactory.getLogger(HomeController.class);
    
    @RequestMapping("/home")
-   public String home(Locale locale, Model model, HttpServletRequest request) {
+   public String home(Locale locale, Model model, HttpServletRequest request, HttpSession session) {
       logger.info("/home.do 요청 처리함!!");
-      rService.reviewgetList(request);
+      rService.reviewgetList(request, session);
       return "home";
    }
-
 
 
 

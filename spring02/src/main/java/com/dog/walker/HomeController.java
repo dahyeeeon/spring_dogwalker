@@ -33,9 +33,11 @@ public class HomeController {
    
    @RequestMapping("/home")
    public String home(Locale locale, Model model, HttpServletRequest request) {
-      logger.info("/home.do 요청 처리함!!");
-      rService.reviewgetList(request);
-      return "home";
+	   logger.info("/home.do 요청 처리!");
+	   rService.reviewgetList(request);
+	   //아이디 모달 경로 이동때문에 모든 컨트롤러에 다 고치기!!!
+	   request.setAttribute("url", request.getContextPath()+"/home.do");
+	   return "home";
    }
 
 

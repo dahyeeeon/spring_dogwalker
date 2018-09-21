@@ -50,7 +50,7 @@
                            회원으로 로그인</a></li>
                      <li role="presentation"><a href="#dogloginTab"
                         aria-controls="dogloginTab" role="tab" data-toggle="tab"
-                        style="font-size: 16px; width: 200px;"> 도그워커로 로그인</a></li>
+                        style="font-size: 16px; width: 200px; margin-left: -90px;"> 도그워커로 로그인</a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">

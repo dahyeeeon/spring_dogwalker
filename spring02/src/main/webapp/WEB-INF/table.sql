@@ -17,6 +17,7 @@ CREATE TABLE pet_walker(
 );
 
 
+
 CREATE TABLE pet_users(
    id VARCHAR2(30) PRIMARY KEY,
    nickname VARCHAR2(100),

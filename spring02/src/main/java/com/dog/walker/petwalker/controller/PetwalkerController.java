@@ -106,6 +106,7 @@ public class PetwalkerController {
 	public String logout(HttpSession session) {
 		// 세션 초기화
 		session.invalidate();
+		
 		// view 페이지 정보 리턴
 		return "petwalker/logout";
 	}

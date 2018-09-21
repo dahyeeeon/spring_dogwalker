@@ -2,19 +2,20 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@include file="../home_menu.jsp"%>
+
 <html>
 <head>
 <title>review/list</title>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <script
 	src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js" /></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script
 	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
@@ -38,10 +39,15 @@
 footer {
 	margin: 50px 0;
 }
+
+a{
+	margin-left:0px !important;
+	
+}
 </style>
 </head>
 <body>
-
+	<%@include file="../home_menu.jsp"%>
 	<div class="container">
 		<div style="text-align: center;">
 			<h2>도그 워커 후기 게시판</h2>

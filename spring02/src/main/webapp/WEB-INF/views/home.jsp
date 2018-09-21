@@ -10,7 +10,6 @@
 .nav>li{
    margin-right:80px;
 }
-
 a#MOVE_TOP_BTN {
     position: fixed;
     right: 2%;
@@ -34,7 +33,6 @@ border:1px solid #64a19d;
 border-radius:50%;
 z-index:999;
 text-align:center;
-
 }
 .expand i{margin-top:12px;color:#64a19d}
 .expand .box{display:none}
@@ -42,7 +40,6 @@ text-align:center;
 .box {
 text-align:left;
    z-index:999;
-
     position:absolute;
     bottom:50px;
     right:0;
@@ -65,20 +62,14 @@ text-align:left;
 font-weight:bold;
 font-size:12px;
 }
-
-
 html,
 body {
     height: 100%;
 }
-
-
 .carousel-inner {
     height: 100%;
 }
-
 /* Background images are set within the HTML using inline CSS, not here */
-
 .fill {
     width: 100%;
     height: 100%;
@@ -88,18 +79,14 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
-
 footer {
     margin: 50px 0;
 }
-
 .search_input_class{
-   width:500px;
-   
+	width:500px;
+	
 }
-
 </style>
- 
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
@@ -107,27 +94,30 @@ footer {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
-<%@include file="home_menu.jsp" %>
+
 <body id="page-top">
+
+<%@include file="home_menu.jsp" %>
 <!-- Wrapper for slides -->
 <div class="item active">
-   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles" style="width:100%;">
-</div>
+   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
+ </div>
 
 <div class="expand">
-   <i class="fa fa-plus"></i>
-   <div class="box">
-      <p>서비스 안내</p>
-      <p></p>
-      <p><strong>문의:02-1234-1234</strong><br/><br/>
-      이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
-        예약 관련 : <br/>최소  1주 전<br/><br/>
-        취소 관련 : <br/>3일 이내 취소 가능
-        </p>
-   </div>
+	<i class="fa fa-plus"></i>
+	<div class="box">
+		<p>서비스 안내</p>
+		<p></p>
+		<p>
+			<strong>문의:02-1234-1234</strong><br/><br/>
+			이동 시간 : <br/>1시간에서 1시간 30분<br/><br/>
+	  		예약 관련 : <br/>최소  1주 전<br/><br/>
+	  		취소 관련 : <br/>3일 이내 취소 가능
+	  	</p>
+	</div>
 </div>
 <div class="container">
-   <div class="row">
+	<div class="row">
         <div class="col-xs-12">
         <h4>이용방법</h4>
             <ul class="nav nav-pills nav-justified thumbnail">
@@ -172,7 +162,7 @@ footer {
                 </li>
             </ul>
         </div>
-   </div>
+	</div>
 </div>
 
 
@@ -306,7 +296,9 @@ footer {
 
 
  <!-- Bootstrap core JavaScript -->
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 
 <script>
     $(function() {
@@ -336,17 +328,12 @@ footer {
     $(window).scroll(function() {
     	var position = $(window).scrollTop(); $(".box")
     	.stop().animate({"top":position+currentPosition+"px"},100); });
-
-
     $(function() {
         var placesAutocomplete = places({
           container: document.querySelector('#input_address')
         });
    });
-
    
-
-
 </script>
 
 

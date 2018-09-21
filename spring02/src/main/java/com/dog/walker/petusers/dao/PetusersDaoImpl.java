@@ -58,6 +58,16 @@ public class PetusersDaoImpl implements PetusersDao {
 		session.update("petusers.updateImg", dto);
 		
 	}
+	
+	@Override
+	public boolean canUseNickname(String nickname) {
+		String result=session.selectOne("petusers.isExist", nickname);
+		if(result==null) {// select 된 결과가 없으면 사용가능 
+			return true;
+		}else {
+			return false;
+		}
+	}
 
 	@Override
 	public void isConfirmed(String nickname) {
@@ -70,7 +80,5 @@ public class PetusersDaoImpl implements PetusersDao {
 		session.update("petusers.isReviewed", id);
 		
 	}
-	
-	
 
 }

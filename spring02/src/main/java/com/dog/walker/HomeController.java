@@ -36,9 +36,9 @@ public class HomeController {
    public String home(Locale locale, Model model, HttpServletRequest request, HttpSession session) {
       logger.info("/home.do 요청 처리함!!");
       rService.reviewgetList(request, session);
+	   //아이디 모달 경로 이동때문에 모든 컨트롤러에 다 고치기!!!
+	   request.setAttribute("url", request.getContextPath()+"/home.do");
       return "home";
+
    }
-
-
-
 }

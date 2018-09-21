@@ -13,14 +13,14 @@
       </c:choose>
       <c:choose>
          <c:when test="${ (not empty id) and (isWalker eq true)  }">
-            <p>
+            
                <strong><a href="petwalker/info.do">${id }</a></strong>님 마이페이지
-            </p>
+           
          </c:when>
          <c:when test="${ (not empty id) and (isWalker eq false)  }">
-            <p>
+          
                <strong><a href="petusers/info.do">${id }</a></strong>님 마이페이지
-            </p>
+           
          </c:when>
          <c:otherwise>
             <a href="javascript:" class="nav-link js-scroll-trigger"
@@ -50,7 +50,7 @@
                            회원으로 로그인</a></li>
                      <li role="presentation"><a href="#dogloginTab"
                         aria-controls="dogloginTab" role="tab" data-toggle="tab"
-                        style="font-size: 16px; width: 200px;"> 도그워커로 로그인</a></li>
+                        style="font-size: 16px; width: 200px; margin-left: -90px;"> 도그워커로 로그인</a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
@@ -136,7 +136,7 @@
                      dna
                   </div>
                   <div role="tabpanel" class="tab-pane" id="dogjoinTab">
-                     얍
+                    	너가 안올동안~
                   </div>
                </div>
             </div>

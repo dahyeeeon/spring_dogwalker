@@ -31,6 +31,12 @@ public class PetusersServiceImpl implements PetusersService {
 	}
 
 	@Override
+	public boolean canUseNickname(String nickname) {
+		// 인자로 전달된 아이디의 사용가능 여부를 리턴해 준다.
+		return dao.canUseNickname(nickname);
+	}
+	
+	@Override
 	   public void signup(HttpServletRequest request ,ModelAndView mView, PetusersDto dto) {
 	      
 	      //파일을 저장할 폴더의 절대 경로를 얻어온다.
@@ -174,5 +180,6 @@ public class PetusersServiceImpl implements PetusersService {
 		// ModelAndView 객체에 메세지를 담는다.
 		mView.addObject("msg", id + " 님 회원 탈퇴 되었습니다.");
 	}
+
 
 }

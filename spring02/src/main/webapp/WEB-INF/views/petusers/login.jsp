@@ -19,7 +19,7 @@
       <c:otherwise>
          <script>
             alert("아이디 혹은 비밀번호가 틀려요.")
-            location.href="${pageContext.request.contextPath }/petusers/loginform.do?";
+            location.href="${pageContext.request.contextPath }/home.do";
          </script>
 
       </c:otherwise>

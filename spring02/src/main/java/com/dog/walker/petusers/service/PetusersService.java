@@ -18,4 +18,5 @@ public interface PetusersService {
 	public void updatePwd(String pwd, HttpSession session);
 	public void updateImg(String pwd, HttpSession session);
 	public void delete(ModelAndView mView, HttpSession session);
+	public boolean canUseNickname(String nickname);
 }

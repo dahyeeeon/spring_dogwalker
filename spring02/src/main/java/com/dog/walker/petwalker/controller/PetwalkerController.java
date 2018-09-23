@@ -120,9 +120,7 @@ public class PetwalkerController {
 		public ModelAndView Reserved(@RequestParam int num,HttpServletRequest request, ModelAndView mView) {	
 			rService.isReserved(request, num);
 			
-			return new ModelAndView("redirect:/petwalker/reservation.do");
-			
-
+ 			return new ModelAndView("redirect:/petwalker/reservation.do");
 		}
 		
 		

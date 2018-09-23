@@ -104,8 +104,6 @@ footer {
 				</c:choose>
 			</ul>
 
-
-
 			<c:choose>
 				<c:when test="${canWrite gt 0}">
 					<button class="btn btn-default" type="button"
@@ -117,17 +115,14 @@ footer {
 				<button class="btn btn-default" id = "button1" type="button">
 						후기 남기기</button>
 					<script>
-                        $("#button1").click(function() {
+                        
+						$("#button1").click(function() {
                            alert("예약을 해서 서비스를 이용해야 리뷰를 쓸 수 있습니다.")
                         })
+                        
                      </script>
 				</c:otherwise>
 			</c:choose>
-
-			<!-- <button class="btn_update" id="insertbutton">
-				<a id="insertanchor" href="uploadform.do">후기 남기기</a>
-			</button> -->
-
 		</div>
 	</div>
 	<%@include file="../home_footer.jsp"%>

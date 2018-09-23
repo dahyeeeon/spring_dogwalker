@@ -32,7 +32,6 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void upload(HttpServletRequest request, ModelAndView mView, ManageDto dto) {
-		 
 	      //파일을 저장할 폴더의 절대 경로를 얻어온다.
 	      String realPath=request.getSession()
 	            .getServletContext().getRealPath("/upload");
@@ -80,7 +79,6 @@ public class ReviewServiceImpl implements ReviewService{
 		  
 		  pudao.isReviewed(id);
 		  
-		 
 		  
 	}
 	

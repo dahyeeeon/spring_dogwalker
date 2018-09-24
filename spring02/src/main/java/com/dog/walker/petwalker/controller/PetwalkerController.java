@@ -56,6 +56,19 @@ public class PetwalkerController {
 		// {"canUse":true} or {"canUse":false}
 		return map;
 	}
+	// 회원가입 닉네임 중복 요청처리
+	@RequestMapping("/petwalker/checknickname")
+	@ResponseBody
+	public Map<String, Object> checknickname(@RequestParam String inputNickname) {
+			// 서비스 객체를 이용해서 사용가능 여부를 boolean type
+			// 으로 리턴 받는다.
+			boolean canUse = pService.canUseNickname(inputNickname);
+			// Map 에 담는다.
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("canUse", canUse);
+			// {"canUse":true} or {"canUse":false}
+			return map;
+		}
 
 	// 로그인 폼 요청 처리
 	@RequestMapping("/petwalker/loginform")

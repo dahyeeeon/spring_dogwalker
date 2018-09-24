@@ -26,7 +26,15 @@ public class PetWalkerDaoImpl implements PetwalkerDao {
 		PetwalkerDto dto=session.selectOne("petwalker.getData", id);
 		return dto;	
 	}
-	
+	@Override
+	public boolean canUseNickname(String nickname) {
+		String result=session.selectOne("petusers.isExist", nickname);
+		if(result==null) {// select 된 결과가 없으면 사용가능 
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	
 	//회원 한명의 정보를 수정하는 메소드

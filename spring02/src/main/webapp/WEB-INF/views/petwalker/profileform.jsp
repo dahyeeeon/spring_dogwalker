@@ -5,10 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
-<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+ <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style>
@@ -38,11 +36,11 @@ width:100%;
 id="profileform" enctype="multipart/form-data">
       <div class="row">
          <fieldset>  
-	<input type="hidden" name="id" id="id" value="${id }"/>
-	<input type="hidden" name="nickname" id="nickname" value="${nickname }"/>
-	<label for="myFile">이미지</label>
-	<input type="file" name="file1" id="file" multiple="multiple"/><br/>
-         
+   <input type="hidden" name="id" id="id" value="${id }"/>
+   <input type="hidden" name="nickname" id="nickname" value="${nickname }"/>
+   <label for="myFile">이미지</label>
+   <input type="file" name="file1" id="file" multiple="multiple"/><br/>
+    
             <legend></legend>
             <p>도그워커 경력</p>
             <textarea name="career" id="career" cols="30" rows="10"></textarea><br />
@@ -56,7 +54,7 @@ id="profileform" enctype="multipart/form-data">
             <legend></legend>
             <p>경험</p>
           <textarea name="experience" id="experience" cols="30" rows="10"></textarea><br />
-	
+   
          </fieldset>
 
       </div><br /><br />
@@ -79,5 +77,5 @@ id="profileform" enctype="multipart/form-data">
 <%@include file="../home_footer.jsp" %>   
 </body>
 
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>	
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>   
 </html>

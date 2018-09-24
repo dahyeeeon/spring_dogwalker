@@ -99,8 +99,8 @@ footer {
 
 <%@include file="home_menu.jsp" %>
 <!-- Wrapper for slides -->
-<div class="item active">
-   <img src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
+<div class="item active" >
+   <img style="width:100%;" src="http://nycdogwalkers.com/images/slide3x.jpg" alt="Los Angeles">
  </div>
 
 <div class="expand">

@@ -14,17 +14,18 @@
       <c:choose>
          <c:when test="${ (not empty id) and (isWalker eq true)  }">
             
-               <strong><a href="petwalker/info.do">${id }</a></strong>님 마이페이지
+               <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
            
          </c:when>
          <c:when test="${ (not empty id) and (isWalker eq false)  }">
           
-               <strong><a href="petusers/info.do">${id }</a></strong>님 마이페이지
+               <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
            
          </c:when>
          <c:otherwise>
-            <a href="javascript:" class="nav-link js-scroll-trigger"
-               data-toggle="modal" data-target="#joinModal">join us</a>
+            <a href="${pageContext.request.contextPath }/home.do"><img
+            src="${pageContext.request.contextPath }/resources/img/paw.png"
+            alt="logo" /></a>
          </c:otherwise>
       </c:choose>
    </div>
@@ -133,9 +134,13 @@
                <!-- Tab panes -->
                <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="userjoinTab">
-                     dna
+                     <a href="${pageContext.request.contextPath }/petusers/signup_form.do">
+                     	<h2>회원으로 회원가입을 원하십니까?	</h2>	
+                     	</a>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="dogjoinTab">
+                                       <a href="${pageContext.request.contextPath }/petusers/signup_form.do">
+                  
                     	너가 안올동안~
                   </div>
                </div>

@@ -1,13 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="../home_menu.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>review/uploadform</title>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bars-square.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/fontawesome-stars.css" />
@@ -18,11 +21,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap-select.css" />
 <script src="${pageContext.request.contextPath }/resources/js/bootstrap-select.js"></script>
-
-
-
-
-
 <style>
 @font-face {
         font-family: 'Glyphicons Halflings';
@@ -63,9 +61,13 @@ input{
 #walker{
    height: 50px;
 }
+footer {
+	margin-top: 90px;
+}
 </style>
 </head>
 <body>
+<%@include file="../home_menu.jsp" %>
 <div class="container">
    <div style="text-align:center;">
       <h2>도그 워커 후기 게시판</h2>
@@ -111,8 +113,7 @@ input{
          </form>
          
 </div>
-         <%@include file="../home_footer.jsp" %>
-         <script>
+ <script>
          $(function() {
              $('#example-square').barrating({
                theme: 'fontawesome-stars'
@@ -127,9 +128,13 @@ input{
              });
              $('#content').keyup();
        });
-         
-         </script>
-
-         
+</script>
+ <!-- Footer -->
+ <footer class="bg-black small text-center text-white-50">
+   <div class="fcontainer">
+     Copyright &copy; Your Website 2018
+     <a href="Service/serviceinfo.do">고객센터</a>
+   </div>
+ </footer>
 </body>
 </html>

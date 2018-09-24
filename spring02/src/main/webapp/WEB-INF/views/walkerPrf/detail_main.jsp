@@ -8,7 +8,6 @@
 <title>Let's Run, Pet walker!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/form.css" />
 <style>
-
  .fotorama__wrap {
     -webkit-text-size-adjust: 100%;
     position: relative;
@@ -22,7 +21,7 @@
 	border: 1px solid #ccc;
 }
 
-img {
+img2 {
 	width: 100%;
 	height: 162px;
 }
@@ -82,6 +81,10 @@ img {
 	margin-bottom: 0;
 	margin-left: -30px;
 }
+footer {
+	margin: 50px 0;
+}
+
 </style>
 
 
@@ -134,10 +137,13 @@ img {
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 </head>
 <body style="margin-top: 180px">
-
-	<%@include file="../home_menu.jsp"%>
+<%@include file="../home_menu.jsp"%>
 	<div class="container">
-
+		<div style="text-align: center;">
+			<h2>도그 워커 후기 게시판</h2>
+			<p>회원님들이 직접 남긴 후기입니다.</p>
+		</div>
+		<br /><br />
 		<div class="row">
 			<div class="col-sm-7 center-block">
 

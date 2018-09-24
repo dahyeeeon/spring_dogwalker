@@ -6,9 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>petwalker/signup_form.jsp</title>
+<!-- 정규식으로 수정하기!! 아직 안했음 -->
 <style>
 footer {
     margin: 50px 0;
+}
+.container {
+	margin-top: 120px;
 }
 .nav>li{
    margin-right:80px;
@@ -397,12 +401,17 @@ a#MOVE_TOP_BTN {
    margin: 0;
 }
 </style>
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <meta charset="UTF-8">
 </head>
 <body>
 <%@include file="../home_menu.jsp" %>
-   <div class="container-fluid">
+   <div class="container container-fluid">
       <div class="contents-header"></div>
       <div class="contents-body">
          <form action="signup.do" method="post" id="signupForm"
@@ -519,7 +528,13 @@ a#MOVE_TOP_BTN {
          });
       });
    </script>
-   
+   <script>
+		$(function() {
+			var placesAutocomplete = places({
+				container : document.querySelector('#input_address')
+			});
+		});
+	</script>
    
    <script>
 	   $(function() {

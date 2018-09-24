@@ -125,7 +125,8 @@ CREATE SEQUENCE reservation_seq;
 drop table pet_walker;
 
 select * from pet_users;
-
+select * from pet_walker;
+select * from reservation;
 drop table pet_walker;
 
 CREATE TABLE pet_users(
@@ -163,20 +164,20 @@ CREATE TABLE manage(
    prevNum NUMBER,
    nextNum NUMBER,
    id VARCHAR2(30),
-      kakao VARCHAR2(100),
-      nickname VARCHAR2(50),
-      dogSize VARCHAR2(100),
-      selectDate VARCHAR2(100),
-      timeSlot VARCHAR2(80),
-      cctv VARCHAR2(50),
-      walkerName VARCHAR2(100),
-      career varchar2(500),
-    experience varchar2(500),
-    freeservice varchar2(500),
-    filePath VARCHAR2(100),
-    orgFileName varchar2(300),
-    saveFileName varchar2(300),
-    fileSize long
+   kakao VARCHAR2(100),
+   nickname VARCHAR2(50),
+   dogSize VARCHAR2(100),
+   selectDate VARCHAR2(100),
+   timeSlot VARCHAR2(80),
+   cctv VARCHAR2(50),
+   walkerName VARCHAR2(100),
+   career varchar2(500),
+   experience varchar2(500),
+   freeservice varchar2(500),
+   filePath VARCHAR2(100),
+   orgFileName varchar2(300),
+   saveFileName varchar2(300),
+   fileSize long
 );
 
 >>>>>>> refs/remotes/origin/soda
@@ -225,6 +226,9 @@ select * from manage;
 
 
 <<<<<<< HEAD
+select * from pet_users;
+select * from pet_walker;
+
 select * from reservation;
 
 select * frofm reservation where petwalker='채영';

@@ -36,7 +36,11 @@ margin-left: auto
 <body>
 <%@include file="../home_menu.jsp" %>
 <div class="container text-center" style=" margin-top: 100px;">
-	<h3>커뮤니티</h3>
+	<div style="text-align: center;">
+			<h2>자유게시판</h2>
+			<p>모든 회원간의 다양한 정보를 나눌 수 있습니다.</p>
+		</div>
+		<br /> <br />
 		<!-- keyword 검색어 form -->
 	<form action="list.do" method="post" class="pull-right">
 		<label for="condition">검색조건</label>

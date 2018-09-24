@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="../home_menu.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +19,9 @@
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
-
-
-
-
 <body style="margin-top: 120px">
 
-
+<%@include file="../home_menu.jsp" %>
 
 <div class="container">
       <div class="row">
@@ -34,8 +30,6 @@
           <div class="panel panel-info">
             <div class="panel-heading panel_update">
               <h3 class="panel-title">${id }님의 개인정보</h3>
-
-              
             </div>
             <div class="panel-body">
               <div class="row">
@@ -68,8 +62,7 @@
                         <td>${dto.nickname }</td>
                       </tr>
                    
-                         <tr>
-                             <tr>
+                      <tr>
                         <td>성별</td>
                         <td>${dto.sex }</td>
                       </tr>
@@ -80,17 +73,14 @@
                       <tr>
                         <td>휴대폰번호</td>
                         <td>${dto.phone }</td>
-                        
-                         </tr>
-                         <tr>
+                      </tr>
+                      <tr>
                         <td>가입일</td>
                         <td>${dto.regdate }</td>
-                        
-                         </tr>
+                      </tr>
+                     <tr>
                         <td>펫유무</td>
-                        <td>${dto.hasPet }
-                        </td>
-                           
+                        <td>${dto.hasPet }</td>
                       </tr>
                      
                     </tbody>

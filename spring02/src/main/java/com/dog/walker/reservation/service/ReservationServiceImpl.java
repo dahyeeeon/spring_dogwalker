@@ -32,20 +32,13 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
 	public void getList(ModelAndView mView, HttpServletRequest request, HttpSession session) {
 		
-
-		String id=(String)session.getAttribute("id");
+		String id=(String)session.getAttribute("id");//펫 워커에 id를 가져옴
 		
-		ReservationDto dto= new ReservationDto();
+		List<ReservationDto> list=dao.reservationgetList(id);
 		
-		dto.setId(id);
-		
-
-
-		//1. FileDto 객체를 전달해서 파일 목록을 불러온다 
-		List<ReservationDto> list=dao.reservationgetList(dto);
-		
-		//2. request 에 담고
 		request.setAttribute("list", list);
+		
+		System.out.println(list);
 		
 	}
 	
@@ -74,7 +67,6 @@ public class ReservationServiceImpl implements ReservationService {
 	public void insert(HttpServletRequest request, ModelAndView mView, ReservationDto dto) {
 
 		
-		
 		String petwalker=request.getParameter("petwalker");
 		String kakao=request.getParameter("kakao");
 		String nickname=request.getParameter("nickname");
@@ -101,10 +93,9 @@ public class ReservationServiceImpl implements ReservationService {
 
 
 	@Override
-	public void isReserved(HttpServletRequest request, int num) {
+	public void isReserved(HttpServletRequest request, int num,String nickname) {
 		
 		num = Integer.parseInt(request.getParameter("num"));
-		String nickname= request.getParameter("nickname");
 		System.out.println("받은 닉네임은:"+nickname);
 		dao.rsvConfirm(num);
 		pudao.isConfirmed(nickname);	

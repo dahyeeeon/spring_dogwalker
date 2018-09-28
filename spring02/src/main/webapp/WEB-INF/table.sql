@@ -199,7 +199,7 @@ drop table pet_walker;
 DROP SEQUENCE manage_seq;
 
 <<<<<<< HEAD
-select * from pet_walker;
+select * from pet_users;
 =======
 
 
@@ -302,6 +302,8 @@ CREATE TABLE manage(
    saveFileName varchar2(300),
    fileSize long
 );
+
+select * from reservation;
 
 CREATE TABLE reservation(
    num NUMBER PRIMARY KEY,
@@ -500,7 +502,6 @@ nextNum number
 );
 
 create Sequence board_cafe_seq;
-
 
 CREATE SEQUENCE reservation_seq;
 

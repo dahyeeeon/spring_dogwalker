@@ -54,22 +54,19 @@
 							<td>${tmp.timeSlot }</td>
 							<td>${tmp.dogSize }</td>
 							<td>${tmp.cctv }</td>
-							<td><c:choose>
-									<c:when test="${tmp.isReserved == 1 }">
-							예약을 수락 했습니다
-						</c:when>
-									<c:when test="${tmp.isReserved == 2 }">
-							예약을 거부 했습니다
-						</c:when>
+							<td>
+							<c:choose>
+									<c:when test="${tmp.isReserved == 1 }">예약을 수락 했습니다 </c:when>
+									<c:when test="${tmp.isReserved == 2 }">예약을 거부 했습니다</c:when>
 									<c:when test="${tmp.isReserved == 0 }">
-
 										<button class="small-btn btn-default" type="button"
-											onclick="javascript:rsvConfirm(${tmp.num },${tmp.nickname })">수락</button>
+											onclick="javascript:rsvConfirm('${tmp.num }','${tmp.nickname }')">수락</button>
 										<button class="small-btn btn-default" type="button"
 											onclick="javascript:rsvConfirm2(${tmp.num })">거절</button>
 									</c:when>
 
-								</c:choose></td>
+								</c:choose>
+								</td>
 						</tr>
 
 					</c:forEach>
@@ -77,34 +74,38 @@
 			</table>
 		</div>
 	</div>
-</body>
-
-
+	
+	
 <script>
 
-	function rsvConfirm(num,nickname){
+	function rsvConfirm(num, nickname) {
+		console.log("클릭함!");
 		var isReserved = confirm("이 예약을 수락 하시겠습니까?");
-		if(isReserved){
-			location.href="reserved.do?num="+num+"&nickname="+nickname;
-		}else if(!isReserved){
-			location.href="reservation.do";
+		if (isReserved) {
+			location.href = "reserved.do?num=" + num + "&nickname=" + nickname;
+		} else if (!isReserved) {
+			location.href = "reservation.do";
 			alert("예약이 수락되지 않았습니다");
 		}
 	}
-	
-	function rsvConfirm2(num){
+
+	function rsvConfirm2(num) {
 		var isReserved = confirm("예약을 거절 하시겠습니까?");
-				
-		if(isReserved){
-			location.href="notReserved.do?num="+num;
+
+		if (isReserved) {
+			location.href = "notReserved.do?num=" + num;
 			alert("예약이 거절 되었습니다");
-			
-		}else if(!isReserved){
-			location.href="reservation.do";
+
+		} else if (!isReserved) {
+			location.href = "reservation.do";
 			alert("예약이 거절되지 않았습니다");
-			
+
 		}
 	}
 </script>
+	
+</body>
+
+
 <%@include file="../home_footer.jsp"%>
 </html>

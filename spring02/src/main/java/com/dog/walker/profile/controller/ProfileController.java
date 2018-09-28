@@ -25,7 +25,6 @@ public class ProfileController {
 	private WalkerProfileService wpService;
 	
 	
-   
       @RequestMapping("/petwalker/profile") //프로필 등록하는 거
       public ModelAndView insert(HttpServletRequest request,
             @ModelAttribute ManageDto dto,PetwalkerDto profiledto,HttpSession session) {

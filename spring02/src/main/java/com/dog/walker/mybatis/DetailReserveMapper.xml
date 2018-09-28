@@ -2,16 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="rsv">
 
-   <select id="getList" resultType="reservationDto" parameterType="reservationDto" >
-      SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv, petwalker, isReserved
-      FROM reservation
-      WHERE petwalker=#{id}
+   <select id="getList" resultType="reservationDto" parameterType="String" >
+      SELECT * FROM reservation WHERE petwalker=#{petwalker}
    </select>
    
    <select id="getList2" resultType="reservationDto" parameterType="reservationDto" >
-      SELECT num, id, kakao, nickname, dogSize, selectDate, timeSlot, cctv, petwalker, isReserved
-      FROM reservation
-      WHERE nickname=#{nickname}
+      SELECT * FROM reservation WHERE petwalker=#{petwalker}
    </select>
    
    

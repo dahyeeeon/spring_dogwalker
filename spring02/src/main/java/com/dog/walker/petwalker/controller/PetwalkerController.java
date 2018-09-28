@@ -117,11 +117,11 @@ public class PetwalkerController {
 
 	// 리절브예약 수락
 	@RequestMapping("/petwalker/reserved")
-	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, ModelAndView mView) {
-		rService.isReserved(request, num);
+	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, @RequestParam String nickname,ModelAndView mView) {
+		System.out.println("제발닉네임은"+nickname);
+		rService.isReserved(request, num, nickname);
 
 		return new ModelAndView("redirect:/petwalker/reservation.do");
-
 	}
 
 	// 리절브 예약거부

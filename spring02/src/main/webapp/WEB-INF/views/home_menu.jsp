@@ -14,12 +14,12 @@
       <c:choose>
          <c:when test="${ (not empty id) and (isWalker eq true)  }">
             
-               <strong><a href="petwalker/info.do">${id }</a></strong>님 마이페이지
+               <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
            
          </c:when>
          <c:when test="${ (not empty id) and (isWalker eq false)  }">
           
-               <strong><a href="petusers/info.do">${id }</a></strong>님 마이페이지
+               <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
            
          </c:when>
          <c:otherwise>

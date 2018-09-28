@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/cafe/detail.jsp</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <style>
 	.content{
 		border: 1px solid #888888;
@@ -62,6 +61,14 @@
 	padding:0px !important
 	}
 </style>
+
+<!-- Bootstrap core CSS -->
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 </head>
 <body>
 <%@include file="../home_menu.jsp" %>

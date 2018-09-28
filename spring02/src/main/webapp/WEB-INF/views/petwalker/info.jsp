@@ -90,7 +90,6 @@
                         <td>펫유무</td>
                         <td>${dto.hasPet }
                         </td>
-                           
                       </tr>
                      
                     </tbody>

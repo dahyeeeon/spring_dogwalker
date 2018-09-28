@@ -8,6 +8,7 @@
 <title>Let's Run, Pet walker!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/form.css" />
 <style>
+
  .fotorama__wrap {
     -webkit-text-size-adjust: 100%;
     position: relative;
@@ -21,7 +22,7 @@
 	border: 1px solid #ccc;
 }
 
-img2 {
+img {
 	width: 100%;
 	height: 162px;
 }
@@ -81,15 +82,6 @@ img2 {
 	margin-bottom: 0;
 	margin-left: -30px;
 }
-footer {
-   margin-top: 140px;
-   left:0px;
-   bottom:0px;
-   height:60px;
-   width:100%;
-}
-
-
 </style>
 
 
@@ -142,13 +134,10 @@ footer {
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 </head>
 <body style="margin-top: 180px">
-<%@include file="../home_menu.jsp"%>
+
+	<%@include file="../home_menu.jsp"%>
 	<div class="container">
-		<div style="text-align: center;">
-			<p style="font-size: 30px">도그 워커 후기 게시판</p>
-			<p>회원님들이 직접 남긴 후기입니다.</p>
-		</div>
-		<br /><br />
+
 		<div class="row">
 			<div class="col-sm-7 center-block">
 
@@ -205,9 +194,9 @@ footer {
 					<c:choose>
 						<c:when test="${id == petUser.id}">
 						
-							<button class="btn_update" type="button"
+							<button class="btn btn-default" type="button"
 							onclick="location.href='insertform.do?petwalker=${pwk.nickname }'">
-								예약하기
+								RESERVATION
 							</button>
 						</c:when>
 				

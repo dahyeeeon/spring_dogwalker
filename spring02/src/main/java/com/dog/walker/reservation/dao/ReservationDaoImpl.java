@@ -25,8 +25,9 @@ public class ReservationDaoImpl implements ReservationDao {
 	}
 
 	@Override
-	public List<ReservationDto> reservationgetList(String id) {
-		return session.selectList("rsv.getList", id);
+	public List<ReservationDto> reservationgetList(ReservationDto dto) {
+		return session.selectList("rsv.getList", dto);
+
 	}
 	
 	@Override

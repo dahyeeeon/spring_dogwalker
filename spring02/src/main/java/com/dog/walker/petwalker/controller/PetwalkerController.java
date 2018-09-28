@@ -33,7 +33,6 @@ public class PetwalkerController {
 		// 담겨있는 UsersDto 객체를 전달한다.
 		pService.signup(request, mView, dto);
 		// ModelAndView 객체에 view 페이지 정보를 담고
-		request.setAttribute("url", request.getContextPath()+"/home.do");
 		mView.setViewName("petwalker/signup");
 		// 리턴해준다.
 		return mView;
@@ -57,19 +56,6 @@ public class PetwalkerController {
 		// {"canUse":true} or {"canUse":false}
 		return map;
 	}
-	// 회원가입 닉네임 중복 요청처리
-	@RequestMapping("/petwalker/checknickname")
-	@ResponseBody
-	public Map<String, Object> checknickname(@RequestParam String inputNickname) {
-			// 서비스 객체를 이용해서 사용가능 여부를 boolean type
-			// 으로 리턴 받는다.
-			boolean canUse = pService.canUseNickname(inputNickname);
-			// Map 에 담는다.
-			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("canUse", canUse);
-			// {"canUse":true} or {"canUse":false}
-			return map;
-		}
 
 	// 로그인 폼 요청 처리
 	@RequestMapping("/petwalker/loginform")
@@ -131,8 +117,8 @@ public class PetwalkerController {
 
 	// 리절브예약 수락
 	@RequestMapping("/petwalker/reserved")
-	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, @RequestParam String nickname, ModelAndView mView) {
-		rService.isReserved(request, num, nickname);
+	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, ModelAndView mView) {
+		rService.isReserved(request, num);
 
 		return new ModelAndView("redirect:/petwalker/reservation.do");
 
@@ -146,16 +132,17 @@ public class PetwalkerController {
 	}
 	
 	@RequestMapping("/petwalker/reservation")
-	public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView, HttpSession session) {
+	public ModelAndView Reservation(HttpServletRequest request, ModelAndView mView) {
 
 		// rService.isReserved(request, mView, nickname);
 
-		rService.getList(mView, request, session);
+		rService.getList(mView, request);
 		mView.setViewName("petwalker/reservation");
 
 		return mView;
 
 	}
+	
 
 	@RequestMapping("/petwalker/info")
 	public ModelAndView authInfo(HttpServletRequest request, HttpSession session) {

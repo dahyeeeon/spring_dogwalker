@@ -99,7 +99,7 @@
                       <a href="profileupdateform.do" class="btn_update">프로필 수정</a>
                    </c:otherwise>
                 </c:choose>
-                <a href="reservation.do?id=${dto.id }" class="btn_update">예약보기</a>
+                <a href="reservation.do?nickname=${dto.nickname }" class="btn_update">예약보기</a>
                 </div>
 
                 </div>

@@ -112,13 +112,13 @@ footer {
 
 			<c:choose>
 				<c:when test="${canWrite gt 0}">
-					<button class="btn_update" type="button"
+					<button class="btn btn-default" type="button"
 						onclick="location.href='uploadform.do'">
 						후기 남기기</button>
 				</c:when>
 
 				<c:otherwise>
-				<button class="btn_update" id = "button1" type="button">
+				<button class="btn btn-default" id = "button1" type="button">
 						후기 남기기</button>
 					<script>
                         $("#button1").click(function() {

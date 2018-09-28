@@ -33,6 +33,7 @@ public class PetusersController {
 		// 담겨있는 UsersDto 객체를 전달한다.
 		uService.signup(request, mView, dto);
 		// ModelAndView 객체에 view 페이지 정보를 담고
+		request.setAttribute("url", request.getContextPath()+"/home.do");
 		mView.setViewName("petusers/signup");
 		// 리턴해준다.
 		return mView;
@@ -47,8 +48,7 @@ public class PetusersController {
 	@RequestMapping("/petusers/checkid")
 	@ResponseBody
 	public Map<String, Object> checkid(@RequestParam String inputId) {
-		// 서비스 객체를 이용해서 사용가능 여부를 boolean type
-		// 으로 리턴 받는다.
+		// 서비스 객체를 이용해서 사용가능 여부를 boolean type으로 리턴 받는다.
 		boolean canUse = uService.canUseId(inputId);
 		// Map 에 담는다.
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -107,11 +107,9 @@ public class PetusersController {
 		ModelAndView mView = new ModelAndView();
 		// 서비스를 통해서 로그인 처리를 한다.
 		uService.login(mView, dto, session);
-
 		// 로그인후 이동할 url
 		mView.addObject("url", url);
 		// view 페이지 정보
-
 		mView.setViewName("petusers/login");
 		return mView;
 	}

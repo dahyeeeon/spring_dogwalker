@@ -9,8 +9,8 @@
 </head>
 <body>
 <script>
- alert("${msg }");
- location.href="${pageContext.request.contextPath }/petwalker/loginform.do";
+alert("회원가입이 완료됐습니다.");
+location.href = "${url}";
  </script>
 </html>
 

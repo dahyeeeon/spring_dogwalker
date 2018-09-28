@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<!DOCTYPE html>
 <html>
 <head>
 <title>review/list</title>
@@ -11,15 +9,12 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-<script
-	src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js" /></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<!-- Bootstrap core JavaScript -->
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+	
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <style>
 .container {
 	margin-top: 140px;
@@ -36,13 +31,16 @@
 	color: white;
 }
 
-footer {
-	margin: 50px 0;
-}
-
 a{
 	margin-left:0px !important;
 	
+}
+footer {
+   margin-top: 140px;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
 }
 </style>
 </head>
@@ -114,13 +112,13 @@ a{
 
 			<c:choose>
 				<c:when test="${canWrite gt 0}">
-					<button class="btn btn-default" type="button"
+					<button class="btn_update" type="button"
 						onclick="location.href='uploadform.do'">
 						후기 남기기</button>
 				</c:when>
 
 				<c:otherwise>
-				<button class="btn btn-default" id = "button1" type="button">
+				<button class="btn_update" id = "button1" type="button">
 						후기 남기기</button>
 					<script>
                         $("#button1").click(function() {
@@ -137,6 +135,8 @@ a{
 		</div>
 	</div>
 	<%@include file="../home_footer.jsp"%>
+	
+	
 	<script>   
    
    
@@ -152,6 +152,6 @@ a{
    });
    
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 </body>
 </html>

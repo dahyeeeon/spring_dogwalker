@@ -82,8 +82,13 @@ img2 {
 	margin-left: -30px;
 }
 footer {
-	margin: 50px 0;
+   margin-top: 140px;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
 }
+
 
 </style>
 
@@ -140,7 +145,7 @@ footer {
 <%@include file="../home_menu.jsp"%>
 	<div class="container">
 		<div style="text-align: center;">
-			<h2>도그 워커 후기 게시판</h2>
+			<p style="font-size: 30px">도그 워커 후기 게시판</p>
 			<p>회원님들이 직접 남긴 후기입니다.</p>
 		</div>
 		<br /><br />
@@ -200,9 +205,9 @@ footer {
 					<c:choose>
 						<c:when test="${id == petUser.id}">
 						
-							<button class="btn btn-default" type="button"
+							<button class="btn_update" type="button"
 							onclick="location.href='insertform.do?petwalker=${pwk.nickname }'">
-								RESERVATION
+								예약하기
 							</button>
 						</c:when>
 				

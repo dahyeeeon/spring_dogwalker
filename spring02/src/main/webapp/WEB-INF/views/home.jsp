@@ -7,6 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Grayscale - Start Bootstrap Theme</title>
 <style>
+footer {
+   margin-top: 140px;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
+}
 .nav>li{
    margin-right:80px;
 }
@@ -79,12 +86,12 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
-footer {
-    margin: 50px 0;
-}
 .search_input_class{
 	width:500px;
 	
+}
+.doglogin{
+	margin-left: -90px;
 }
 </style>
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -293,13 +300,12 @@ footer {
 </section>
 
 <a id="MOVE_TOP_BTN" href="#">TOP-</a>
+<%@include file="home_footer.jsp" %>
 
 
  <!-- Bootstrap core JavaScript -->
-	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
-
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 <script>
     $(function() {
         $(window).scroll(function() {

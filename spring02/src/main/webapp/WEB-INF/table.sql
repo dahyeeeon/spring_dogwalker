@@ -644,6 +644,8 @@ CREATE TABLE reservation(
    isReserved NUMBER default 0
 );
 
+select * from reservation
+
 create table board_Cafe(
 num NUMBER PRIMARY KEY,
 writer varchar2(100),
@@ -675,3 +677,7 @@ create Sequence board_cafe_seq;
 CREATE SEQUENCE reservation_seq;
 CREATE SEQUENCE manage_seq;
 
+select * from all_tables
+select * from manage
+delete from manage where writer='utest1';
+delete from pet_walker where id='dwtest2';

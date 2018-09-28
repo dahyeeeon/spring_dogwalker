@@ -90,6 +90,7 @@ public class CafeController {
 		//비즈니스 로직을 수행하고 
 		//view 페이지에서 필요한 데이터가 request 영역에 담기게 한다.
 		cafeService.getList(request);
+		request.setAttribute("url", request.getContextPath()+"/community/list.do");
 		//view 페이지로 forward 이동
 		return new ModelAndView("community/list");
 	}

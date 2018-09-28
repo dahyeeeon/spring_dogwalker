@@ -272,6 +272,8 @@ img {
    rel="stylesheet">
 <link rel="stylesheet"
    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="/walker/resources/css/dogwalker.css" />
+
 </head>
 
 <body>
@@ -377,7 +379,7 @@ img {
 	                              <div class="petsitter-card-star-box" style = "float:left">
 	                              
                               		<c:if test="${list1.nickname eq list2.nickname }">
-                              			<span><strong>리뷰 평점은 : </strong>${list2.stars }</span>
+                              			<span><strong>리뷰 평점: </strong>${list2.stars }</span>
                               			<%-- <c:forEach begin="1" end="${list2.stars }" >
 	                              			 <img src="https://storage.googleapis.com/pefam-web-cdn/star_s_off.png" class="star star-off">
                               			</c:forEach> --%>

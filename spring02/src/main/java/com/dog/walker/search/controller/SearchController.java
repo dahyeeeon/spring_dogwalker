@@ -1,5 +1,7 @@
 package com.dog.walker.search.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +21,11 @@ public class SearchController {
 	
 	
 	@RequestMapping("/search/list")
-	public ModelAndView allwalkershow(ModelAndView mView, ManageDto profileDto,@RequestParam(defaultValue="") String input_address ) {
+	public ModelAndView allwalkershow(HttpServletRequest request, ModelAndView mView, ManageDto profileDto,@RequestParam(defaultValue="") String input_address ) {
 
 		sService.getAllInfo(input_address,mView);
 		sService.getWalkerTotal(input_address, mView);
+		request.setAttribute("url", request.getContextPath()+"/search/list.do");
 		mView.setViewName("search/allWalker");
 		return mView;
 	}
@@ -43,4 +46,3 @@ public class SearchController {
 		return mView;
 	}
 }
-

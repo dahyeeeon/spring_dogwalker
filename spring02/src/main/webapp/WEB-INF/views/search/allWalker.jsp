@@ -262,7 +262,11 @@ img {
 	border: 2px solid #999;
 }
 footer {
-	margin-top: 90px;
+   margin-top: 100px;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
 }
 </style>
 
@@ -274,7 +278,9 @@ footer {
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 <link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+ <!-- Bootstrap core JavaScript -->
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 
 </head>
 
@@ -304,7 +310,7 @@ footer {
                            <div class="petwalker-card-over">
                               <img
                                  src="${pageContext.request.contextPath }/${list1.addProfilePath}"
-                                 alt="이미지!!" class="detailImg" />
+                                 class="detailImg" />
                            </div>
                         </div>
 
@@ -359,7 +365,7 @@ footer {
 
 
    <%@include file="../home_footer.jsp"%>
-
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 
 </body>
 </html>

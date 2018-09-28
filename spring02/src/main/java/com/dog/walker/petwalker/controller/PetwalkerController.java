@@ -33,6 +33,7 @@ public class PetwalkerController {
 		// 담겨있는 UsersDto 객체를 전달한다.
 		pService.signup(request, mView, dto);
 		// ModelAndView 객체에 view 페이지 정보를 담고
+		request.setAttribute("url", request.getContextPath()+"/home.do");
 		mView.setViewName("petwalker/signup");
 		// 리턴해준다.
 		return mView;
@@ -130,8 +131,8 @@ public class PetwalkerController {
 
 	// 리절브예약 수락
 	@RequestMapping("/petwalker/reserved")
-	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, ModelAndView mView) {
-		rService.isReserved(request, num);
+	public ModelAndView Reserved(@RequestParam int num, HttpServletRequest request, @RequestParam String nickname, ModelAndView mView) {
+		rService.isReserved(request, num, nickname);
 
 		return new ModelAndView("redirect:/petwalker/reservation.do");
 

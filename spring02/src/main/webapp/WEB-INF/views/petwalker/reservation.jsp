@@ -12,21 +12,30 @@
 	margin: 0 auto;
 }
 </style>
-<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
-<link href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
+<link
+	href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/bootstrap.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link
+	href="${pageContext.request.contextPath }/resources/vendor/bootstrap/css/grayscale.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<script
+	src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 </head>
 <body style="margin-top: 120px">
-<%@include file="../home_menu.jsp"%>
+	<%@include file="../home_menu.jsp"%>
 	<div class="container">
-	<div style="text-align: center;">
-		<h2>${id }님의 예약 목록</h2>
-		<p>산책 요청들을 수락 혹은 거절 할 수 있습니다.</p>
-	</div>
-		<div class="row bottomCol" style="margin-bottom: 130px; margin-top: 60px;">
+		<div style="text-align: center;">
+			<h2>${id }님의예약 목록</h2>
+			<p>산책 요청들을 수락 혹은 거절 할 수 있습니다.</p>
+		</div>
+		<div class="row bottomCol"
+			style="margin-bottom: 130px; margin-top: 60px;">
 			<h3>예약 목록</h3>
 			<table class="table table-border">
 				<thead>
@@ -50,16 +59,11 @@
 							<td>${tmp.dogSize }</td>
 							<td>${tmp.cctv }</td>
 							<td><c:choose>
-									<c:when test="${tmp.isReserved == 1 }">
-							예약을 수락 했습니다
-						</c:when>
-									<c:when test="${tmp.isReserved == 2 }">
-							예약을 거부 했습니다
-						</c:when>
+									<c:when test="${tmp.isReserved == 1 }">예약을 수락 했습니다 </c:when>
+									<c:when test="${tmp.isReserved == 2 }">예약을 거부 했습니다</c:when>
 									<c:when test="${tmp.isReserved == 0 }">
-
 										<button class="small-btn btn-default" type="button"
-											onclick="javascript:rsvConfirm(${tmp.num },${tmp.nickname })">수락</button>
+											onclick="javascript:rsvConfirm('${tmp.num }','${tmp.nickname }')">수락</button>
 										<button class="small-btn btn-default" type="button"
 											onclick="javascript:rsvConfirm2(${tmp.num })">거절</button>
 									</c:when>

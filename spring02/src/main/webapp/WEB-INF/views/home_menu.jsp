@@ -7,28 +7,22 @@
             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath }/petwalker/logout.do">logout</a>
          </c:when>
          <c:otherwise>
-            <a href="javascript:" class="nav-link js-scroll-trigger"
-               data-toggle="modal" data-target="#loginModal">login</a>
+            <a href="javascript:" class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#loginModal">login</a>
          </c:otherwise>
       </c:choose>
       <c:choose>
          <c:when test="${ (not empty id) and (isWalker eq true)  }">
-            
                <strong><a href="${pageContext.request.contextPath }/petwalker/info.do">${id }</a></strong>님 마이페이지
-           
          </c:when>
          <c:when test="${ (not empty id) and (isWalker eq false)  }">
-          
                <strong><a href="${pageContext.request.contextPath }/petusers/info.do">${id }</a></strong>님 마이페이지
-           
          </c:when>
          <c:otherwise>
-            <a href="${pageContext.request.contextPath }/home.do"><img
-            src="${pageContext.request.contextPath }/resources/img/paw.png"
-            alt="logo" /></a>
+            <a href="${pageContext.request.contextPath }/home.do"><img src="${pageContext.request.contextPath }/resources/img/paw.png" alt="logo" /></a>
          </c:otherwise>
       </c:choose>
    </div>
+   
    <!-- 로그인 모달 -->
    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
       aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -49,9 +43,9 @@
                         href="#userloginTab" aria-controls="userloginTab" role="tab"
                         data-toggle="tab" style="font-size: 16px; width: 200px;">
                            회원으로 로그인</a></li>
-                     <li role="presentation"><a href="#dogloginTab"
+                     <li role="presentation"><a class="doglogin" href="#dogloginTab"
                         aria-controls="dogloginTab" role="tab" data-toggle="tab"
-                        style="font-size: 16px; width: 200px; margin-left: -90px;"> 도그워커로 로그인</a></li>
+                        style="font-size: 16px; width: 200px;"> 도그워커로 로그인</a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
@@ -72,7 +66,7 @@
                            <div class="modal-footer">
 							<a href="${pageContext.request.contextPath }/petusers/signup_form.do" class="btn btn-primary" style="position: absolute; left: 15px;">회원가입하기</a>
 							<button type="submit" class="btn btn-primary">로그인</button>
-                             <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                             <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
                            </div>
                         </form>
                      </div>
@@ -93,7 +87,7 @@
                            <div class="modal-footer">
                            	<a href="${pageContext.request.contextPath }/petwalker/signup_form.do" class="btn btn-primary" style="position: absolute; left: 15px;">회원가입하기</a>
                               <button type="submit" class="btn btn-primary">로그인</button>
-                              <button type="button" class="btn btn-default"
+                              <button type="button" class="btn btn-primary"
                                  data-dismiss="modal">닫기</button>
                            </div>
                         </form>
@@ -104,51 +98,7 @@
          </div>
       </div>
    </div>
-
-   <!-- 회원가입 모달 -->
-   <div class="modal fade" id="joinModal" tabindex="-1" role="dialog"
-      aria-labelledby="joinModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <!-- 모달 헤더 -->
-            <div class="modal-header">
-               <h4 class="modal-title" id="joinModalLabel">회원가입 하기</h4>
-               <button type="button" class="close" data-dismiss="modal"
-                  aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-               </button>
-            </div>
-            <div class="modal-body">
-               <div role="tabpanel">
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs" role="tablist">
-                     <li role="presentation" class="active"><a
-                        href="#userjoinTab" aria-controls="userjoinTab" role="tab"
-                        data-toggle="tab" style="font-size: 16px; width: 200px;"> 회원
-                           회원가입하기</a></li>
-                     <li role="presentation"><a href="#dogjoinTab"
-                        aria-controls="joinTab" role="tab" data-toggle="tab"
-                        style="font-size: 16px; width: 210px; margin-left: -90px"> 도그워커 회원가입하기</a></li>
-                  </ul>
-               </div>
-               <!-- Tab panes -->
-               <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="userjoinTab">
-                     <a href="${pageContext.request.contextPath }/petusers/signup_form.do">
-                     	<h2>회원으로 회원가입을 원하십니까?	</h2>	
-                     	</a>
-                  </div>
-                  <div role="tabpanel" class="tab-pane" id="dogjoinTab">
-                                       <a href="${pageContext.request.contextPath }/petusers/signup_form.do">
-                  
-                    	너가 안올동안~
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-
+   
    <div class="gnb_area">
       <h1>
          <a href="${pageContext.request.contextPath }/home.do"><img

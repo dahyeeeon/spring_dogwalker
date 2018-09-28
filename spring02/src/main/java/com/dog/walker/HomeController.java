@@ -22,10 +22,6 @@ import com.dog.walker.review.service.ReviewService;
 public class HomeController {
 	@Autowired
 	private ReviewService rService;
-	@Autowired
-	private DetailService rsvService;
-	@Autowired
-	private ReviewService rvService;
 	
 	
    //로그를 찍기 위한 도구

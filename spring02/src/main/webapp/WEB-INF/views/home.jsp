@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Grayscale - Start Bootstrap Theme</title>
+<title>Let's Run</title>
 <style>
 footer {
    margin-top: 140px;

@@ -21,96 +21,111 @@ import com.dog.walker.reservation.service.ReservationService;
 @Controller
 public class PetwalkerController {
 
-	@Autowired
-	private PetwalkerService pService;
+   @Autowired
+   private PetwalkerService pService;
 
-	// 회원가입 요청 처리
-	@RequestMapping("/petwalker/signup")
-	public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetwalkerDto dto) {
-		// 서비스에 전달할 ModelAndView 객체 생성
-		ModelAndView mView = new ModelAndView();
-		// 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
-		// 담겨있는 UsersDto 객체를 전달한다.
-		pService.signup(request, mView, dto);
-		// ModelAndView 객체에 view 페이지 정보를 담고
-		mView.setViewName("petwalker/signup");
-		// 리턴해준다.
-		return mView;
-	}
+   // 회원가입 요청 처리
+   @RequestMapping("/petwalker/signup")
+   public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetwalkerDto dto) {
+      // 서비스에 전달할 ModelAndView 객체 생성
+      ModelAndView mView = new ModelAndView();
+      // 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
+      // 담겨있는 UsersDto 객체를 전달한다.
+      pService.signup(request, mView, dto);
+      // ModelAndView 객체에 view 페이지 정보를 담고
+      request.setAttribute("url", request.getContextPath() + "/home.do");
+      mView.setViewName("petwalker/signup");
+      // 리턴해준다.
+      return mView;
+   }
 
-	// 회원가입 폼 요청 처리
-	@RequestMapping("/petwalker/signup_form")
-	public String signupForm() {
-		return "petwalker/signup_form";
-	}
+   // 회원가입 폼 요청 처리
+   @RequestMapping("/petwalker/signup_form")
+   public String signupForm() {
+      return "petwalker/signup_form";
+   }
 
-	@RequestMapping("/petwalker/checkid")
-	@ResponseBody
-	public Map<String, Object> checkid(@RequestParam String inputId) {
-		// 서비스 객체를 이용해서 사용가능 여부를 boolean type
-		// 으로 리턴 받는다.
-		boolean canUse = pService.canUseId(inputId);
-		// Map 에 담는다.
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("canUse", canUse);
-		// {"canUse":true} or {"canUse":false}
-		return map;
-	}
+   @RequestMapping("/petwalker/checkid")
+   @ResponseBody
+   public Map<String, Object> checkid(@RequestParam String inputId) {
+      // 서비스 객체를 이용해서 사용가능 여부를 boolean type
+      // 으로 리턴 받는다.
+      boolean canUse = pService.canUseId(inputId);
+      // Map 에 담는다.
+      Map<String, Object> map = new HashMap<String, Object>();
+      map.put("canUse", canUse);
+      // {"canUse":true} or {"canUse":false}
+      return map;
+   }
 
-	// 로그인 폼 요청 처리
-	@RequestMapping("/petwalker/loginform")
-	public String loginForm(HttpServletRequest request) {
-		// 로그인 후 이동할 url 주소를 읽어온다.
-		String url = request.getParameter("url");
-		// 만일 전달되지 않았으면
-		if (url == null) {
-			// 인덱스로 이동할수 있도록
-			url = request.getContextPath() + "/";
-		}
-		// request 에 담기
-		request.setAttribute("url", url);
+   // 회원가입 닉네임 중복 요청처리
+   @RequestMapping("/petwalker/checknickname")
+   @ResponseBody
+   public Map<String, Object> checknickname(@RequestParam String inputNickname) {
+      // 서비스 객체를 이용해서 사용가능 여부를 boolean type으로 리턴 받는다.
+      boolean canUse = pService.canUseNickname(inputNickname);
+      // Map 에 담는다.
+      Map<String, Object> map = new HashMap<String, Object>();
+      map.put("canUse", canUse);
+      // {"canUse":true} or {"canUse":false}
+      return map;
+   }
 
-		return "petwalker/loginform";
-	}
+   // 로그인 폼 요청 처리
+   @RequestMapping("/petwalker/loginform")
+   public String loginForm(HttpServletRequest request) {
+      // 로그인 후 이동할 url 주소를 읽어온다.
+      String url = request.getParameter("url");
+      // 만일 전달되지 않았으면
+      if (url == null) {
+         // 인덱스로 이동할수 있도록
+         url = request.getContextPath() + "/";
+      }
+      // request 에 담기
+      request.setAttribute("url", url);
 
-	public ModelAndView loginForm2(@RequestParam(defaultValue = "") String url, HttpServletRequest request) {
+      return "petwalker/loginform";
+   }
 
-		// 만일 전달되지 않았으면
-		if (url.equals("")) {
-			// 인덱스로 이동할수 있도록
-			url = request.getContextPath() + "/";
-		}
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("url", url);
-		mView.setViewName("petwalker/loginform");
+   public ModelAndView loginForm2(@RequestParam(defaultValue = "") String url, HttpServletRequest request) {
 
-		return mView;
-	}
+      // 만일 전달되지 않았으면
+      if (url.equals("")) {
+         // 인덱스로 이동할수 있도록
+         url = request.getContextPath() + "/";
+      }
+      ModelAndView mView = new ModelAndView();
+      mView.addObject("url", url);
+      mView.setViewName("petwalker/loginform");
 
-	// 로그인 요청 처리
-	@RequestMapping("/petwalker/login")
-	public ModelAndView login(@ModelAttribute PetwalkerDto dto, @RequestParam String url, HttpSession session) {
-		ModelAndView mView = new ModelAndView();
-		// 서비스를 통해서 로그인 처리를 한다.
-		pService.login(mView, dto, session);
+      return mView;
+   }
 
-		// 로그인후 이동할 url
-		mView.addObject("url", url);
-		// view 페이지 정보
-		mView.setViewName("petwalker/login");
-		return mView;
-	}
+   // 로그인 요청 처리
+   @RequestMapping("/petwalker/login")
+   public ModelAndView login(@ModelAttribute PetwalkerDto dto, @RequestParam String url, HttpSession session) {
+      ModelAndView mView = new ModelAndView();
+      // 서비스를 통해서 로그인 처리를 한다.
+      pService.login(mView, dto, session);
 
-	// 로그아웃 요청 처리
-	@RequestMapping("/petwalker/logout")
-	public String logout(HttpSession session) {
-		// 세션 초기화
-		session.invalidate();
-		
-		// view 페이지 정보 리턴
-		return "petwalker/logout";
-	}
-	// 개인 정보 보기 요청 처리
+      // 로그인후 이동할 url
+      mView.addObject("url", url);
+      // view 페이지 정보
+      mView.setViewName("petwalker/login");
+      return mView;
+   }
+
+   // 로그아웃 요청 처리
+   @RequestMapping("/petwalker/logout")
+   public String logout(HttpSession session) {
+      // 세션 초기화
+      session.invalidate();
+
+      // view 페이지 정보 리턴
+      return "petwalker/logout";
+   }
+   // 개인 정보 보기 요청 처리
+
 
 	@Autowired
 	private ReservationService rService;

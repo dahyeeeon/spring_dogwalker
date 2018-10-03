@@ -20,7 +20,15 @@
 	margin-top: 140px;
 }
 
-#insertbutton {
+#insertbutton1 {
+	color:white;
+	float: right;
+	margin-top: 20px;
+	background-color: #4f837f;
+}
+
+#insertbutton2 {
+	color:white;
 	float: right;
 	margin-top: 20px;
 	background-color: #4f837f;
@@ -42,6 +50,8 @@ footer {
    height:60px;
    width:100%;
 }
+
+
 </style>
 </head>
 <body>
@@ -112,34 +122,30 @@ footer {
 
 			<c:choose>
 				<c:when test="${canWrite gt 0}">
-					<button class="btn btn-default" type="button"
+					<button class="btn btn-default" type="button" id="insertbutton1"
 						onclick="location.href='uploadform.do'">
 						후기 남기기</button>
 				</c:when>
 
 				<c:otherwise>
-				<button class="btn btn-default" id = "button1" type="button">
+				<button class="btn btn-default" id = "insertbutton2" type="button">
 						후기 남기기</button>
 					<script>
-                        $("#button1").click(function() {
+                        $("#insertbutton2").click(function() {
                            alert("예약을 해서 서비스를 이용해야 리뷰를 쓸 수 있습니다.")
                         })
                      </script>
 				</c:otherwise>
 			</c:choose>
 
-			<!-- <button class="btn_update" id="insertbutton">
-				<a id="insertanchor" href="uploadform.do">후기 남기기</a>
-			</button> -->
-
 		</div>
 	</div>
 	<%@include file="../home_footer.jsp"%>
 	
-	
+	<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
 	<script>   
-   
-   
+	
+  
    $(".print-star").each(function(){
       var count=$(this).attr("data-stars");
       if(count==""){
@@ -152,6 +158,6 @@ footer {
    });
    
     </script>
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+
 </body>
 </html>

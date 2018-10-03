@@ -16,7 +16,7 @@ CREATE TABLE pet_walker(
    isProfiled NUMBER default 0
 );
 
-
+drop table pet_walker;
 
 CREATE TABLE pet_users(
    id VARCHAR2(30) PRIMARY KEY,
@@ -34,6 +34,9 @@ CREATE TABLE pet_users(
    fileSize long,
    isConfirmed NUMBER default 0 
 );
+
+drop table pet_users;
+
 select * from manage;
 select * from pet_walker;
 
@@ -82,6 +85,8 @@ CREATE TABLE reservation(
    petwalker VARCHAR2(50),
    isReserved NUMBER default 0
 );
+
+drop table reservation;
 
 create table board_Cafe(
 num NUMBER PRIMARY KEY,
@@ -364,6 +369,7 @@ GROUP BY nickname
 select m.filePath filePath, p.imagePath imagePath, p.nickname nickname, p.id id , substr(p.addr,1,3) addr, p.hasPet hasPet,p.sex sex 
 FROM manage m JOIN pet_walker p ON m.nickname = p.nickname;
 
+select * from pet_walker;
 
 select * from pet_users;
 select * from reservation where nickname=1;

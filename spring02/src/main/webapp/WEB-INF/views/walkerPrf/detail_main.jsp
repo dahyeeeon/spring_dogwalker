@@ -6,18 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Let's Run, Pet walker!</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/form.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/form.css" />
 <style>
-
- .fotorama__wrap {
-    -webkit-text-size-adjust: 100%;
-    position: relative;
-    direction: ltr;
-    z-index: 0;
-    /* text-align: center; */
-    margin: 0 auto;
+.fotorama__wrap {
+	-webkit-text-size-adjust: 100%;
+	position: relative;
+	direction: ltr;
+	z-index: 0;
+	/* text-align: center; */
+	margin: 0 auto;
 }
- 
+
 .divider {
 	border: 1px solid #ccc;
 }
@@ -131,7 +131,8 @@ img {
 	src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <!-- 16 KB -->
 <!-- 아이콘 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/dogwalker.css" />
 </head>
 <body style="margin-top: 180px">
 
@@ -141,14 +142,17 @@ img {
 		<div class="row">
 			<div class="col-sm-7 center-block">
 
-				<div class="fotorama" data-autoplay="true"
-					data-nav="thumbs" data-allowfullscreen="true">
+				<div class="fotorama" data-autoplay="true" data-nav="thumbs"
+					data-allowfullscreen="true">
 
-					<img src="${pageContext.request.contextPath}/${pwk.filePath }" class="img-responsive img-thumbnail"
-						style="height: 260px; width: 500px" /> 
-					<img src="${pageContext.request.contextPath}/${pwk.filePath }" class="img-responsive img-thumbnail"
-						style="height: 260px; width: 500px" /> 
-					<img src="${pageContext.request.contextPath }/resources/img/dog4.jpg" class="img-responsive img-thumbnail"
+					<img src="${pageContext.request.contextPath}/${pwk.filePath }"
+						class="img-responsive img-thumbnail"
+						style="height: 260px; width: 500px" /> <img
+						src="${pageContext.request.contextPath}/${pwk.filePath }"
+						class="img-responsive img-thumbnail"
+						style="height: 260px; width: 500px" /> <img
+						src="${pageContext.request.contextPath }/resources/img/dog4.jpg"
+						class="img-responsive img-thumbnail"
 						style="height: 260px; width: 500px" />
 
 				</div>
@@ -193,16 +197,14 @@ img {
 				<div class="action" style="text-align: center; margin-top: 50px;">
 					<c:choose>
 						<c:when test="${id == petUser.id}">
-						
+
 							<button class="btn btn-default" type="button"
-							onclick="location.href='insertform.do?petwalker=${pwk.nickname }'">
-								RESERVATION
-							</button>
+								onclick="location.href='insertform.do?petwalker=${pwk.nickname }'">
+								RESERVATION</button>
 						</c:when>
-				
+
 						<c:otherwise>
-							<button class="btn btn-default rsvb"
-								style="cursor: no-drop">RESERVATION</button>
+							<button class="btn btn-default rsvb" style="cursor: no-drop">RESERVATION</button>
 							<script>
 								$(".rsvb").click(function() {
 									alert("유저만 예약 가능합니다! ")
@@ -260,7 +262,7 @@ img {
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Add Pagination -->
 				<div class="swiper-pagination"></div>
 				<!-- Add Arrows -->
@@ -272,18 +274,18 @@ img {
 
 		</div>
 
-		</div>
+	</div>
 
 
-		
-		<script>
-			var swiper = new Swiper('.swiper-container', {
-				navigation : {
-					nextEl : '.swiper-button-next',
-					prevEl : '.swiper-button-prev',
-				},
-			});
-		</script>
+
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			navigation : {
+				nextEl : '.swiper-button-next',
+				prevEl : '.swiper-button-prev',
+			},
+		});
+	</script>
 </body>
 <%@include file="../home_footer.jsp"%>
 </html>

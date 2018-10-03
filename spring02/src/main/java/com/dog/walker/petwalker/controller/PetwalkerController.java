@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dog.walker.petusers.dto.PetusersDto;
 import com.dog.walker.petwalker.dto.PetwalkerDto;
 import com.dog.walker.petwalker.service.PetwalkerService;
 import com.dog.walker.reservation.service.ReservationService;
@@ -26,18 +27,20 @@ public class PetwalkerController {
 
 	// 회원가입 요청 처리
 	@RequestMapping("/petwalker/signup")
-	public ModelAndView signup(HttpServletRequest request, @ModelAttribute PetwalkerDto dto) {
+	public ModelAndView signup(HttpServletRequest request,@ModelAttribute PetwalkerDto dto) {
 		// 서비스에 전달할 ModelAndView 객체 생성
 		ModelAndView mView = new ModelAndView();
 		// 서비스에 ModelAndVie 객체와 폼 전송된 회원 가입정보가
 		// 담겨있는 UsersDto 객체를 전달한다.
 		pService.signup(request, mView, dto);
 		// ModelAndView 객체에 view 페이지 정보를 담고
+		request.setAttribute("url", request.getContextPath()+"/home.do");
 		mView.setViewName("petwalker/signup");
 		// 리턴해준다.
 		return mView;
 	}
-
+	
+	
 	// 회원가입 폼 요청 처리
 	@RequestMapping("/petwalker/signup_form")
 	public String signupForm() {
@@ -56,7 +59,20 @@ public class PetwalkerController {
 		// {"canUse":true} or {"canUse":false}
 		return map;
 	}
+	
 
+	@RequestMapping("/petwalker/checknickname")
+	@ResponseBody
+	public Map<String, Object> checknickname(@RequestParam String inputNickname) {
+		// 서비스 객체를 이용해서 사용가능 여부를 boolean type
+		// 으로 리턴 받는다.
+		boolean canUse = pService.canUseNickname(inputNickname);
+		// Map 에 담는다.
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("canUse", canUse);
+		// {"canUse":true} or {"canUse":false}
+		return map;
+	}
 	// 로그인 폼 요청 처리
 	@RequestMapping("/petwalker/loginform")
 	public String loginForm(HttpServletRequest request) {

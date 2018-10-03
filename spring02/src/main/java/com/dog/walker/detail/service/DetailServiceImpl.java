@@ -21,61 +21,52 @@ import com.dog.walker.cafe.dto.CafeDto;
 public class DetailServiceImpl implements DetailService {
 	@Autowired
 	private ManageDao dao;
-	
+
 	@Autowired
 	private ReservationDao rsvdao;
-	
-	   @Override
-	   public void rsvInsertform(HttpServletRequest request, ModelAndView mView) {
-	      
-	      String id=(String)request.getSession().getAttribute("id");
-	      String nickname=request.getParameter("petwalker");
-	      mView.addObject("id",id);
-	      mView.addObject("nickname",nickname);
-	      PetusersDto petUser = rsvdao.pUserGetData(id);
-	      request.setAttribute("petUser", petUser);
-	      
-	   }
-
-	
 
 	@Override
-	public void reviewgetList(HttpServletRequest request,  ModelAndView mView) {
-		
-		String nickname=request.getParameter("nickname");
-		mView.addObject("nickname",nickname);
-		
-		ManageDto dto=new ManageDto();
-		
+	public void rsvInsertform(HttpServletRequest request, ModelAndView mView) {
+
+		String id = (String) request.getSession().getAttribute("id");
+		String nickname = request.getParameter("petwalker");
+		mView.addObject("id", id);
+		mView.addObject("nickname", nickname);
+		PetusersDto petUser = rsvdao.pUserGetData(id);
+		request.setAttribute("petUser", petUser);
+
+	}
+
+	@Override
+	public void reviewgetList(HttpServletRequest request, ModelAndView mView) {
+
+		String nickname = request.getParameter("nickname");
+		mView.addObject("nickname", nickname);
+
+		ManageDto dto = new ManageDto();
+
 		dto.setNickname(nickname);
 
-		//1. FileDto 객체를 전달해서 파일 목록을 불러온다 
-		List<ManageDto> list=dao.rgetList(dto);
-		
-		//2. request 에 담고
+		// 1. FileDto 객체를 전달해서 파일 목록을 불러온다
+		List<ManageDto> list = dao.rgetList(dto);
+
+		// 2. request 에 담고
 		request.setAttribute("list", list);
 	}
-	
 
 	@Override
-	   public void pwk(HttpServletRequest request, ModelAndView mView) {
-	      
+	public void pwk(HttpServletRequest request, ModelAndView mView) {
 
-	      String nickname=request.getParameter("nickname");
-	     
-	      
-	      ManageDto dto=new ManageDto();
-	      
-	      dto.setNickname(nickname);
-	      
-	      ManageDto pwk=dao.pwkGetData(nickname);
-	      
-	      request.setAttribute("pwk", pwk);
-	      
-	   }
+		String nickname = request.getParameter("nickname");
 
+		ManageDto dto = new ManageDto();
 
-	
-	
+		dto.setNickname(nickname);
+
+		ManageDto pwk = dao.pwkGetData(nickname);
+
+		request.setAttribute("pwk", pwk);
+
+	}
 
 }

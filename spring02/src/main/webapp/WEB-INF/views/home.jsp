@@ -8,7 +8,7 @@
 <title>Grayscale - Start Bootstrap Theme</title>
 <style>
 footer {
-   margin-top: 140px; 
+   margin-top: 140px;  
    left:0px;
    bottom:0px;
    height:60px;
